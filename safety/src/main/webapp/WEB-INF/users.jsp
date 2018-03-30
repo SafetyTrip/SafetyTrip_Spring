@@ -23,9 +23,9 @@
   </head>
 
   <body>
-	<jsp:include page="include/main/nav.jsp" flush="true" />
-	<jsp:include page ="include/users/signUp.jsp" flush ="true" />
-	<jsp:include page="include/main/footer.jsp" flush="true" />
+	<jsp:include page="main/nav.jsp" flush="true" />
+	<jsp:include page="users/signUp.jsp" flush ="true" />
+	<jsp:include page="main/footer.jsp" flush="true" />
 	
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script src ="js/daum-api.js"></script>

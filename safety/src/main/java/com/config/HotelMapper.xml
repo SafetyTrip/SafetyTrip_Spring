@@ -14,5 +14,10 @@
 		where rownum <![CDATA[<=]]> 5 and cityno in
 		(select cityno from city where couno = #{couno})
 	</select>
+	
+	<select id="getHotelListByCityno" parameterType="String" resultType="HotelDTO">
+		select hno, hname, good, address from hotel
+		where rownum <![CDATA[<=]]> 5 and cityno = #{cityno}
+	</select>
 </mapper>
 

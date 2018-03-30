@@ -17,4 +17,8 @@ public class HotelDAO {
 	public List<HotelDTO> getHotelList(String couno) {
 		return template.selectList("getHotelList", couno);
 	}
+	
+	public List<HotelDTO> getHotelListByCityno(String cityno) {
+		return template.selectList("getHotelListByCityno", cityno);
+	}
 }

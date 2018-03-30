@@ -15,14 +15,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <!-- CSS -->
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/safety.css" rel="stylesheet">
     <!-- jQuery file -->
     <script src="js/jquery-3.3.1.min.js"></script>
   </head>
 
   <body>
   	<jsp:include page="main/nav.jsp" flush="true" />
-	<jsp:include page="include/safety.jsp" flush="true" />
+	<jsp:include page="include/city.jsp" flush="true" />
 	<jsp:include page="main/footer.jsp" flush="true" />
 	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

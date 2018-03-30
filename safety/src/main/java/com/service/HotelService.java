@@ -17,4 +17,8 @@ public class HotelService {
 	public List<HotelDTO> getHotelList(String couno) {
 		return dao.getHotelList(couno);
 	}
+	
+	public List<HotelDTO> getHotelListByCityno(String cityno) {
+		return dao.getHotelListByCityno(cityno);
+	}
 }

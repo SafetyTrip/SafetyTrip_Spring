@@ -24,9 +24,9 @@
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <jsp:include page="include/main/nav.jsp" flush="true" />
-	<jsp:include page="include/users/login.jsp" flush="true" />
-	<jsp:include page="include/main/footer.jsp" flush="true" />
+    <jsp:include page="main/nav.jsp" flush="true" />
+	<jsp:include page="users/login.jsp" flush="true" />
+	<jsp:include page="main/footer.jsp" flush="true" />
 	
 	<script src ="js/login.js"></script>
 </body>

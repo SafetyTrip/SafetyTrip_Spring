@@ -1,15 +1,15 @@
 $(document).ready(function() {
 	$('.panel').click(function() {
 		var couno = $(this).attr("data-couno");
-		var cname = $(this).attr("data-cname");
+		var cename = $(this).attr("data-cename");
 		
-		if(couno != undefined) {
-			location.href="country/"+couno+"/"+cname;
+		if(cename != undefined) {
+			location.href="country/"+couno+"/"+cename;
 		} else {
 			var cityno = $(this).attr("data-cityno");
-			var cityname = $(this).attr("data-cityname");
+			var cityename = $(this).attr("data-cityename");
 			
-			location.href="city/"+cityno+"/"+cityname;
+			location.href="city/"+couno+"/"+cityno+"/"+cityename;
 		}
 	});
 	
