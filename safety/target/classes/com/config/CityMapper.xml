@@ -4,11 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="CityMapper">
-	<select id="getCityList" resultType="cityDTO">
-		select cityno, cityename from city
+	<select id="getCityListByCityname" parameterType="string" resultType="CityDTO">
+		select cityno, couno, cityname, cityename from city
+		where rownum <![CDATA[<=]]> 10
+		<if test="value != null">
+			and cityname like '%' || #{value} || '%'
+		</if>
+		order by cityname desc
 	</select>
-	<select id="getCitySelectListByCouno" parameterType="list" resultType="String">
-		select cityno, couno, cityname, cityename from city where couno = #{couno}
+	
+	<select id="getCityListByCityename" parameterType="string" resultType="CityDTO">
+		select cityno, couno, cityname, cityename from city
+		where rownum <![CDATA[<=]]> 10
+		<if test="value != null">
+			and cityename like '%' || #{value} || '%'
+		</if>
+		order by cityename desc
+	</select>
+	
+	<select id="getCityListByContinent" parameterType="string" resultType="CityDTO">
+		select cityno, couno, cityname, cityename from city
+		where rownum <![CDATA[<=]]> 10
+		and couno in (select couno from country where continent = #{continent})
+		order by cityename desc
 	</select>
 </mapper>
 

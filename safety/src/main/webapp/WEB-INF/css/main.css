@@ -22,3 +22,7 @@ body > .container {
 .pointer {
 	cursor: pointer;
 }
+
+.hidden {
+	visibility: hidden;
+}
