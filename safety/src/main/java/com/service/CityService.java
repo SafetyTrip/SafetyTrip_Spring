@@ -23,4 +23,8 @@ public class CityService {
 		
 		return list;
 	}
+	
+	public List<CityDTO> getCityListByContinent(String continent) {
+		return dao.getCityListByContinent(continent);
+	}
 }

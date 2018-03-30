@@ -21,5 +21,12 @@
 		</if>
 		order by cityename desc
 	</select>
+	
+	<select id="getCityListByContinent" parameterType="string" resultType="CityDTO">
+		select cityno, couno, cityname, cityename from city
+		where rownum <![CDATA[<=]]> 10
+		and couno in (select couno from country where continent = #{continent})
+		order by cityename desc
+	</select>
 </mapper>
 

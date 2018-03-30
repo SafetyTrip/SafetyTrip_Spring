@@ -21,4 +21,8 @@ public class CityDAO {
 	public List<CityDTO> getCityListByCityename(String word) {
 		return template.selectList("getCityListByCityename", word);
 	}
+	
+	public List<CityDTO> getCityListByContinent(String continent) {
+		return template.selectList("getCityListByContinent", continent);
+	}
 }

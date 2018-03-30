@@ -44,6 +44,7 @@ public class MainController {
 		
 		if(continent != null) {
 			countryList = countryService.getCountryListByContinent(continent);
+			cityList = cityService.getCityListByContinent(continent);
 		} else {
 			countryList = countryService.getCountryList(map.get("word").toLowerCase());
 			cityList = cityService.getCityList(map.get("word").toLowerCase());
