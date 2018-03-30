@@ -7,13 +7,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
-	<div class="row">
-		<h3>${cname}</h3>
+	<div class="page-header">
+		<h3>${cityename}</h3>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<iframe height=400px width="100%" frameborder="0" style="border:0"
-			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${cname}+관광+명소" allowfullscreen>
+			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${cityename}+관광+명소" allowfullscreen>
 			</iframe>
 			<div class="table-responsive">
 				<h4>인근 호텔</h4>
