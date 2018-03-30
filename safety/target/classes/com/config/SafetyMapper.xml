@@ -9,7 +9,7 @@
 		values(SEQ_SAFETY_sno.nextval, #{couno}, #{title}, #{content}, #{id}, TO_DATE(#{createDate}, 'YYYY-MM-DD'))
 	</insert>
 	
-	<select id="safetySelectListByCouno" parameterType="string" resultType="SafetyDTO">
+	<select id="getSafetyListByCouno" parameterType="string" resultType="SafetyDTO">
 		select sno, title, createDate from safety where rownum <![CDATA[<=]]> 10 and couno = #{couno}
 	</select>
 	

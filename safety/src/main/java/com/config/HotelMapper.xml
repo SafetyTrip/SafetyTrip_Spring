@@ -9,12 +9,10 @@
 		values(SEQ_Hotel_hno.nextval, #{cityno}, #{hname}, #{good}, #{address}, #{lat}, #{lng})
 	</insert>
 	
-	<select id="hotelSelectListBycityno" parameterType="list" resultType="HotelDTO">
+	<select id="getHotelList" parameterType="String" resultType="HotelDTO">
 		select hno, hname, good, address from hotel
 		where rownum <![CDATA[<=]]> 5 and cityno in
-		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
-			#{item}
-		</foreach>
+		(select cityno from city where couno = #{couno})
 	</select>
 </mapper>
 
