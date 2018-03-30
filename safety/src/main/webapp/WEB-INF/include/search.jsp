@@ -18,22 +18,18 @@
 		<h3>COUNTRY</h3>
 		<div class="row">
 			<c:forEach var="dto" items="${search}" varStatus="status">
-			<div class="col-sm-3">
-	          <div class="panel panel-default pointer">
-	            <div class="panel-heading">
-	              <h3 class="panel-title">
-	              	${dto.cname} (${dto.cename})
-	              </h3>
-	            </div>
-	            <div class="panel-body">
-	              <img src="img/country/${dto.couno}.png" style="height: 100px;" />
-	              <form action="country" method="get">
-	              	<input type="hidden" name="no" value="${dto.couno}" />
-	              	<input type="hidden" name="name" value="${dto.cname}" />
-	              </form>
-	            </div>
-	          </div>
-	        </div>
+				<div class="col-sm-3">
+		          <div class="panel panel-default pointer" data-couno="${dto.couno}" data-cname="${dto.cname}">
+		            <div class="panel-heading">
+		              <h3 class="panel-title">
+		              	${dto.cname} (${dto.cename})
+		              </h3>
+		            </div>
+		            <div class="panel-body">
+		              <img src="img/country/${dto.couno}.png" style="height: 100px;" />
+		            </div>
+		          </div>
+		        </div>
 			</c:forEach>
 		</div>
 	</div>
