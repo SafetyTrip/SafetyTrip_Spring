@@ -3,13 +3,13 @@ $(document).ready(function() {
 		var couno = $(this).attr("data-couno");
 		var cname = $(this).attr("data-cname");
 		
-		if(couno != undefined) {
+		if(cname != undefined) {
 			location.href="country/"+couno+"/"+cname;
 		} else {
 			var cityno = $(this).attr("data-cityno");
 			var cityname = $(this).attr("data-cityname");
 			
-			location.href="city/"+cityno+"/"+cityname;
+			location.href="city/"+couno+"/"+cityno+"/"+cityname;
 		}
 	});
 	

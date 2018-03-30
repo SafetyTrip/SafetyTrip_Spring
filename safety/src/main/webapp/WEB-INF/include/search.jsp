@@ -45,7 +45,7 @@
 			<div class="col-md-11 horizontal-scroll">
 			<c:forEach var="dto" items="${cityList}" varStatus="status">
 				<div>
-		          <div class="panel panel-default pointer" data-cityno="${dto.cityno}" data-cityname="${dto.cityname}">
+		          <div class="panel panel-default pointer" data-couno="${dto.couno}" data-cityno="${dto.cityno}" data-cityname="${dto.cityname}">
 		            <div class="panel-heading">
 		              <h3 class="panel-title">
 		              	${dto.cityname} (${dto.cityename})

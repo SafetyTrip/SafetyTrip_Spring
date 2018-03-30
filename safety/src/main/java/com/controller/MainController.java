@@ -62,9 +62,20 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.setViewName("country");
-		mav.addObject("couno", couno);
 		mav.addObject("cname", cname);
 		mav.addObject("hList", hotelService.getHotelList(couno));
+		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
+		
+		return mav;
+	}
+	
+	@RequestMapping(value = "/city/{couno}/{cityno}/{cityname}", method = RequestMethod.GET)
+	public ModelAndView city(@PathVariable String couno, @PathVariable String cityno, @PathVariable String cityname) {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("country");
+		mav.addObject("cityname", cityname);
+		mav.addObject("hList", hotelService.getHotelListByCityno(cityno));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
 		
 		return mav;
