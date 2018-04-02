@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <!-- Main Carousel -->
 <div class="container theme-showcase">
@@ -10,7 +10,7 @@
      </ol>
      <div class="carousel-inner" role="listbox">
        <div class="item active">
-         <img class="first-slide" src="img/main/backgrounds_blue.jpg" alt="First slide">
+         <img class="first-slide" src="<c:url value='/resources/img/main/backgrounds_blue.jpg'/>" alt="First slide">
          <div class="carousel-caption">
             <h1>Europe.</h1>
             <p>The United Kingdom. France. the Federal Republic of Germany. Spain. The Republic of Italy.</p>
@@ -18,7 +18,7 @@
           </div>
        </div>
        <div class="item">
-      	  <img class="second-slide" src="img/main/backgrounds_blue.jpg" alt="Second slide">
+      	  <img class="second-slide" src="<c:url value='/resources/img/main/backgrounds_blue.jpg'/>" alt="Second slide">
          <div class="carousel-caption">
             <h1>Asia.</h1>
             <p>Japan. The People's Republic of China. Taiwan.</p>
@@ -26,7 +26,7 @@
           </div>
        </div>
        <div class="item">
-         <img class="third-slide" src="img/main/backgrounds_blue.jpg" alt="Third slide">
+         <img class="third-slide" src="<c:url value='/resources/img/main/backgrounds_blue.jpg'/>" alt="Third slide">
          <div class="carousel-caption">
             <h1>America.</h1>
             <p>The United States. Canada.</p>

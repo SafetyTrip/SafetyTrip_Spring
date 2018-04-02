@@ -1,6 +1,6 @@
-<%@page import="java.util.List"%>
 <%@page import="com.dto.SafetyDTO"%>
 <%@page import="com.dto.HotelDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 

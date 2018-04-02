@@ -6,7 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
-	<div class="row">
+   <div class="page-header">
 		<div class="col-md-12">
 		  <form action="search" method="get">
 	         <input class="form-control col-md-8" name="word" type="text" placeholder="Search" aria-label="Search">
@@ -28,7 +28,7 @@
 		              </h3>
 		            </div>
 		            <div class="panel-body">
-		              <img src="img/country/${dto.couno}.png" style="height: 100px;" />
+		              <img src="<c:url value='/resources/img/country/${dto.couno}.png'/>" style="height: 100px;" />
 		            </div>
 		          </div>
 		        </div>
@@ -52,7 +52,7 @@
 		              </h3>
 		            </div>
 		            <div class="panel-body">
-		              <img src="img/city/${dto.cityno}.png" style="height: 100px;" />
+		              <img src="<c:url value='/resources/img/city/${dto.cityno}.png'/>" style="height: 100px;" />
 		            </div>
 		          </div>
 		        </div>
