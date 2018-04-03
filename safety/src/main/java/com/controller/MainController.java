@@ -38,6 +38,7 @@ public class MainController {
 		
 		ModelAndView mav = new ModelAndView();
 		String continent =  map.get("continent");
+		String word = map.get("word");
 		
 		List<CountryDTO> countryList = null;
 		List<CityDTO> cityList = null;
@@ -46,19 +47,20 @@ public class MainController {
 			countryList = countryService.getCountryListByContinent(continent);
 			cityList = cityService.getCityListByContinent(continent);
 		} else {
-			countryList = countryService.getCountryList(map.get("word").toLowerCase());
-			cityList = cityService.getCityList(map.get("word").toLowerCase());
+			countryList = countryService.getCountryList(word);
+			cityList = cityService.getCityList(word);
 		}
 
 		mav.setViewName("search");
+		mav.addObject("word", word);
 		mav.addObject("countryList", countryList);
 		mav.addObject("cityList", cityList);
 		
 		return mav;
 	}
 	
-	@RequestMapping(value = "/country/{couno}/{cename}", method = RequestMethod.GET)
-	public ModelAndView country(@PathVariable String couno, @PathVariable String cename) {
+	@RequestMapping(value = "/country/{cename}/{couno}", method = RequestMethod.GET)
+	public ModelAndView country(@PathVariable String cename, @PathVariable String couno) {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.setViewName("country");
@@ -69,7 +71,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/city/{couno}/{cityno}/{cityename}", method = RequestMethod.GET)
+	@RequestMapping(value = "/city/{couno}/{cityename}/{cityno}", method = RequestMethod.GET)
 	public ModelAndView city(@PathVariable String couno, @PathVariable String cityno, @PathVariable String cityename) {
 		ModelAndView mav = new ModelAndView();
 		
