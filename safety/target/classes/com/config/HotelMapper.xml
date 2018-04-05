@@ -11,16 +11,18 @@
 	
 	<select id="getHotelList" parameterType="hashmap" resultType="HotelDTO">
 		select hno, cityno, hname, good, address, lat, lng from hotel
-		where rownum <![CDATA[<=]]> 5 
 		<choose>
 			<when test="cityno != null">
-				and cityno = #{cityno}
+				where cityno = #{cityno}
 			</when>
 			<when test="couno != null">
-				and cityno in
+				where cityno in
 				(select cityno from city where couno = #{couno})
 			</when>
 		</choose>
+		<if test="num != null">
+			and rownum <![CDATA[<=]]> #{num}
+		</if>
 	</select>
 	
 	<select id="getCountHotel" parameterType="hashmap" resultType="int">

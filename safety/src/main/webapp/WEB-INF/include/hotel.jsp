@@ -5,6 +5,14 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set var="perPage" value="${hpDTO.perPage}" />
+<c:set var="totalCount" value="${hpDTO.totalCount}" />
+<c:set var="curPage" value="${hpDTO.curPage}" />
+<c:set var="end" value="${totalCount/perPage}" />
+<c:if test="${totalCount%perPage !=0}">
+   <c:set var="pageNum" value="${end+1}" />
+</c:if>
+
 <div class="container">
 	<div class="jumbotron">
         <h3></h3>
@@ -12,7 +20,7 @@
     </div>
 	<div class="row">
 		<div class="table-responsive">
-			<div class="hotel" data-couno="${couno}" data-cityno="${cityno}">
+			<div class="hotel" data-couno="${couno}" data-ename="${ename}" data-cityno="${cityno}">
 				<h4>${ename} 근처 호텔</h4>
             </div>
             <table class="table table-striped">
@@ -40,32 +48,16 @@
             </table>
 		</div>
 		<div class="page" data-curPage="${hpDTO.curPage}">
-			<% 
-				HotelPageDTO hpDTO = (HotelPageDTO) request.getAttribute("hpDTO");
-				int perPage = hpDTO.getPerPage();
-				int totalCount = hpDTO.getTotalCount();
-				int curPage = hpDTO.getCurPage();
-				int max = totalCount/perPage;
-				
-				if(totalCount%perPage != 0) {
-					max++;
-				}
-				
-				for(int i=1; i<max; i++) {
-					
-			%>
-			<span class="curPage pointer 
-			<% 
-				if(curPage == i) {
-			%>
-				bold
-			<% 
-				}
-			%>
-			"><%= i%></span>
-			<% 
-				}
-			%>
+			<c:forEach var="i" begin="1" end="${end}" varStatus="status">
+				<c:choose>
+					<c:when test="${curPage == (status.index)}">
+				    	 <span class="curPage pointer bold">${status.index}</span>
+				    </c:when>
+				    <c:otherwise>
+				    	<span class="curPage pointer">${status.index}</span>
+				    </c:otherwise>
+			    </c:choose>
+			</c:forEach>
 		</div>
 	</div>
 </div>
