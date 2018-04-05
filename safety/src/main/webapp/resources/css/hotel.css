@@ -1,0 +1,7 @@
+.page {
+	text-align: center;
+}
+
+.page > span {
+	padding-left: 20px;
+}

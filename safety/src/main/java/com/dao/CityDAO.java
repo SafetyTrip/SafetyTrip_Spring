@@ -15,14 +15,14 @@ public class CityDAO {
 	SqlSessionTemplate template;
 	
 	public List<CityDTO> getCityListByCityname(String word) {
-		return template.selectList("getCityListByCityname", word);
+		return template.selectList("CityMapper.getCityListByCityname", word);
 	}
 	
 	public List<CityDTO> getCityListByCityename(String word) {
-		return template.selectList("getCityListByCityename", word);
+		return template.selectList("CityMapper.getCityListByCityename", word);
 	}
 	
 	public List<CityDTO> getCityListByContinent(String continent) {
-		return template.selectList("getCityListByContinent", continent);
+		return template.selectList("CityMapper.getCityListByContinent", continent);
 	}
 }

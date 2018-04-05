@@ -9,7 +9,7 @@
    <div class="page-header">
 		<div class="col-md-12">
 		  <form action="search" method="get">
-	         <input class="form-control col-md-8" name="word" type="text" placeholder="Search" aria-label="Search">
+	         <input class="form-control col-md-8" name="word" type="text" placeholder="Search" aria-label="Search" value="${word}">
 	       </form>
 	   	</div>
    </div>
