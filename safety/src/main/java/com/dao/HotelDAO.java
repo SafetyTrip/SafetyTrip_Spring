@@ -23,18 +23,19 @@ public class HotelDAO {
 	
 	//목록보기
 	public HotelPageDTO getDetailHotelList(HashMap<String, Integer> map){
+		HotelPageDTO dto = new HotelPageDTO();
+		
 		int curPage = map.get("curPage");
-		HotelPageDTO pageDTO = new HotelPageDTO();
+		int perPage = dto.getPerPage();
+		int start = (curPage-1)*perPage;	
 		
-		int start = (curPage-1)*pageDTO.getPerPage();	
-		List<HotelDTO> list=  template.selectList("HotelMapper.getHotelList", map,
-				new RowBounds(start, pageDTO.getPerPage()));
+		List<HotelDTO> list = template.selectList("HotelMapper.getHotelList", map, new RowBounds(start, perPage));
 		
-		pageDTO.setList(list);
-		pageDTO.setCurPage(curPage);
-		pageDTO.setTotalCount(getCountHotel(map));
+		dto.setList(list);
+		dto.setCurPage(curPage);
+		dto.setTotalCount(getCountHotel(map));
 		
-		return pageDTO;
+		return dto;
 	}
 	
 	public int getCountHotel(HashMap<String, Integer> map) {

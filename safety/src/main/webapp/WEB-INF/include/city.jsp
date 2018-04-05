@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
-	<div class="page-header">
+	<div class="page-header" data-couno="${couno}" data-cityename="${cityename}" data-cityno="${cityno}">
 		<h3>${cityename}</h3>
 	</div>
 	<div class="row">
@@ -15,7 +15,7 @@
 			<iframe height=400px width="100%" frameborder="0" style="border:0"
 			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${cityename}+관광+명소" allowfullscreen>
 			</iframe>
-			<div class="table-responsive">
+			<div class="table-responsive pointer">
 				<h4>인근 호텔</h4>
 	            <table class="table table-striped">
 	              <thead>
@@ -27,7 +27,7 @@
 	              </thead>
 	              <tbody>
 	              	<c:forEach var="dto" items="${hList}" varStatus="status">
-		                <tr class="hotel-tr pointer">
+		                <tr class="hotel-tr">
 		                  <td>
 		                  	${status.index + 1}
 		                  	<input type="hidden" class="hno" value="${dto.hno}">
