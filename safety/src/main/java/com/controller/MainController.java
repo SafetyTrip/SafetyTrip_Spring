@@ -38,6 +38,7 @@ public class MainController {
 		
 		ModelAndView mav = new ModelAndView();
 		String continent =  map.get("continent");
+		String word = map.get("word");
 		
 		List<CountryDTO> countryList = null;
 		List<CityDTO> cityList = null;
@@ -46,11 +47,12 @@ public class MainController {
 			countryList = countryService.getCountryListByContinent(continent);
 			cityList = cityService.getCityListByContinent(continent);
 		} else {
-			countryList = countryService.getCountryList(map.get("word").toLowerCase());
-			cityList = cityService.getCityList(map.get("word").toLowerCase());
+			countryList = countryService.getCountryList(word);
+			cityList = cityService.getCityList(word);
 		}
 
 		mav.setViewName("search");
+		mav.addObject("word", word);
 		mav.addObject("countryList", countryList);
 		mav.addObject("cityList", cityList);
 		
@@ -58,24 +60,28 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/country/{couno}/{cename}", method = RequestMethod.GET)
-	public ModelAndView country(@PathVariable String couno, @PathVariable String cename) {
+	public ModelAndView country(@PathVariable int couno, @PathVariable String cename) {
 		ModelAndView mav = new ModelAndView();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("couno", couno);
 		
 		mav.setViewName("country");
 		mav.addObject("cename", cename);
-		mav.addObject("hList", hotelService.getHotelList(couno));
+		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
 		
 		return mav;
 	}
 	
-	@RequestMapping(value = "/city/{couno}/{cityno}/{cityename}", method = RequestMethod.GET)
-	public ModelAndView city(@PathVariable String couno, @PathVariable String cityno, @PathVariable String cityename) {
+	@RequestMapping(value = "/city/{couno}/{cityename}/{cityno}", method = RequestMethod.GET)
+	public ModelAndView city(@PathVariable int couno, @PathVariable String cityename, @PathVariable int cityno) {
 		ModelAndView mav = new ModelAndView();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("cityno", cityno);
 		
 		mav.setViewName("city");
 		mav.addObject("cityename", cityename);
-		mav.addObject("hList", hotelService.getHotelListByCityno(cityno));
+		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
 		
 		return mav;
