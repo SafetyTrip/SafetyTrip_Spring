@@ -1,6 +1,12 @@
 $(document).ready(function() {
+	$('.hotel').click(function() {
+		const couno = $('.page-header').attr('data-couno');
+		const cename = $('.page-header').attr('data-cename');
+		
+		location.href = '/trip/hotel/'+couno+'/'+cename;
+	});
+	
 	$('.safety-tr').click(function() {
-		var sno = $(this).find('.sno').val();
-		location.href = 'safety?sno=' + sno;
+		const sno = $(this).find('.sno').val();
 	});
 });

@@ -29,7 +29,7 @@
 	              	<c:forEach var="dto" items="${hList}" varStatus="status">
 		                <tr class="hotel-tr pointer">
 		                  <td>
-		                  	${status.index}
+		                  	${status.index + 1}
 		                  	<input type="hidden" class="hno" value="${dto.hno}">
 		                  </td>
 		                  <td>${dto.hname}</td>
@@ -55,7 +55,7 @@
 	              	<c:forEach var="dto" items="${sList}" varStatus="status">
 		                <tr class="safety-tr pointer">
 		                  <td>
-		                  	${status.index}
+		                  	${status.index + 1}
 		                  	<input type="hidden" class="sno" value="${dto.sno}">
 		                  </td>
 		                  <td>${dto.title}</td>

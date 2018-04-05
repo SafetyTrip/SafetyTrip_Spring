@@ -9,15 +9,34 @@
 		values(SEQ_Hotel_hno.nextval, #{cityno}, #{hname}, #{good}, #{address}, #{lat}, #{lng})
 	</insert>
 	
-	<select id="getHotelList" parameterType="String" resultType="HotelDTO">
-		select hno, hname, good, address from hotel
-		where rownum <![CDATA[<=]]> 5 and cityno in
-		(select cityno from city where couno = #{couno})
+	<select id="getHotelList" parameterType="hashmap" resultType="HotelDTO">
+		select hno, cityno, hname, good, address, lat, lng from hotel
+		where rownum <![CDATA[<=]]> 5 
+		<choose>
+			<when test="cityno != null">
+				and cityno = #{cityno}
+			</when>
+			<when test="couno != null">
+				and cityno in
+				(select cityno from city where couno = #{couno})
+			</when>
+		</choose>
 	</select>
 	
-	<select id="getHotelListByCityno" parameterType="String" resultType="HotelDTO">
-		select hno, hname, good, address from hotel
-		where rownum <![CDATA[<=]]> 5 and cityno = #{cityno}
+	<select id="getCountHotel" parameterType="hashmap" resultType="int">
+		select count(*) from hotel
+		<choose>
+			<when test="cityno != null">
+				where cityno = #{cityno}
+			</when>
+			<when test="couno != null">
+				where cityno in
+				(select cityno from city where couno = #{couno})
+			</when>
+			<otherwise>
+				where 1=2;
+			</otherwise>
+		</choose>
 	</select>
 </mapper>
 

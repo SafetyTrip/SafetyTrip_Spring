@@ -14,7 +14,7 @@ public class SafetyDAO {
 	@Autowired
 	SqlSessionTemplate template;
 	
-	public List<SafetyDTO> getSafetyListByCouno(String couno) {
+	public List<SafetyDTO> getSafetyListByCouno(int couno) {
 		return template.selectList("getSafetyListByCouno", couno);
 	}
 }

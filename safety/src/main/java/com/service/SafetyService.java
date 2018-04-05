@@ -14,7 +14,7 @@ public class SafetyService {
 	@Autowired
 	SafetyDAO dao;
 	
-	public List<SafetyDTO> getSafetyListByCouno(String couno) {
+	public List<SafetyDTO> getSafetyListByCouno(int couno) {
 		return dao.getSafetyListByCouno(couno);
 	}
 }

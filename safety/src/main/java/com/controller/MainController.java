@@ -59,25 +59,29 @@ public class MainController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/country/{cename}/{couno}", method = RequestMethod.GET)
-	public ModelAndView country(@PathVariable String cename, @PathVariable String couno) {
+	@RequestMapping(value = "/country/{couno}/{cename}", method = RequestMethod.GET)
+	public ModelAndView country(@PathVariable int couno, @PathVariable String cename) {
 		ModelAndView mav = new ModelAndView();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("couno", couno);
 		
 		mav.setViewName("country");
 		mav.addObject("cename", cename);
-		mav.addObject("hList", hotelService.getHotelList(couno));
+		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
 		
 		return mav;
 	}
 	
 	@RequestMapping(value = "/city/{couno}/{cityename}/{cityno}", method = RequestMethod.GET)
-	public ModelAndView city(@PathVariable String couno, @PathVariable String cityno, @PathVariable String cityename) {
+	public ModelAndView city(@PathVariable int couno, @PathVariable String cityename, @PathVariable int cityno) {
 		ModelAndView mav = new ModelAndView();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("cityno", cityno);
 		
 		mav.setViewName("city");
 		mav.addObject("cityename", cityename);
-		mav.addObject("hList", hotelService.getHotelListByCityno(cityno));
+		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
 		
 		return mav;
