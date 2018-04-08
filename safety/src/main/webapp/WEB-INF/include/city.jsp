@@ -53,10 +53,9 @@
 	              </thead>
 	              <tbody>
 	              	<c:forEach var="dto" items="${sList}" varStatus="status">
-		                <tr class="safety-tr pointer">
+		                <tr class="safety-tr pointer" data-sno="${dto.sno}">
 		                  <td>
 		                  	${status.index + 1}
-		                  	<input type="hidden" class="sno" value="${dto.sno}">
 		                  </td>
 		                  <td>${dto.title}</td>
 		                  <td>${dto.createDate}</td>

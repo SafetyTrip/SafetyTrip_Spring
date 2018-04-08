@@ -20,9 +20,6 @@
 				(select cityno from city where couno = #{couno})
 			</when>
 		</choose>
-		<if test="num != null">
-			and rownum <![CDATA[<=]]> #{num}
-		</if>
 	</select>
 	
 	<select id="getCountHotel" parameterType="hashmap" resultType="int">

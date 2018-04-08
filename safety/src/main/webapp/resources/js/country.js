@@ -1,5 +1,5 @@
 $(document).ready( () => {
-	$('.table-responsive').on('click', () => {
+	$('.hotel-table').on('click', () => {
 		const couno = $('.page-header').attr('data-couno');
 		const cename = $('.page-header').attr('data-cename');
 		
@@ -7,6 +7,9 @@ $(document).ready( () => {
 	});
 	
 	$('.safety-tr').on('click', (e) => {
-		const sno = $(e.target).find('.sno').val();
+		const couno = $('.page-header').attr('data-couno');
+		const sno = $(e.target).closest('tr').attr('data-sno');
+		
+		location.href = '/trip/safety/'+couno+'?curPage=1&sno='+sno;
 	});
 });

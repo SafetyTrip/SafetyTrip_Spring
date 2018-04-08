@@ -27,7 +27,6 @@ public class HotelController {
 		
 		mav.setViewName("hotel");
 		mav.addObject("ename", cename);
-		mav.addObject("curPage", curPage);
 		mav.addObject("hpDTO", hotelService.getDetailHotelList(map));
 		
 		return mav;
@@ -42,7 +41,6 @@ public class HotelController {
 		
 		mav.setViewName("hotel");
 		mav.addObject("ename", cityename);
-		mav.addObject("curPage", curPage);
 		mav.addObject("hpDTO", hotelService.getDetailHotelList(map));
 		
 		return mav;

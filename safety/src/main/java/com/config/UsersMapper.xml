@@ -5,33 +5,31 @@
 <mapper namespace="UsersMapper">
 
 	<insert id="usersAdd" parameterType="UsersDTO">
-	 insert into users (uno, userid, passwd, email, uname, name, passport, sex,
-	 birth, post, address1, address2, createdate, eaccess) 
-	 values(SEQ_USERS_uno.nextval, #{userid}, #{passwd},#{email}, #{uname},#{name},#{passport}, 
-	 #{sex},to_date(#{birth},'YYYY-MM-DD'),#{post}, #{address1},#{address2}, sysdate, 0)
+		 insert into users (uno, userid, passwd, email, uname, name, passport, sex,
+		 birth, post, address1, address2, createdate, eaccess) 
+		 values(SEQ_USERS_uno.nextval, #{userid}, #{passwd},#{email}, #{uname},#{name},#{passport}, 
+		 #{sex},to_date(#{birth},'YYYY-MM-DD'),#{post}, #{address1},#{address2}, sysdate, 0)
 	</insert>
-	
 	
 	<select id="usersIdCheck" parameterType="string" resultType="int">
 		select count(*) from users
-		where userid =#{userid}
+		where userid=#{value}
 	</select>
 	
 	<select id="usersEmailCheck" parameterType="string" resultType="int">
 		select count(*) from users
-		where email =#{email}
+		where email =#{value}
 	</select>
 	
 	<select id="usersUname" parameterType="string" resultType="int">
 		select count(*) from users
-		where uname =#{uname}
+		where uname =#{value}
 	</select>
-	
 	
 	<select id="mypage" parameterType="string" resultType="UsersDTO">		
 		select userid,passwd username,post1,addr1,addr2,phone1,phone2,phone3,email1,email2
 		from users
-		where userid =#{userid} 
+		where userid =#{value} 
 	</select>
 
 	<select id="login" parameterType="hashmap" resultType="UsersDTO">
@@ -40,6 +38,4 @@
 		where userid = #{userid} and passwd = #{passwd}
 	</select>
 	
-	
-
 </mapper>

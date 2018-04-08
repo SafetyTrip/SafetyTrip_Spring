@@ -27,4 +27,8 @@ public class CountryService {
 	public List<CountryDTO> getCountryListByContinent(String continent) {
 		return dao.getCountryListByContinent(continent);
 	}
+	
+	public String getCountryOneByCouno(int couno) {
+		return dao.getCountryOneByCouno(couno);
+	}
 }

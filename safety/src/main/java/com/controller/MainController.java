@@ -79,7 +79,6 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("cityno", cityno);
-		map.put("num", 5);
 		
 		mav.setViewName("city");
 		mav.addObject("cityename", cityename);
