@@ -10,11 +10,15 @@
 	</insert>
 	
 	<select id="getSafetyListByCouno" parameterType="int" resultType="SafetyDTO">
-		select sno, title, createDate from safety where rownum <![CDATA[<=]]> 10 and couno = #{couno}
+		select sno, title, createDate from safety where couno = #{value}
 	</select>
 	
-	<select id="safetySelectOneBySno" parameterType="int" resultType="SafetyDTO">
-		select sno, couno, title, content, createDate from safety where sno = #{sno}
+	<select id="getSafetyOneBySno" parameterType="int" resultType="SafetyDTO">
+		select sno, couno, title, content, createDate from safety where sno = #{value}
+	</select>
+	
+	<select id="getCountSafety" parameterType="int" resultType="int">
+		select count(*) from safety where couno = ${value}
 	</select>
 </mapper>
 

@@ -1,13 +1,16 @@
 $(document).ready( () => {
-	$('.table-responsive').on('click', () => {
+	$('.hotel-table').on('click', () => {
 		const couno = $('.page-header').attr('data-couno');
 		const cityename = $('.page-header').attr('data-cityename');
 		const cityno = $('.page-header').attr('data-cityno');
 		
-		location.href = '/trip/hotel/'+couno+'/'+cityename+"/"+cityno+"?curPage=1";
+		location.href = '/trip/hotel/'+couno+'/'+cityename+'/'+cityno+'?curPage=1';
 	});
 	
 	$('.safety-tr').on('click', (e) => {
-		const sno = $(e.target).find('.sno').val();
+		const couno = $('.page-header').attr('data-couno');
+		const sno = $(e.target).attr('data-sno');
+		
+		location.href = '/trip/safety/'+couno+'?curPage=1&sno='+sno;
 	});
 });

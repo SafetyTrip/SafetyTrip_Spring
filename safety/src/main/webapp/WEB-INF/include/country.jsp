@@ -15,7 +15,7 @@
 			<iframe height=400px width="100%" frameborder="0" style="border:0"
 			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${cename}+관광+명소" allowfullscreen>
 			</iframe>
-			<div class="table-responsive pointer">
+			<div class="table-responsive pointer hotel-table">
 				<h4>인근 호텔</h4>
 	            <table class="table table-striped">
 	              <thead>
@@ -53,10 +53,9 @@
 	              </thead>
 	              <tbody>
 	              	<c:forEach var="dto" items="${sList}" varStatus="status">
-		                <tr class="safety-tr pointer">
+		                <tr class="safety-tr pointer" data-sno="${dto.sno}">
 		                  <td>
 		                  	${status.index + 1}
-		                  	<input type="hidden" class="sno" value="${dto.sno}">
 		                  </td>
 		                  <td>${dto.title}</td>
 		                  <td>${dto.createDate}</td>

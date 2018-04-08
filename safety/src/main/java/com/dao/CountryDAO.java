@@ -25,4 +25,8 @@ public class CountryDAO {
 	public List<CountryDTO> getCountryListByContinent(String continent) {
 		return template.selectList("CountryMapper.getCountryListByContinent", continent);
 	}
+	
+	public String getCountryOneByCouno(int couno) {
+		return template.selectOne("CountryMapper.getCountryOneByCouno", couno);
+	}
 }

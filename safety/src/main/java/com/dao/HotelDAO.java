@@ -18,7 +18,7 @@ public class HotelDAO {
 	SqlSessionTemplate template;
 	
 	public List<HotelDTO> getHotelList(HashMap<String, Integer> map) {
-		return template.selectList("HotelMapper.getHotelList", map);
+		return template.selectList("HotelMapper.getHotelList", map, new RowBounds(0, 5));
 	}
 	
 	//목록보기

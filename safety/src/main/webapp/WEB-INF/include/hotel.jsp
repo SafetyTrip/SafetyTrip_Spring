@@ -34,10 +34,9 @@
               </thead>
               <tbody>
               	<c:forEach var="dto" items="${hpDTO.list}" varStatus="status">
-	                <tr class="hotel-tr pointer">
+	                <tr class="hotel-tr pointer" data-hno="${dto.hno}">
 	                  <td>
 	                  	${status.index + 1}
-	                  	<input type="hidden" class="hno" value="${dto.hno}">
 	                  </td>
 	                  <td>${dto.hname}</td>
 	                  <td>${dto.good}</td>
@@ -47,7 +46,7 @@
               </tbody>
             </table>
 		</div>
-		<div class="page" data-curPage="${hpDTO.curPage}">
+		<div class="page" data-curPage="${curPage}">
 			<c:forEach var="i" begin="1" end="${end}" varStatus="status">
 				<c:choose>
 					<c:when test="${curPage == (status.index)}">
