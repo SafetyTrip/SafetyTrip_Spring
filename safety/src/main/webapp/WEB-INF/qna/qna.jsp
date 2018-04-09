@@ -49,9 +49,10 @@
 <div class="container" >
 <!-- Begin of rows -->
 
+<form name="qna" method="post">
 <c:forEach var="dto" items="${qna}" varStatus="status">
 
-<form name="qna" method="post">
+
     <div class="row carousel-row" style="width:150; height:150;">
         <div class="col-xs-8 col-xs-offset-2 slide-row">
             
@@ -99,8 +100,9 @@
             
         </div>
      </div>  
-    </form>
+  
    </c:forEach>
+   </form>
   <!-- End of rows -->
 </div>		
 
