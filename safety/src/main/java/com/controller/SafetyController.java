@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dto.SafetyPageDTO;
+import com.dto.PageDTO;
+import com.dto.SafetyDTO;
 import com.service.CountryService;
 import com.service.SafetyService;
 
@@ -38,7 +39,7 @@ public class SafetyController {
 		
 		mav.setViewName("safety");
 		mav.addObject("cename", countryService.getCountryOneByCouno(couno));
-		SafetyPageDTO dto = safetyService.getDetailSafetyList(map);
+		PageDTO<SafetyDTO> dto = safetyService.getDetailSafetyList(map);
 		mav.addObject("spDTO", dto);
 		mav.addObject("sno", dto.getDto().getSno());
 		

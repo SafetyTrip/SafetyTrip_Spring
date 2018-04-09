@@ -1,5 +1,5 @@
 $(document).ready( () => {
-	$('.hotel-table').on('click', () => {
+	$('.hotel-div').on('click', () => {
 		const couno = $('.page-header').attr('data-couno');
 		const cename = $('.page-header').attr('data-cename');
 		

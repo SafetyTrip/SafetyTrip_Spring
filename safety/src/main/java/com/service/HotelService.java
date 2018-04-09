@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.HotelDAO;
 import com.dto.HotelDTO;
-import com.dto.HotelPageDTO;
+import com.dto.PageDTO;
 
 @Service
 public class HotelService {
@@ -20,7 +20,7 @@ public class HotelService {
 		return dao.getHotelList(map);
 	}
 	
-	public HotelPageDTO getDetailHotelList(HashMap<String, Integer> map){
+	public PageDTO<HotelDTO> getDetailHotelList(HashMap<String, Integer> map){
 		return dao.getDetailHotelList(map);
 	}
 }

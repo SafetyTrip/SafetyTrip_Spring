@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.SafetyDAO;
+import com.dto.PageDTO;
 import com.dto.SafetyDTO;
-import com.dto.SafetyPageDTO;
 
 @Service
 public class SafetyService {
@@ -20,7 +20,7 @@ public class SafetyService {
 		return dao.getSafetyListByCouno(couno);
 	}
 	
-	public SafetyPageDTO getDetailSafetyList(HashMap<String, Integer> map){
+	public PageDTO<SafetyDTO> getDetailSafetyList(HashMap<String, Integer> map){
 		return dao.getDetailSafetyList(map);
 	}
 }

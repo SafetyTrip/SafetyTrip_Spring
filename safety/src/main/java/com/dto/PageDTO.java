@@ -1,12 +1,16 @@
 package com.dto;
 
-public class PageDTO {
+import java.util.List;
+
+public class PageDTO<T> {
 
 	private int perPage = 5;  // 페이지 당 보여줄 갯수
 	private int totalCount;   // 전체 레코드 갯수
 	private int curPage;      // 현재 페이지 번호
 	private int couno;
 	private int cityno;
+	private List<T> list;		// 보여줄 리스트
+	private T dto;				// 보여줄 게시글
 	
 	public PageDTO() {}
 	
@@ -43,5 +47,19 @@ public class PageDTO {
 	}
 	public void setCityno(int cityno) {
 		this.cityno = cityno;
+	}
+
+	public List<T> getList() {
+		return list;
+	}
+	public void setList(List<T> list) {
+		this.list = list;
+	}
+
+	public T getDto() {
+		return dto;
+	}
+	public void setDto(T dto) {
+		this.dto = dto;
 	}
 }

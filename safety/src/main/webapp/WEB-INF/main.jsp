@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/main/SafetyTrip.png">
+    <link rel="icon" href="<c:url value='/resources/img/main/SafetyTrip.png'/>">
 	<!-- Title -->
     <title>SafetyTrip Main</title>
     <!-- 합쳐지고 최소화된 최신 CSS -->
