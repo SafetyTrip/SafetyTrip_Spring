@@ -23,6 +23,7 @@
 				<value>classpath:com/config/HotelMapper.xml</value>
 				<value>classpath:com/config/SafetyMapper.xml</value>
 				<value>classpath:com/config/UsersMapper.xml</value>
+				<value>classpath:com/config/QnAMapper.xml</value>
 			</list>
 		</property>
 		<property name="dataSource" ref="dataSource"></property>
@@ -33,6 +34,9 @@
 				<value>com.dto.HotelDTO</value>
 				<value>com.dto.SafetyDTO</value>
 				<value>com.dto.UsersDTO</value>
+				<value>com.dto.QnAImgDTO</value>
+				<value>com.dto.QnADTO</value>
+				<value>com.dto.QnAPageDTO</value>
 			</list>
 		</property>
 	</bean>
