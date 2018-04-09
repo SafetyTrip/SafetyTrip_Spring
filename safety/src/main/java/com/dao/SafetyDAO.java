@@ -8,8 +8,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dto.PageDTO;
 import com.dto.SafetyDTO;
-import com.dto.SafetyPageDTO;
 
 @Repository
 public class SafetyDAO {
@@ -22,8 +22,8 @@ public class SafetyDAO {
 	}
 	
 	//목록보기
-	public SafetyPageDTO getDetailSafetyList(HashMap<String, Integer> map){
-		SafetyPageDTO dto = new SafetyPageDTO();
+	public PageDTO<SafetyDTO> getDetailSafetyList(HashMap<String, Integer> map){
+		PageDTO<SafetyDTO> dto = new PageDTO<>();
 		
 		int curPage = map.get("curPage");
 		int perPage = dto.getPerPage();

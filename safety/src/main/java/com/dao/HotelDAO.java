@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.HotelDTO;
-import com.dto.HotelPageDTO;
+import com.dto.PageDTO;
 
 @Repository
 public class HotelDAO {
@@ -22,8 +22,8 @@ public class HotelDAO {
 	}
 	
 	//목록보기
-	public HotelPageDTO getDetailHotelList(HashMap<String, Integer> map){
-		HotelPageDTO dto = new HotelPageDTO();
+	public PageDTO<HotelDTO> getDetailHotelList(HashMap<String, Integer> map){
+		PageDTO<HotelDTO> dto = new PageDTO<>();
 		
 		int curPage = map.get("curPage");
 		int perPage = dto.getPerPage();
