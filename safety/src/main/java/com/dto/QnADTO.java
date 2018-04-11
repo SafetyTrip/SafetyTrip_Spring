@@ -6,8 +6,8 @@ import org.apache.ibatis.type.Alias;
 public class QnADTO {
 	
 	private int qno;
-	private int uno;
-	private int hno;
+	private int uno=8;
+	private int hno=1;
 	private String question;
 	private int qopen;
 	private String createDate;

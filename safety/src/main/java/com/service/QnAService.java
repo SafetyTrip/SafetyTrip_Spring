@@ -38,7 +38,37 @@ public class QnAService {
 				dao.qnawrite(dto);
 			}//qnawrite
 			
-
+	//QnAImg Retrieve 		
+			public QnAImgDTO qnaImgretrieve(int qno) {	
+				return dao.qnaImgretrieve(qno);		
+			}//qnaImgretrieve
+		
+	//QnA Retrieve 		
+			public QnADTO qnaretrieve(int qno) {	
+				return dao.qnaretrieve(qno);		
+			}//qnaretrieve
 	
+	//QnAImg Delete
+			 public void qnaImgdelete(int qno) {
+				 dao.qnaImgdelete(qno);
+			 }//qnaImgdelete
+			 
+	//QnA Delete
+			 public void qnadelete(int qno) {
+				 dao.qnadelete(qno);
+			 }//qnadelete
+	
+	//QnAImg Update 		 
+			 public void qnaImgupdate(QnAImgDTO dto) {
+				 dao.qnaImgupdate(dto);
+			 }//qnaImgupdate
+			 
+	//QnA Update 		 
+			 public void qnaupdate(QnADTO dto) {
+				 dao.qnaupdate(dto);
+			 }//qnaupdate	
+			 
+			 
+			 
 	
 }

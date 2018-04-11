@@ -39,6 +39,36 @@ public class QnADAO {
 			template.insert("QnAMapper.qnaInsert", dto);
 		}//qnawrite
 		
+	//QnAImg Retrieve 			
+		public QnAImgDTO qnaImgretrieve(int qno) {	
+			return template.selectOne("QnAMapper.qnaImgRetrieve",qno);		
+		}//qnaImgretrieve	
+				
+	//QnA Retrieve 			
+		public QnADTO qnaretrieve(int qno) {	
+			return template.selectOne("QnAMapper.qnaRetrieve",qno);		
+		}//qnaretrieve
+			
+	//QnAImg Delete
+		 public void qnaImgdelete(int qno) {
+			template.selectOne("QnAMapper.qnaImgDelete",qno);
+		}//qnaImgdelete
+				  
+	//QnA Delete
+		 public void qnadelete(int qno) {
+			template.selectOne("QnAMapper.qnaDelete",qno);
+		}//qnadelete
+				  
+	//QnAImg Update 
+		 public void qnaImgupdate(QnAImgDTO dto) {
+			template.update("QnAMapper.qnaImgUpdate",dto);
+		}//qnaImgupdate	  
+				  
+	//QnA Update 
+		 public void qnaupdate(QnADTO dto) {
+			template.update("QnAMapper.qnaUpdate",dto);
+		}//qnaupdate	
+						
 
 	
 		

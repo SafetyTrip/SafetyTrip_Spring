@@ -48,10 +48,7 @@
 
 <div class="container" >
 <!-- Begin of rows -->
-
-<form name="qna" method="post">
 <c:forEach var="dto" items="${qna}" varStatus="status">
-
 
     <div class="row carousel-row" style="width:150; height:150;">
         <div class="col-xs-8 col-xs-offset-2 slide-row">
@@ -78,19 +75,20 @@
               </div>
             </div>
     
-  
             <div class="slide-content">
-                <a href="qnaretrieve?qno=${dto.qno}">
+            <input type="hidden" name="qno" value="${dto.qno}">
+                <a class="qnaretrieve"  data-num="${dto.qno}">
                 <h4>QnATitle ${dto.qno}</h4>
                 </a>
                 <p>
                    QnAContent ${dto.question}
                 </p>
             </div>
+            
             <div class="slide-footer">
                 <span class="pull-right buttons">
                     <button class="btn btn-sm btn-info">
-                    <a href="qnaretrieve?qno=${dto.qno}">Rewrite</a>
+                    <a class="qnarewrite"  data-num="${dto.qno}">Rewrite</a>
                     </button>
         			<button class="btn btn-sm btn-outline-primary">
         			<a href="qnaretrieve?qno=${dto.qno}">Show</a>
@@ -100,11 +98,32 @@
             
         </div>
      </div>  
-  
+   
    </c:forEach>
-   </form>
   <!-- End of rows -->
 </div>		
+
+
+
+	
+
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.4/tinymce.min.js'></script>
+<script>
+$(document).ready(function(){
+	$(".qnaretrieve").on("click",function(){
+	    var qno= $(this).attr("data-num");
+	    location.href="qnaretrieve?qno="+qno;
+	});
+	$(".qnarewrite").on("click",function(){
+	    var qno= $(this).attr("data-num");
+	    location.href="qnaretrieve?qno="+qno;
+	});
+	
+})
+
+</script>
+
 
 
 
@@ -113,10 +132,4 @@
 <br>
 <br>
 <br>				
-</main>		
-
-
-
-<script>
-
-</script>
+</main>	

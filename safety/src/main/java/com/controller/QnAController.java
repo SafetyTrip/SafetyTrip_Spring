@@ -45,6 +45,29 @@ public class QnAController {
 		return "redirect:qna";
 	}//qnawrite
 	
+	//QnA Retrieve 
+			@RequestMapping(value = "/qnaretrieve", method = RequestMethod.GET)
+			@ModelAttribute("qnaretrieve")
+			public QnADTO qnaretrieve(@RequestParam(required=false , defaultValue="14") int qno) {
+				System.out.println("qnaretrieve>>>>>>>"); 
+				QnADTO dto = service.qnaretrieve(qno);
+				return dto;
+			}//qnaretrieve
+			
+	//QnA Delete
+			@RequestMapping(value="/qnadelete" , method=RequestMethod.GET)
+			public String qnadelete(@RequestParam int qno) {
+					service.qnadelete(qno);
+					return  "redirect:qna";
+			}//qnadelete	
+			
+	
+	//QnA Update 
+			@RequestMapping(value="/qnaupdate" , method=RequestMethod.POST)
+			public String qnaupdate(QnADTO dto) {
+				service.qnaupdate(dto);
+				return  "redirect:qna";
+			}//qnaupdate
 	
 	
 	

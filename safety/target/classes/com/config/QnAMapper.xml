@@ -29,7 +29,7 @@
 	<!-- QnA Write 쓰기 -->
 	<insert id="qnaInsert" parameterType="QnADTO">
        insert into qna( qno, uno, hno, question)
-       values( SEQ_QNA_QNO.nextval, 8, 1, #{question} )
+       values( SEQ_QNA_QNO.nextval, #{uno}, #{hno}, #{question} )
     </insert>
     
     <!-- QnAIMG Retrieve 쓰기 -->
@@ -47,10 +47,35 @@
 	   from qna
 	   where qno = #{qno}
 	</select>
-
-
-
-
+	
+	<!-- QnAImg Delete -->
+	<delete id="qnaImgDelete" parameterType="int">
+	 delete from qna_img
+	 where qno = #{qno}
+	</delete>
+	
+	<!-- QnA Delete -->
+	<delete id="qnaDelete" parameterType="int">
+	 delete from qna
+	 where qno = #{qno}
+	</delete>
+	
+	<!-- QnAImg Update -->
+	<update id="qnaImgUpdate" parameterType="QnAImgDTO">
+	 update qna_img
+	 set qino=#{qino}
+	 where qno = #{qno}
+	 </update>
+	 
+	<!-- QnA Update -->
+	<update id="qnaUpdate" parameterType="QnADTO">
+	 update qna
+	 set uno=#{uno}, hno=#{hno}, question=#{question}
+	 where qno = #{qno}
+	 </update>
+	
+	
+	
 </mapper>
 
 
