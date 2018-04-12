@@ -30,7 +30,7 @@
 		  <%
 			} 
 		  %>
-            <li><a href="#">QnA</a></li>
+            <li><a href="qna">QnA</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

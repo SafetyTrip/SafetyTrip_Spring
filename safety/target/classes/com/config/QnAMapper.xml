@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="QnAMapper">
+	
+	<!-- QnA IMG 불러오기 -->
+	<select id="qnaImgList" resultType="QnAImgDTO">
+	   select qino, qno
+	   from qna_img
+	</select>
+
+	<!-- QnA List 불러오기 -->
+	<select id="qnaList" resultType="QnADTO">
+	   select qno, uno, hno,
+	   question, qopen,
+	   to_char(createdate,'YYYY/MM/DD') createdate
+	   from qna
+	   order by qno desc
+	</select>
+
+	<!-- QnAIMG Write 쓰기 -->
+	<insert id="qnaImgInsert" parameterType="QnAImgDTO">
+       insert into qna_img(qino)
+       values(#{qino})
+    </insert>
+	
+	<!-- QnA Write 쓰기 -->
+	<insert id="qnaInsert" parameterType="QnADTO">
+       insert into qna( qno, uno, hno, question)
+       values( SEQ_QNA_QNO.nextval, #{uno}, #{hno}, #{question} )
+    </insert>
+    
+    <!-- QnAIMG Retrieve 쓰기 -->
+	<select id="qnaImgRetrieve" parameterType="int" resultType="QnAImgDTO">
+	   select qino, qno
+	   from qna_img
+	   where qno = #{qno}
+	</select>
+
+	<!-- QnA Retrieve 쓰기 -->
+	<select id="qnaRetrieve"  parameterType="int"  resultType="QnADTO">
+	   select qno, uno, hno,
+	   question, qopen,
+	   to_char(createdate,'YYYY/MM/DD') createdate
+	   from qna
+	   where qno = #{qno}
+	</select>
+	
+	<!-- QnAImg Delete -->
+	<delete id="qnaImgDelete" parameterType="int">
+	 delete from qna_img
+	 where qno = #{qno}
+	</delete>
+	
+	<!-- QnA Delete -->
+	<delete id="qnaDelete" parameterType="int">
+	 delete from qna
+	 where qno = #{qno}
+	</delete>
+	
+	<!-- QnAImg Update -->
+	<update id="qnaImgUpdate" parameterType="QnAImgDTO">
+	 update qna_img
+	 set qino=#{qino}
+	 where qno = #{qno}
+	 </update>
+	 
+	<!-- QnA Update -->
+	<update id="qnaUpdate" parameterType="QnADTO">
+	 update qna
+	 set uno=#{uno}, hno=#{hno}, question=#{question}
+	 where qno = #{qno}
+	 </update>
+	
+	
+	
+</mapper>
+
+
+
