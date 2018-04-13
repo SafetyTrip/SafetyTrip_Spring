@@ -48,7 +48,7 @@ public class QnAController {
 	//QnA Retrieve 
 			@RequestMapping(value = "/qnaretrieve", method = RequestMethod.GET)
 			@ModelAttribute("qnaretrieve")
-			public QnADTO qnaretrieve(@RequestParam(required=false , defaultValue="14") int qno) {
+			public QnADTO qnaretrieve(@RequestParam(required=false , defaultValue="1") int qno) {
 				System.out.println("qnaretrieve>>>>>>>"); 
 				QnADTO dto = service.qnaretrieve(qno);
 				return dto;
