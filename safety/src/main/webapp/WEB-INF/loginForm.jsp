@@ -27,7 +27,7 @@
 </head>
 <body>
     <jsp:include page="main/nav.jsp" flush="true" />
-	<jsp:include page="users/login.jsp" flush="true" />
+	<jsp:include page="users/loginForm.jsp" flush="true" />
 	<jsp:include page="main/footer.jsp" flush="true" />
 	
 	<script src="<c:url value='/resources/js/login.js'/>"></script>

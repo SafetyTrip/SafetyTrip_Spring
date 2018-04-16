@@ -18,7 +18,7 @@
         <span class="span-or">or</span>
       </div>
 
-      <form id="login_js" action="LoginServlet" method="post">
+      <form id="login" action="login" method="post">
         <div class="form-group">
           <label for="userid">Userid</label>
           <input type="text" class="form-control" name="userid" id="userid">
