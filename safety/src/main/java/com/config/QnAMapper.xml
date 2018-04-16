@@ -14,24 +14,24 @@
 	<!-- QnA List 불러오기 -->
 	<select id="qnaList" resultType="QnADTO">
 	   select qno, uno, hno,
-	   question, qopen,
+	   title, question, answer, qopen,
 	   to_char(createdate,'YYYY/MM/DD') createdate
 	   from qna
 	   order by qno desc
 	</select>
-
+	
 	<!-- QnAIMG Write 쓰기 -->
 	<insert id="qnaImgInsert" parameterType="QnAImgDTO">
        insert into qna_img(qino)
-       values(#{qino})
+       values(SEQ_QNA_IMG_QINO.nextval)
     </insert>
 	
 	<!-- QnA Write 쓰기 -->
 	<insert id="qnaInsert" parameterType="QnADTO">
-       insert into qna( qno, uno, hno, question)
-       values( SEQ_QNA_QNO.nextval, #{uno}, #{hno}, #{question} )
+       insert into qna( qno, uno, hno, title, question)
+       values( SEQ_QNA_QNO.nextval, #{uno}, #{title}, #{hno}, #{question} )
     </insert>
-    
+  	
     <!-- QnAIMG Retrieve 쓰기 -->
 	<select id="qnaImgRetrieve" parameterType="int" resultType="QnAImgDTO">
 	   select qino, qno
@@ -42,7 +42,7 @@
 	<!-- QnA Retrieve 쓰기 -->
 	<select id="qnaRetrieve"  parameterType="int"  resultType="QnADTO">
 	   select qno, uno, hno,
-	   question, qopen,
+	   title, question, answer, qopen,
 	   to_char(createdate,'YYYY/MM/DD') createdate
 	   from qna
 	   where qno = #{qno}
@@ -70,10 +70,9 @@
 	<!-- QnA Update -->
 	<update id="qnaUpdate" parameterType="QnADTO">
 	 update qna
-	 set uno=#{uno}, hno=#{hno}, question=#{question}
+	 set uno=#{uno}, hno=#{hno}, title=#{title}, question=#{question}
 	 where qno = #{qno}
 	 </update>
-	
 	
 	
 </mapper>

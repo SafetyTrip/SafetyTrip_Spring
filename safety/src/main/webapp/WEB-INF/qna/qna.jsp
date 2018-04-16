@@ -79,6 +79,7 @@
             <input type="hidden" name="qno" value="${dto.qno}">
                 <a class="qnaretrieve"  data-num="${dto.qno}">
                 <h4>QnATitle ${dto.qno}</h4>
+                <h4>${dto.title}</h4>
                 </a>
                 <p>
                    QnAContent ${dto.question}

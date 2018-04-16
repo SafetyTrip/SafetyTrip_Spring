@@ -43,6 +43,7 @@
 <strong>QnA Write</strong>
 </h4>
 <input type="hidden" name="qno" value="${qnaretrieve.qno}">
+<input class="form-control" type="text" name="title" value="${qnaretrieve.title}">
 <fieldset class="form-group">
     <textarea 
             class="form-control" 

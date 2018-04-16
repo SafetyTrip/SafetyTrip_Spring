@@ -39,6 +39,8 @@
 <h4 class=" py-3 font-weight-bold text-grey ">
 <strong>QnA Write</strong>
 </h4>
+<input type="hidden" name="qno" value="${qna.qno}">
+<input class="form-control" type="text" name="title" placeholder=" Write your Title">
 <fieldset class="form-group">
     <textarea 
             class="form-control" 

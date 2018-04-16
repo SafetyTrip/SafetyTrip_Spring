@@ -24,8 +24,7 @@ public class QnAService {
 			
 	//QnA List 불러오기
 			public List<QnADTO> qna(){
-			
-				return dao.qna();
+			    return dao.qna();
 			}//qna
 	
 	//QnAImg Write 쓰기
