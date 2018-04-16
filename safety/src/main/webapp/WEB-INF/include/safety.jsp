@@ -43,7 +43,7 @@
 					    </c:otherwise>
 				    </c:choose>
 	                  <td>
-	                  	${status.index + 1}
+	                  	${(status.index+1) + (curPage-1)*5}
 	                  </td>
 	                  <td>${dto.title}</td>
 	                  <td>${dto.createDate}</td>

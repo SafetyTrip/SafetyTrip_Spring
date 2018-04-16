@@ -34,7 +34,7 @@
               	<c:forEach var="dto" items="${hpDTO.list}" varStatus="status">
 	                <tr class="hotel-tr pointer" data-hno="${dto.hno}">
 	                  <td>
-	                  	${status.index + 1}
+	                  	${(status.index+1) + (curPage-1)*5}
 	                  </td>
 	                  <td>${dto.hname}</td>
 	                  <td>${dto.good}</td>
