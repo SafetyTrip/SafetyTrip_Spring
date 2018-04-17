@@ -407,7 +407,7 @@ insert into country(couno, cname, cename, continent)
 values(1, '영국', 'United Kingdom', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(2, '프랑스', 'France', 'Europe');
+values(2, '프랑스', 'French Republic', 'Europe');
 
 insert into country(couno, cname, cename, continent)
 values(3, '독일', 'Germany', 'Europe');

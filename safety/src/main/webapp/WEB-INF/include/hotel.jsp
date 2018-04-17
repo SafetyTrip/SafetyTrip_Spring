@@ -11,8 +11,13 @@
    <c:set var="pageNum" value="${end+1}" />
 </c:if>
 
-<div id="map"></div>
+<!-- <div id="map"></div> -->
 <div class="container">
+	<div class="page-header">
+		<iframe id="google-map" height=400px width="100%" frameborder="0" style="border:0"
+			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${hpDTO.list[0].address}" allowfullscreen>
+		</iframe>
+	</div>
 	<div class="row">
 		<div class="table-responsive">
 			<div class="hotel" data-couno="${couno}" data-ename="${ename}" data-cityno="${cityno}">
@@ -29,11 +34,18 @@
               </thead>
               <tbody>
               	<c:forEach var="dto" items="${hpDTO.list}" varStatus="status">
-	                <tr class="hotel-tr pointer" data-hno="${dto.hno}" data-lat="${dto.lat}" data-lng="${dto.lng}">
+              		<c:choose>
+						<c:when test="${status.index == 0}">
+					    	<tr class="hotel-tr pointer bold" data-hno="${dto.hno}">
+					    </c:when>
+					    <c:otherwise>
+					    	<tr class="hotel-tr pointer" data-hno="${dto.hno}">
+					    </c:otherwise>
+				    </c:choose>
 	                  <td>
 	                  	${(status.index+1) + (curPage-1)*5}
 	                  </td>
-	                  <td class="hotel-hname">${dto.hname}</td>
+	                  <td>${dto.hname}</td>
 	                  <td>${dto.good}</td>
 	                  <td>${dto.address}</td>
 	                </tr>
@@ -55,45 +67,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
-var map;
-function initMap() {
-	var features = [];
-	var map_lat = 0;
-	var map_lng = 0;
-    
-    for(var i=0;i<5;i++) {
-		var hname = $('.hotel-hname').eq(i).text();
-		var lat = Number($('.hotel-tr').eq(i).attr('data-lat'));
-		var lng = Number($('.hotel-tr').eq(i).attr('data-lng'));
-		
-		features[i] = {
-	            position: new google.maps.LatLng(lat, lng),
-	            type: hname
-	          };
-		
-		map_lat += lat;
-		map_lng += lng;
-	}
-    
-    map_lat = map_lat/5;
-    map_lng = map_lng/5;
-    
-    map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 16,
-      center: new google.maps.LatLng(map_lat, map_lng),
-      mapTypeId: 'roadmap'
-    });
-
-    // Create markers.
-    features.forEach(function(feature) {
-      var marker = new google.maps.Marker({
-        position: feature.position,
-        icon: 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png',
-        map: map
-      });
-    });
-  }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&callback=initMap"></script>

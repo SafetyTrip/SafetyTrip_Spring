@@ -11,7 +11,7 @@
    <c:set var="pageNum" value="${end+1}" />
 </c:if>
 
-<<c:set var="sDto" value="${spDTO.dto}"></c:set>
+<c:set var="sDto" value="${spDTO.dto}"></c:set>
 
 
 <div class="container">

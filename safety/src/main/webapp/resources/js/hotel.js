@@ -16,5 +16,14 @@ $(document).ready( () => {
 			location.href = uri;
 		}
 	});
+	
+	$('.hotel-tr').on('click', (e) => {
+		$('.bold').removeClass('bold');
+		$(e.target).closest('tr').addClass('bold');
+		
+		var hname = $(e.target).closest('tr').children().last().text();
+		console.log(hname);
+		$('#google-map').attr("src","https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q="+hname);
+	});
 });
 
