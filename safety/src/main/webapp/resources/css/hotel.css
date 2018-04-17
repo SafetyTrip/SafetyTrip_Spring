@@ -5,3 +5,7 @@
 .page > span {
 	padding-left: 20px;
 }
+
+#map {
+  height: 100%;
+}
