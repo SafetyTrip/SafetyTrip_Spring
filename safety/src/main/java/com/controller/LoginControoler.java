@@ -19,6 +19,14 @@ public class LoginControoler {
 
 	@Autowired
 	UsersService service;
+	
+	@RequestMapping(value="/loginAfter/logout", method=RequestMethod.GET)
+	public String logout( Model m, HttpSession session) {
+
+		  session.invalidate();
+		//  m.addAttribute("mesg", "정상적으로 로그아웃 되었습니다.");
+		return "redirect:/";
+	}
 
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String userslogin(@RequestParam HashMap<String, String> map, Model m, HttpSession session) {

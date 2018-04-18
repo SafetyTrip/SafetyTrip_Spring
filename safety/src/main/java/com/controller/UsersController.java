@@ -1,5 +1,7 @@
 package com.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +18,37 @@ public class UsersController {
 	@Autowired
 	UsersService service;
 	
+	@RequestMapping(value="/loginAfter/mypageupdate", method=RequestMethod.POST)
+	public String myPageUpdate( HttpSession session, UsersDTO dto) {
+		
+		UsersDTO login = (UsersDTO)session.getAttribute("login");
+		String userid = login.getUserid();
+		//dto에 uno 값을 저장
+		dto.setUserid(userid);
+		service.mypageupdate(dto);
+		
+		// DB에서 dto 값을 가져와서 seesion에 저장
+		dto =service.myPage(userid);
+		session.setAttribute("login", dto);
+		
+		
+		return "redirect:../";
+	}
+	
+	@RequestMapping(value="/loginAfter/myPage")
+	public String myPage( HttpSession session) {
+	
+		UsersDTO dto = (UsersDTO)session.getAttribute("login");
+		String userid = dto.getUserid();
+		dto = service.myPage(userid);
+		session.setAttribute("login", dto);
+		
+		return "redirect:../";
+		//return "mypage";
+	}
+	
 	@RequestMapping(value="/usersAdd", method=RequestMethod.POST)
 	public String usersAdd(UsersDTO dto) {
-		System.out.println(dto);
 		service.usersAdd(dto);
 		return "main";
 	}

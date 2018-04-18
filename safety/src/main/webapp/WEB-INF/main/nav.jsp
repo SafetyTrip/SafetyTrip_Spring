@@ -20,12 +20,12 @@
 		<div id="navbar" class="collapse navbar-collapse navbar-right">
 			<ul class="nav navbar-nav">
 				<c:if test="${empty login}">
-					<li><a href="loginForm">Login</a></li>
 					<li><a href="users">SignUp</a></li>
+					<li><a href="loginForm">Login</a></li>
 				</c:if>
 				<c:if test="${!empty login}">
- 					<li><a href="#">MyPage</a></li>
-					<li><a href="#">Logout</a></li>
+ 					<li><a href="mypage">MyPage</a></li>
+					<li><a href="loginAfter/logout">Logout</a></li>
 				</c:if>
 				<li><a href="qna">QnA</a></li>
 			</ul>

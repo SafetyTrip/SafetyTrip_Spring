@@ -30,4 +30,12 @@ public class UsersDAO {
 	public UsersDTO login(HashMap<String, String> map) {
 		return template.selectOne("UsersMapper.login", map);
 	}
+	public UsersDTO myPage(String userid) {
+		return template.selectOne("UsersMapper.myPage",userid);
+	}
+	
+	public void mypageupdate(UsersDTO dto) {
+	template.selectOne("UsersMapper.mypageupdate",dto);
+	}
+	
 }
