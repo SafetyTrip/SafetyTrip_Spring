@@ -43,7 +43,7 @@ function loginWithKakao() {
 	          // {"kaccount_email":"leejj90@naver.com","kaccount_email_verified":true,"id":760782838,"properties":{"profile_image":"http://k.kakaocdn.net/dn/CjMDM/btqk9hWElJu/8iq1wSl4a4JhKBmvJbUNq1/profile_640x640s.jpg","nickname":"이정준","thumbnail_image":"http://k.kakaocdn.net/dn/CjMDM/btqk9hWElJu/8iq1wSl4a4JhKBmvJbUNq1/profile_110x110c.jpg"}}
 	        },
 	        fail: function(error) {
-	          alert(JSON.stringify(error));
+	        	alert("로그인에 실패했습니다.");
 	        }
         });
     },
@@ -53,3 +53,22 @@ function loginWithKakao() {
   });
 };
 
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '122362501665138',
+		xfbml      : true,
+		version    : 'v2.9'
+    });
+	
+	FB.api('/me', {fields: 'email'}, function(response) {
+		console.log(response);
+	});
+};
+
+(function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
