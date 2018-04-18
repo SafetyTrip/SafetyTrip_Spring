@@ -36,4 +36,19 @@ public class LoginControoler {
 		return nextPage;
 	}
 
+	@RequestMapping(value="/snsLogin", method=RequestMethod.POST)
+	public String snsLogin(@RequestParam String email, Model m, HttpSession session) {
+		UsersDTO dto = service.snsLogin(email);
+		
+		String nextPage = null;
+		if (dto == null) {
+			nextPage = "users";
+			m.addAttribute("email", email);
+		} else {
+			session.setAttribute("login", dto);
+			nextPage = "main";
+		}
+
+		return nextPage;
+	}
 }

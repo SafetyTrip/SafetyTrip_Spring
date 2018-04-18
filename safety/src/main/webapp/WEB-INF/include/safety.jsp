@@ -15,6 +15,9 @@
 
 
 <div class="container">
+	<div class="row">
+		<button type="button" class="btn btn-back btn-block" data-cename="${cename}">${cename} 돌아가기</button>
+	</div>
 	<div class="jumbotron">
         <h3>${sDto.title}</h3>
         <p>${sDto.content}</p>

@@ -29,4 +29,7 @@ public class UsersService {
 	public UsersDTO login(HashMap<String, String> map) {
 		return dao.login(map);
 	}
+	public UsersDTO snsLogin(String email) {
+		return dao.snsLogin(email);
+	}
 }

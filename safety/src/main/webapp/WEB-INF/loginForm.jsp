@@ -24,6 +24,7 @@
     <link href="<c:url value='/resources/css/login.css'/>" rel="stylesheet">
     <!-- jQuery file -->
     <script src="<c:url value='/resources/js/jquery-3.3.1.min.js'/>"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
     <jsp:include page="main/nav.jsp" flush="true" />
