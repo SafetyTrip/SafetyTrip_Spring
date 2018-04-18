@@ -11,7 +11,7 @@
    <c:set var="pageNum" value="${end+1}" />
 </c:if>
 
-<<c:set var="sDto" value="${spDTO.dto}"></c:set>
+<c:set var="sDto" value="${spDTO.dto}"></c:set>
 
 
 <div class="container">
@@ -43,7 +43,7 @@
 					    </c:otherwise>
 				    </c:choose>
 	                  <td>
-	                  	${status.index + 1}
+	                  	${(status.index+1) + (curPage-1)*5}
 	                  </td>
 	                  <td>${dto.title}</td>
 	                  <td>${dto.createDate}</td>

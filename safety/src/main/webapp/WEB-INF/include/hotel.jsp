@@ -11,11 +11,13 @@
    <c:set var="pageNum" value="${end+1}" />
 </c:if>
 
+<!-- <div id="map"></div> -->
 <div class="container">
-	<div class="jumbotron">
-        <h3></h3>
-        <p></p>
-    </div>
+	<div class="page-header">
+		<iframe id="google-map" height=400px width="100%" frameborder="0" style="border:0"
+			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${hpDTO.list[0].address}" allowfullscreen>
+		</iframe>
+	</div>
 	<div class="row">
 		<div class="table-responsive">
 			<div class="hotel" data-couno="${couno}" data-ename="${ename}" data-cityno="${cityno}">
@@ -32,9 +34,16 @@
               </thead>
               <tbody>
               	<c:forEach var="dto" items="${hpDTO.list}" varStatus="status">
-	                <tr class="hotel-tr pointer" data-hno="${dto.hno}">
+              		<c:choose>
+						<c:when test="${status.index == 0}">
+					    	<tr class="hotel-tr pointer bold" data-hno="${dto.hno}">
+					    </c:when>
+					    <c:otherwise>
+					    	<tr class="hotel-tr pointer" data-hno="${dto.hno}">
+					    </c:otherwise>
+				    </c:choose>
 	                  <td>
-	                  	${status.index + 1}
+	                  	${(status.index+1) + (curPage-1)*5}
 	                  </td>
 	                  <td>${dto.hname}</td>
 	                  <td>${dto.good}</td>

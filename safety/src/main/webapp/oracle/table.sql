@@ -404,108 +404,108 @@ END;
 
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '영국', 'United Kingdom', 'Europe');
+values(1, '영국', 'United Kingdom', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '프랑스', 'France', 'Europe');
+values(2, '프랑스', 'French Republic', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '독일', 'Germany', 'Europe');
+values(3, '독일', 'Germany', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '스페인', 'Spain', 'Europe');
+values(4, '스페인', 'Spain', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '이탈리아', 'Italy', 'Europe');
+values(5, '이탈리아', 'Italy', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '일본', 'Japan', 'Asia');
+values(6, '일본', 'Japan', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '중국', 'China', 'Asia');
+values(7, '중국', 'China', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '대만', 'Taiwan', 'Asia');
+values(8, '대만', 'Taiwan', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '미국', 'United States of America', 'America');
+values(9, '미국', 'United States of America', 'America');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, '캐나다', 'Canada', 'America');
+values(10, '캐나다', 'Canada', 'America');
 
 commit;
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 1, '런던', 'London');
+values (1, 1, '런던', 'London');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 1, '맨체스터', 'Manchester');
+values (2, 1, '맨체스터', 'Manchester');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 1, '리버풀', 'Liverpool');
+values (3, 1, '리버풀', 'Liverpool');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 2, '파리', 'Paris');
+values (4, 2, '파리', 'Paris');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 2, '리옹', 'Lyon');
+values (5, 2, '리옹', 'Lyon');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 2, '마르세유', 'Marseille');
+values (6, 2, '마르세유', 'Marseille');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 3, '베를린', 'Berlin');
+values (7, 3, '베를린', 'Berlin');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 3, '뮌헨', 'München');
+values (8, 3, '뮌헨', 'München');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 4, '마드리드', 'Madrid');
+values (9, 4, '마드리드', 'Madrid');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 4, '바르셀로나', 'Barcelona');
+values (10, 4, '바르셀로나', 'Barcelona');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 5, '로마', 'Roma');
+values (11, 5, '로마', 'Roma');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 5, '밀라노', 'Millan');
+values (12, 5, '밀라노', 'Millan');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 6, '도쿄', 'Tokyo');
+values (13, 6, '도쿄', 'Tokyo');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 6, '쿄토', 'Kyoto');
+values (14, 6, '쿄토', 'Kyoto');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 6, '오사카', 'Osaka');
+values (15, 6, '오사카', 'Osaka');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 7, '베이징', 'Beijing');
+values (16, 7, '베이징', 'Beijing');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 7, '상하이', 'Shanghai');
+values (17, 7, '상하이', 'Shanghai');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 8, '타이베이', 'Taipei');
+values (18, 8, '타이베이', 'Taipei');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 9, '뉴욕', 'New York');
+values (19, 9, '뉴욕', 'New York');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 9, '워싱턴', 'Washington');
+values (20, 9, '워싱턴', 'Washington');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 9, '로스앤젤레스', 'Los Angeles');
+values (21, 9, '로스앤젤레스', 'Los Angeles');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 10, '토론토', 'Toronto');
+values (22, 10, '토론토', 'Toronto');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 10, '몬토리올', 'Montreal');
+values (23, 10, '몬토리올', 'Montreal');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 10, '오타와', 'Ottawa');
+values (24, 10, '오타와', 'Ottawa');
 
 commit;
 
