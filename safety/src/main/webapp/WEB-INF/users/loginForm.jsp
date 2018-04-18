@@ -12,7 +12,7 @@
 		    </a>
 	      </div>
 	      <div class="row">
-	      		<img id="facebook-login" width="80%" src="https://scontent-icn1-1.xx.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?_nc_cat=0&oh=77d4e49cfba09d965b771239143fb455&oe=5B4FC0EA" />
+	      		<img id="facebook-login" class="pointer" width="80%" src="https://scontent-icn1-1.xx.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?_nc_cat=0&oh=77d4e49cfba09d965b771239143fb455&oe=5B4FC0EA" />
 	      </div>
       </div>
       <div class="login-or">
