@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<iframe height=400px width="100%" frameborder="0" style="border:0"
-			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${cename}+관광+명소" allowfullscreen>
+			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=attractions+in+${cename}" allowfullscreen>
 			</iframe>
 			<div class="table-responsive pointer hotel-div">
 				<h4>인근 호텔</h4>

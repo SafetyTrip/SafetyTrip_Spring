@@ -193,7 +193,7 @@ CREATE TABLE USERS
 	uname varchar2(20) constraint users_uname_nn NOT NULL constraint users_uname_uk UNIQUE,
 	name varchar2(20) constraint users_name_nn NOT NULL,
 	passport varchar2(20) constraint users_passport_nn NOT NULL,
-	sex nchar constraint users_sex_nn NOT NULL constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
+	sex varchar2(1) constraint users_sex_nn NOT NULL constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
 	birth date constraint users_birth_nn NOT NULL,
 	post varchar2(5) constraint users_post_nn NOT NULL,
 	address1 varchar2(500) constraint users_address1_nn NOT NULL,
@@ -407,7 +407,7 @@ insert into country(couno, cname, cename, continent)
 values(1, '영국', 'United Kingdom', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(2, '프랑스', 'France', 'Europe');
+values(2, '프랑스', 'French Republic', 'Europe');
 
 insert into country(couno, cname, cename, continent)
 values(3, '독일', 'Germany', 'Europe');
