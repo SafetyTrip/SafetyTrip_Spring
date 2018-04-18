@@ -8,7 +8,7 @@
 		 insert into users (uno, userid, passwd, email, uname, name, passport, sex,
 		 birth, post, address1, address2, createdate, eaccess) 
 		 values(SEQ_USERS_uno.nextval, #{userid}, #{passwd},#{email}, #{uname},#{name},#{passport}, 
-		 #{sex},to_date(#{birth},'YYYY-MM-DD'),#{post}, #{address1},#{address2}, sysdate, 0)
+		 #{sex},#{birth},#{post}, #{address1},#{address2}, sysdate, 0)
 	</insert>
 	
 	<select id="usersIdCheck" parameterType="string" resultType="int">
@@ -26,9 +26,10 @@
 		where uname =#{value}
 	</select>
 	
-	<select id="mypage" parameterType="string" resultType="UsersDTO">		
-		select userid,passwd username,post1,addr1,addr2,phone1,phone2,phone3,email1,email2
-		from users
+	<select id="myPage" parameterType="string" resultType="UsersDTO">		
+		select uno,userid,passwd ,email,uname,name,passport,
+		birth,post,address1,address2,createdate,eaccess from users
+	
 		where userid =#{value} 
 	</select>
 
@@ -37,6 +38,22 @@
 	 	birth, post, address1, address2, createdate, eaccess from users
 		where userid = #{userid} and passwd = #{passwd}
 	</select>
+	
+	<update  id ="mypageupdate" parameterType="UsersDTO" >	
+		update users
+		set
+		passwd=#{passwd},
+		email=#{email},
+		uname= #{uname},
+		name=#{name},
+		passport=#{passport},
+		birth =#{birth},
+		post =#{post},
+		address1= #{address1},
+		address2=#{address2}
+		where userid= #{userid}
+		
+	</update>
 	
 	<select id="snsLogin" parameterType="string" resultType="UsersDTO">
 		select uno, userid, passwd, email, uname, name, passport, sex,

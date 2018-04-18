@@ -51,4 +51,13 @@ public class LoginControoler {
 
 		return nextPage;
 	}
+	
+	@RequestMapping(value="/loginAfter/logout", method=RequestMethod.GET)
+	public String logout( Model m, HttpSession session) {
+
+		  session.invalidate();
+		//  m.addAttribute("mesg", "정상적으로 로그아웃 되었습니다.");
+		return "redirect:/";
+	}
+
 }

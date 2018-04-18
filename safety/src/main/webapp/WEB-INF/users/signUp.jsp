@@ -63,11 +63,9 @@
 		<label class="col-md-4 control-label" for="sex">성별</label>  
 		<div class="col-md-3 radio">
 		  <label>
-		    <input type="radio" id ="sex" name= "sex" value="M">남
-		  </label>
+		    <input type="radio" id ="sex" name= "sex" value="M">남   </label>
 		  <label>
-		    <input type="radio" id ="sex" name= "sex" value="F">여
-		  </label>
+		    <input type="radio" id ="sex" name= "sex" value="F">여   </label>
 		</div>
 	</div>
 	<div class="form-group">

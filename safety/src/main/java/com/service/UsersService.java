@@ -29,6 +29,15 @@ public class UsersService {
 	public UsersDTO login(HashMap<String, String> map) {
 		return dao.login(map);
 	}
+	public UsersDTO myPage(String userid) {
+		return dao.myPage(userid);
+	}
+	
+	public void mypageupdate(UsersDTO dto) {
+		System.out.println(dto);
+		 dao.mypageupdate(dto);
+	}
+	
 	public UsersDTO snsLogin(String email) {
 		return dao.snsLogin(email);
 	}
