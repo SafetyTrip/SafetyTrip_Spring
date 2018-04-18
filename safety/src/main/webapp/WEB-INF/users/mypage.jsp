@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>${login.userid}
+	pageEncoding="UTF-8"%>
 
 <div class="container">
 <form id="mypage" class="form-horizontal" action="loginAfter/mypageupdate" method="post">
