@@ -193,8 +193,8 @@ CREATE TABLE USERS
 	uname varchar2(20) constraint users_uname_nn NOT NULL constraint users_uname_uk UNIQUE,
 	name varchar2(20) constraint users_name_nn NOT NULL,
 	passport varchar2(20) constraint users_passport_nn NOT NULL,
-	sex nchar constraint users_sex_nn NOT NULL constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
-	birth date constraint users_birth_nn NOT NULL,
+	sex varchar2(1) constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
+	birth number(8,0) constraint users_birth_nn NOT NULL,
 	post varchar2(5) constraint users_post_nn NOT NULL,
 	address1 varchar2(500) constraint users_address1_nn NOT NULL,
 	address2 varchar2(500) constraint users_address2_nn NOT NULL,
@@ -508,6 +508,10 @@ insert into city(cityno, couno, cityname, cityename)
 values (SEQ_CITY_cityno.nextval, 10, '오타와', 'Ottawa');
 
 commit;
+
+select * from tab;
+
+purge recyclebin;
 
 
 select * from country;
