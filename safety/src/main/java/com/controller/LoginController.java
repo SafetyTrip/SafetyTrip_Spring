@@ -15,7 +15,7 @@ import com.dto.UsersDTO;
 import com.service.UsersService;
 
 @Controller
-public class LoginControoler {
+public class LoginController {
 
 	@Autowired
 	UsersService service;
@@ -44,6 +44,7 @@ public class LoginControoler {
 		if (dto == null) {
 			nextPage = "users";
 			m.addAttribute("email", email);
+			m.addAttribute("mesg", "SNS 계정으로 회원 가입 후 이용해 주세요.");
 		} else {
 			session.setAttribute("login", dto);
 			nextPage = "main";
@@ -56,8 +57,9 @@ public class LoginControoler {
 	public String logout( Model m, HttpSession session) {
 
 		  session.invalidate();
-		//  m.addAttribute("mesg", "정상적으로 로그아웃 되었습니다.");
-		return "redirect:/";
+		  //m.addAttribute("mesg", "정상적으로 로그아웃 되었습니다.");
+		
+		  return "redirect:/";
 	}
 
 }
