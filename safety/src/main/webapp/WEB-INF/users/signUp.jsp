@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:if test="${mesg != null}">
+   <script>
+   		alert('${mesg}');
+   </script>
+</c:if>
     
 <div class="container">
 
@@ -28,7 +35,14 @@
 	<div class="form-group">
 		<label class="col-md-4 control-label" for="email">이메일</label>  
 		<div class="col-md-3">
-		  <input id="email" name="email" type="email" placeholder="email" class="form-control input-md">
+		  <c:choose>
+			<c:when test="${email != null}">
+		    	<input id="email" name="email" type="email" placeholder="email" class="form-control input-md" value="${email}">
+		    </c:when>
+		    <c:otherwise>
+		    	<input id="email" name="email" type="email" placeholder="email" class="form-control input-md">
+		    </c:otherwise>
+	      </c:choose>
 		</div>
 		<button type="button" id="idcheck2" class="btn btn-default" name="idcheck2" value="0">중복 확인</button>
 	</div>

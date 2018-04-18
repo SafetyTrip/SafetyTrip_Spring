@@ -13,7 +13,10 @@
 
 <!-- <div id="map"></div> -->
 <div class="container">
-	<div class="page-header">
+	<div class="row">
+		<button type="button" class="btn btn-back btn-block">${ename} 돌아가기</button>
+	</div>
+	<div class="row">
 		<iframe id="google-map" height=400px width="100%" frameborder="0" style="border:0"
 			  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q=${hpDTO.list[0].address}" allowfullscreen>
 		</iframe>

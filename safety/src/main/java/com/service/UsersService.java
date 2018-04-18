@@ -37,4 +37,8 @@ public class UsersService {
 		System.out.println(dto);
 		 dao.mypageupdate(dto);
 	}
+	
+	public UsersDTO snsLogin(String email) {
+		return dao.snsLogin(email);
+	}
 }
