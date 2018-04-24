@@ -16,7 +16,7 @@
 	insert into review(revno,uno,cityno,title,content)
 	values(seq_review_revno.nextval,#{uno},#{cityno},#{title},#{content})
 	</insert>
-
+	
 </mapper>
 
 

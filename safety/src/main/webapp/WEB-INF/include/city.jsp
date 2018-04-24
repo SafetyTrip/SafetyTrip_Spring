@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <div class="container">
 	<div class="page-header" data-couno="${couno}" data-cityename="${cityename}" data-cityno="${cityno}">
 		<h3>${cityename}
@@ -72,17 +71,15 @@
 	                <tr>
 	                  <th>#</th>
 	                  <th>Title</th>
-	                  <th>Author</th>
 	                  <th>Date</th>
 	                </tr>
 	              </thead>
 	              <tbody>
-	               <c:forEach items="${rList}" var="dto" varStatus="status">
-	                <tr>
+	               <c:forEach end='4' items="${rList}" var="rDTO" varStatus="status">
+	                <tr class="review-tr pointer" data-revno="${rDTO.revno}">
 	                  <td>${status.index + 1}</td>
-	                  <td>${dto.title}</td>
-	                  <td>${login.userid}</td>
-	                  <td>${dto.createdate}</td>
+	                  <td>${rDTO.title}</td>
+	                  <td>${rDTO.createdate}</td>
 	                </tr>
 	                </c:forEach>
 	              </tbody>

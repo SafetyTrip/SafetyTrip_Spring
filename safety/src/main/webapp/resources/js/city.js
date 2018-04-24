@@ -14,6 +14,10 @@ $(document).ready( () => {
 		location.href = '/trip/safety/'+couno+'?curPage=1&sno='+sno;
 	});
 	
+	$('.review-tr').on('click',function(event){
+		const revno = $(event.target).closest('tr').attr('data-revno');
+	});
+	
 	
 	$('#reviewSubmit').on('click',function(){
 		//var data = $('#reviewForm').serialize();
