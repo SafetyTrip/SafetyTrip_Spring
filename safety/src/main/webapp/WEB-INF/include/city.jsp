@@ -72,20 +72,28 @@
 	                  <th>#</th>
 	                  <th>Title</th>
 	                  <th>Date</th>
+	                  <th class="hidden">content</th>
 	                </tr>
 	              </thead>
 	              <tbody>
 	               <c:forEach end='4' items="${rList}" var="rDTO" varStatus="status">
-	                <tr class="review-tr pointer" data-revno="${rDTO.revno}">
+	                <tr class="review-tr pointer" data-title="${rDTO.title}" data-content="${rDTO.content}">
 	                  <td>${status.index + 1}</td>
 	                  <td>${rDTO.title}</td>
 	                  <td>${rDTO.createdate}</td>
+	                  <td class="hidden">${rDTO.content}</td>
 	                </tr>
 	                </c:forEach>
 	              </tbody>
+	              <tfoot>
+	              	<tr>
+	              		<td><jsp:include page="reviewPage.jsp" flush="true"/></td>
+	              	</tr>
+	              </tfoot>
 	            </table>
 			</div>
 		</div>
+<!-- Reivew 작성 -->
 <div class="modal fade" id="myModal" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -94,6 +102,7 @@
              </div>
        	<form id="reviewForm">
  			<div class="modal-body">
+ 				<h4>Review 작성</h4>
 				<table class="table">
 					<tr>
 						<td>title</td>
@@ -115,5 +124,32 @@
 		</div>
 	</div>
 </div>
-	</div>	
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Review 내용</h4>
+        </div>
+        	<div class="modal-body">
+        		<div class="form-group">
+   				   <label for="label">Review Title</label>
+   				   <input type="text" id="reviewTitle" name="title" class="form-control"/>
+  			    </div>
+  			    <div class="form-group">
+   				   <label for="label">Review Content</label>
+   				   <textarea id="reviewContent" name="content" class="form-control" rows="20" cols="20"></textarea>
+  			    </div>
+  		   </div>
+       			 <div class="modal-footer">
+       			 <button type="button" id="reviewUpdate" class="btn btn-warning">수정</button>
+       			 <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+       		</div>
+   		 </div>
+	</div>
+</div>
+
+
+
+</div>	
 </div>

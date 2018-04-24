@@ -13,8 +13,6 @@ public class ReviewDAO {
 	@Autowired
 	SqlSessionTemplate template;
 	
-	
-	
 	//Review글쓰기
 	public int reviewWrite(ReviewDTO rDTO) {
 		int n = template.insert("ReviewMapper.reviewWrite",rDTO);

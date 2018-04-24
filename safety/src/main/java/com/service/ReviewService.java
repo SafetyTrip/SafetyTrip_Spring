@@ -13,8 +13,6 @@ public class ReviewService {
 	@Autowired
 	ReviewDAO rDAO;
 	
-	
-	
 	//Review 글쓰기
 	public Boolean reviewWrite(ReviewDTO rDTO) {
 		boolean result = false;
@@ -23,6 +21,7 @@ public class ReviewService {
 			result = true;
 		}
 		return result;
-
 	}
+	
+	
 }

@@ -15,7 +15,13 @@ $(document).ready( () => {
 	});
 	
 	$('.review-tr').on('click',function(event){
-		const revno = $(event.target).closest('tr').attr('data-revno');
+		const title = $(event.target).closest('tr').attr('data-title');
+		const content = $(event.target).closest('tr').attr('data-content');
+
+		$('#reviewTitle').val(title);
+		$('#reviewContent').text(content);
+		
+		$('#myModal2').modal();
 	});
 	
 	
