@@ -76,7 +76,8 @@
 	                </tr>
 	              </thead>
 	              <tbody>
-	               <c:forEach end='4' items="${rList}" var="rDTO" varStatus="status">
+	               <c:set value="${rList.list}" var="rList" />
+	               <c:forEach items="${rList}" var="rDTO" varStatus="status">
 	                <tr class="review-tr pointer" data-title="${rDTO.title}" data-content="${rDTO.content}">
 	                  <td>${status.index + 1}</td>
 	                  <td>${rDTO.title}</td>
@@ -85,12 +86,8 @@
 	                </tr>
 	                </c:forEach>
 	              </tbody>
-	              <tfoot>
-	              	<tr>
-	              		<td><jsp:include page="reviewPage.jsp" flush="true"/></td>
-	              	</tr>
-	              </tfoot>
 	            </table>
+	            <jsp:include page="reviewPage.jsp" flush="true"/>
 			</div>
 		</div>
 <!-- Reivew 작성 -->
@@ -128,7 +125,6 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
           <h4 class="modal-title">Review 내용</h4>
         </div>
         	<div class="modal-body">
@@ -148,8 +144,5 @@
    		 </div>
 	</div>
 </div>
-
-
-
 </div>	
 </div>

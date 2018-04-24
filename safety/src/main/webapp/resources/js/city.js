@@ -24,7 +24,6 @@ $(document).ready( () => {
 		$('#myModal2').modal();
 	});
 	
-	
 	$('#reviewSubmit').on('click',function(){
 		//var data = $('#reviewForm').serialize();
 		const couno = $('.page-header').attr('data-couno');

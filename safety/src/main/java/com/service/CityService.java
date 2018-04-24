@@ -1,6 +1,5 @@
 package com.service;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.CityDAO;
 import com.dto.CityDTO;
-import com.dto.ReviewDTO;
+import com.dto.PageDTO;
 
 @Service
 public class CityService {
@@ -30,7 +29,7 @@ public class CityService {
 		return dao.getCityListByContinent(continent);
 	}
 	
-	public List<ReviewDTO> getReviewList(int cityno){
-		return dao.getReviewList(cityno);
+	public PageDTO getReviewList(int curPage,int cityno){
+		return dao.getReviewList(curPage, cityno);
 	}
 }

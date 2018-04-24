@@ -18,6 +18,13 @@
 	values(seq_review_revno.nextval,#{uno},#{cityno},#{title},#{content})
 	</insert>
 	
+	<!-- 리뷰리스트 총 개수 -->
+	<select id="reviewListCount" parameterType="int" resultType="int">
+	select count(*) from review
+	where cityno = #{cityno}
+	</select>
+	
+	
 </mapper>
 
 
