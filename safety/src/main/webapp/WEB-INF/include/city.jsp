@@ -5,7 +5,9 @@
 
 <div class="container">
 	<div class="page-header" data-couno="${couno}" data-cityename="${cityename}" data-cityno="${cityno}">
-		<h3>${cityename}</h3>
+		<h3>${cityename}
+		<button class="btn btn-link pull-right" data-target="#myModal" data-toggle="modal">Review</button>
+		</h3>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
@@ -62,5 +64,50 @@
 	            </table>
 			</div>
 		</div>
+		<div class="col-md-6">
+			<div class="table-responsive">
+				<h4>Review</h4>
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>#</th>
+	                  <th>Title</th>
+	                  <th>Date</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              </tbody>
+	            </table>
+			</div>
+		</div>
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 id="modal-title" class="modal-title"></h4>
+             </div>
+       	<form id="reviewForm">
+ 			<div class="modal-body">
+				<table class="table">
+					<tr>
+						<td>title</td>
+						<td><input class="form-control" id="title" name="title" type="text"></td>
+					</tr>
+					<tr>
+						<td>content</td>
+						<td><textarea class="form-control" id="content" name="content" rows="10"></textarea></td>
+					</tr>
+				</table>
+				<input type="hidden" id="cityno" name="cityno" value="${cityno}">
+ 				<input type="hidden" id="uno" name="uno" value="${login.uno}">
+			</div>
+		</form>
+			<div class="modal-footer">
+				<button class="btn btn-success" id="reviewSubmit">글쓰기</button>
+				<button class="btn btn-default" data-dismiss="modal">취소</button>
+			</div>	
+		</div>
+	</div>
+</div>
 	</div>	
 </div>

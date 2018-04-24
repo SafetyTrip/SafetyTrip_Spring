@@ -1,0 +1,34 @@
+package com.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.dto.ReviewDTO;
+import com.service.ReviewService;
+
+@Controller
+public class ReviewController {
+
+	@Autowired
+	ReviewService rService;
+	
+	//Review글쓰기
+	@RequestMapping(value="/reviewWrite")
+	@ResponseBody
+	public Boolean reviewWrite(ReviewDTO rDTO) {
+		return rService.reviewWrite(rDTO);
+	}
+	
+	//Review목록
+	@RequestMapping(value="/reviewList")
+	@ResponseBody
+	public List<ReviewDTO> reviewList() {
+		List<ReviewDTO> reviewList = rService.reviewList();
+		return reviewList;
+		
+	}
+}

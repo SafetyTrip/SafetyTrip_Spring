@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="ReviewMapper">
+	
+	<!-- 리뷰보기 -->
+	<select id="reviewList" resultType="ReviewDTO">
+	select revno,title,createdate from review
+	</select>
+	
+	<!-- 리뷰쓰기 -->
+	<insert id="reviewWrite" parameterType="ReviewDTO">
+	insert into review(revno,uno,cityno,title,content)
+	values(seq_review_revno.nextval,#{uno},#{cityno},#{title},#{content})
+	</insert>
+
+</mapper>
+
+
+
