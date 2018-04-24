@@ -36,7 +36,7 @@ $(document).ready( () => {
 			success : function(result){
 				if(result){
 					alert('리뷰 등록이 완료되었습니다.');
-					location.href="";
+					location.href="/trip/city/" + couno + '/' + cityename + '/' + cityno;
 				}
 			}
 		})

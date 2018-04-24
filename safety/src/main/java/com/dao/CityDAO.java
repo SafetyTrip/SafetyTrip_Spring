@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.CityDTO;
+import com.dto.ReviewDTO;
 
 @Repository
 public class CityDAO {
@@ -24,5 +25,9 @@ public class CityDAO {
 	
 	public List<CityDTO> getCityListByContinent(String continent) {
 		return template.selectList("CityMapper.getCityListByContinent", continent);
+	}
+	
+	public List<ReviewDTO> getReviewList(int cityno){
+		return template.selectList("ReviewMapper.reviewList",cityno);
 	}
 }

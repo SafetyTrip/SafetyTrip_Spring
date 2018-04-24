@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.CityDAO;
 import com.dto.CityDTO;
+import com.dto.ReviewDTO;
 
 @Service
 public class CityService {
@@ -26,5 +27,9 @@ public class CityService {
 	
 	public List<CityDTO> getCityListByContinent(String continent) {
 		return dao.getCityListByContinent(continent);
+	}
+	
+	public List<ReviewDTO> getReviewList(int cityno){
+		return dao.getReviewList(cityno);
 	}
 }

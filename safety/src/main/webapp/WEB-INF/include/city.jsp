@@ -72,10 +72,19 @@
 	                <tr>
 	                  <th>#</th>
 	                  <th>Title</th>
+	                  <th>Author</th>
 	                  <th>Date</th>
 	                </tr>
 	              </thead>
 	              <tbody>
+	               <c:forEach items="${rList}" var="dto" varStatus="status">
+	                <tr>
+	                  <td>${status.index + 1}</td>
+	                  <td>${dto.title}</td>
+	                  <td>${login.userid}</td>
+	                  <td>${dto.createdate}</td>
+	                </tr>
+	                </c:forEach>
 	              </tbody>
 	            </table>
 			</div>

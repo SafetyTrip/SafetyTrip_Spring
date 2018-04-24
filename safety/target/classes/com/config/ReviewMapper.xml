@@ -6,8 +6,9 @@
 <mapper namespace="ReviewMapper">
 	
 	<!-- 리뷰보기 -->
-	<select id="reviewList" resultType="ReviewDTO">
-	select revno,title,createdate from review
+	<select id="reviewList" parameterType="int" resultType="ReviewDTO">
+	select revno,title,to_date(createdate,'yyyy/mm/dd') createdate from review
+	where cityno = #{cityno}
 	</select>
 	
 	<!-- 리뷰쓰기 -->

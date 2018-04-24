@@ -12,7 +12,7 @@ public class ReviewDTO {
 	private String content;
 	private int viewscount;
 	private int good;
-	private int createdate;
+	private String createdate;
 	public int getRevno() {
 		return revno;
 	}
@@ -55,10 +55,10 @@ public class ReviewDTO {
 	public void setGood(int good) {
 		this.good = good;
 	}
-	public int getCreatedate() {
+	public String getCreatedate() {
 		return createdate;
 	}
-	public void setCreatedate(int createdate) {
+	public void setCreatedate(String createdate) {
 		this.createdate = createdate;
 	}
 	
@@ -67,6 +67,8 @@ public class ReviewDTO {
 		return "ReviewDTO [revno=" + revno + ", uno=" + uno + ", cityno=" + cityno + ", title=" + title + ", content="
 				+ content + ", viewscount=" + viewscount + ", good=" + good + ", createdate=" + createdate + "]";
 	}
+	
+	
 	
 	
 }

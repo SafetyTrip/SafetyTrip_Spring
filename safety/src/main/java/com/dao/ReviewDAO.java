@@ -1,6 +1,5 @@
 package com.dao;
 
-import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +13,6 @@ public class ReviewDAO {
 	@Autowired
 	SqlSessionTemplate template;
 	
-	
-	//Reivew목록
-	public List<ReviewDTO> reviewList(){
-		return template.selectList("ReviewMapper.reviewList");
-	}
 	
 	
 	//Review글쓰기
