@@ -52,6 +52,9 @@ DROP SEQUENCE SEQ_USERS_uno;
 CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_HOTEL_hno INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_QNA_qino1 INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_QNA_qino2 INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_QNA_qino3 INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_QNA_qno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_RESERVATION_resno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_REVIEW_revno INCREMENT BY 1 START WITH 1;
@@ -101,6 +104,18 @@ CREATE TABLE HOTEL
 
 CREATE TABLE QNA
 (
+    qino1 number(7,0),
+    thetext1 varchar2(1000),
+    thefile1 varchar2(1000)
+    DEFAULT '1',
+    qino2 number(7,0),
+    thetext2 varchar2(1000),
+    thefile2 varchar2(1000)
+    DEFAULT '1',
+    qino3 number(7,0),
+    thetext3 varchar2(1000),
+    thefile3 varchar2(1000)
+    DEFAULT '1',
 	qno number(7,0) constraint qna_qno_nn NOT NULL,
 	uno number(7,0) constraint qna_uno_nn NOT NULL,
 	hno number(10,0) constraint qna_hno_nn NOT NULL,
@@ -112,7 +127,7 @@ CREATE TABLE QNA
     constraint qna_qopen_nn NOT NULL 
     constraint qna_qopen_ck CHECK(qopen = 0 or qopen = 1),
 	createdate date DEFAULT SYSDATE 
-  constraint qna_createdate_nn NOT NULL,
+    constraint qna_createdate_nn NOT NULL,
 	constraint qna_qno_pk PRIMARY KEY (qno)
 );
 

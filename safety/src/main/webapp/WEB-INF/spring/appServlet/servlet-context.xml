@@ -17,8 +17,10 @@
 	<mvc:view-controller path="/loginForm" view-name="loginForm"/>	
 	<mvc:view-controller path="/mypage" view-name="mypage"/>	
 	
+	<!-- static resource -->
 	<mvc:resources location="/resources/" mapping="/resources/**"/>
-
+	<mvc:resources location="/WEB-INF/angular/" mapping="/angular/**"/>
+	<mvc:resources location="/WEB-INF/img/" mapping="/img/**"/>
 	
 	<mvc:interceptors>
 	  <mvc:interceptor>
