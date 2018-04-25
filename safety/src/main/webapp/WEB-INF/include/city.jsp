@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="curPage" value="${rList.curPage}" />
+
 <div class="container">
 	<div class="page-header" data-couno="${couno}" data-cityename="${cityename}" data-cityno="${cityno}">
-		<h3>${cityename}
-		<button class="btn btn-link pull-right" data-target="#myModal" data-toggle="modal">Review</button>
-		</h3>
+		<h3>${cityename}</h3>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
@@ -65,7 +64,9 @@
 		</div>
 		<div class="col-md-6">
 			<div class="table-responsive">
-				<h4>Review</h4>
+				<h4>Review
+				<button class="btn btn-link pull-right" data-target="#myModal" data-toggle="modal">Review 작성</button>
+				</h4>
 	            <table class="table table-striped">
 	              <thead>
 	                <tr>
@@ -79,7 +80,7 @@
 	               <c:set value="${rList.list}" var="rList" />
 	               <c:forEach items="${rList}" var="rDTO" varStatus="status">
 	                <tr class="review-tr pointer" data-title="${rDTO.title}" data-content="${rDTO.content}">
-	                  <td>${status.index + 1}</td>
+	                  <td>${(status.index+1) + (curPage-1)*5}</td>
 	                  <td>${rDTO.title}</td>
 	                  <td>${rDTO.createdate}</td>
 	                  <td class="hidden">${rDTO.content}</td>
