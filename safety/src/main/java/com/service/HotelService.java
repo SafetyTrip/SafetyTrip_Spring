@@ -23,4 +23,8 @@ public class HotelService {
 	public PageDTO<HotelDTO> getDetailHotelList(HashMap<String, Integer> map){
 		return dao.getDetailHotelList(map);
 	}
+	
+	public HashMap<String,String> clickGood(HashMap<String, Integer> map) {
+		return dao.clickGood(map);
+	}
 }
