@@ -175,7 +175,7 @@ CREATE TABLE RESERVATION
 CREATE TABLE REVIEW
 (
 	revno number(7,0) constraint review_revno_nn NOT NULL,
-	uno number(7,0) constraint review_uno_nn NOT NULL,
+	userid varchar2(20)  constraint review_userid_nn NOT NULL,
 	cityno number(10,0) constraint review_cityno_nn NOT NULL,
 	title varchar2(1000) constraint review_title_nn NOT NULL,
 	content clob constraint review_content_nn NOT NULL,
@@ -339,9 +339,9 @@ ALTER TABLE RESERVATION
 
 
 ALTER TABLE REVIEW
-	ADD constraint review_uno_fk
-	FOREIGN KEY (uno)
-	REFERENCES USERS (uno)
+	ADD constraint review_userid_fk
+	FOREIGN KEY (userid)
+	REFERENCES USERS (userid)
 ;
 
 
