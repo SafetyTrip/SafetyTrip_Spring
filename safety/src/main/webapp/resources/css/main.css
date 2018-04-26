@@ -1,4 +1,9 @@
 
+.navbar-default .navbar-brand {
+    color:blue;
+}
+
+
 body > .container {
 	padding-top: 60px;
 }

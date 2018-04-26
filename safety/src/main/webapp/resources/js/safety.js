@@ -15,4 +15,11 @@ $(document).ready( () => {
 		
 		location.href = '/trip/safety/'+couno+'?curPage='+curPage+'&sno='+sno;
 	});
+	
+	$('.btn-back').on('click', (e) => {
+		const couno = $('.safety').attr("data-couno");
+		const cename = $(e.target).attr("data-cename");
+		
+		location.href="../country/"+couno+"/"+cename;
+	});
 });

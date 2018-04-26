@@ -35,7 +35,10 @@ public class UsersDAO {
 	}
 	
 	public void mypageupdate(UsersDTO dto) {
-	template.selectOne("UsersMapper.mypageupdate",dto);
+		template.selectOne("UsersMapper.mypageupdate",dto);
 	}
 	
+	public UsersDTO snsLogin(String email) {
+		return template.selectOne("UsersMapper.snsLogin", email);
+	}
 }

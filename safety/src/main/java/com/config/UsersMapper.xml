@@ -55,6 +55,9 @@
 		
 	</update>
 	
-	
-	
+	<select id="snsLogin" parameterType="string" resultType="UsersDTO">
+		select uno, userid, passwd, email, uname, name, passport, sex,
+	 	birth, post, address1, address2, createdate, eaccess from users
+		where email = #{value}
+	</select>
 </mapper>

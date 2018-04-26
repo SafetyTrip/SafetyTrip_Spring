@@ -5,3 +5,7 @@
 .page > span {
 	padding-left: 20px;
 }
+
+.good-click {
+	color: red;
+}

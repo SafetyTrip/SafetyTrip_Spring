@@ -4,14 +4,16 @@
 <div class="container">
   <div class="row">
     <div class="main">
-	  <h3>Please Log In, or <a href="#">Sign Up</a></h3>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
-        </div>
+	  <h3>Please Log In, or <a href="users">Sign Up</a></h3>
+      <div class="sns">
+	      <div class="row">
+	      	<a id="custom-login-btn" href="javascript:loginWithKakao()">
+			  <img id="kakao-login" width="80%" src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" />
+		    </a>
+	      </div>
+	      <div class="row">
+	      		<img id="facebook-login" class="pointer" width="80%" src="https://scontent-icn1-1.xx.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?_nc_cat=0&oh=77d4e49cfba09d965b771239143fb455&oe=5B4FC0EA" />
+	      </div>
       </div>
       <div class="login-or">
         <hr class="hr-or">

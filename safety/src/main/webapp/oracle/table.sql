@@ -1,5 +1,5 @@
 /* Drop Triggers */
-
+/*
 DROP TRIGGER TRI_CITY_cityno;
 DROP TRIGGER TRI_COUNTRY_couno;
 DROP TRIGGER TRI_HOTEL_hno;
@@ -11,7 +11,7 @@ DROP TRIGGER TRI_REV_HOTEL_rhno;
 DROP TRIGGER TRI_ROOM_roomno;
 DROP TRIGGER TRI_SAFETY_sno;
 DROP TRIGGER TRI_USERS_uno;
-
+*/
 
 
 /* Drop Tables */
@@ -21,6 +21,7 @@ DROP TABLE REV_HOTEL CASCADE CONSTRAINTS;
 DROP TABLE RESERVATION CASCADE CONSTRAINTS;
 DROP TABLE ROOM CASCADE CONSTRAINTS;
 DROP TABLE HOTEL CASCADE CONSTRAINTS;
+DROP TABLE HOTEL_GOOD CASCADE CONSTRAINTS;
 DROP TABLE REV_COMMENT CASCADE CONSTRAINTS;
 DROP TABLE REVIEW CASCADE CONSTRAINTS;
 DROP TABLE CITY CASCADE CONSTRAINTS;
@@ -43,7 +44,7 @@ DROP SEQUENCE SEQ_REV_HOTEL_rhno;
 DROP SEQUENCE SEQ_ROOM_roomno;
 DROP SEQUENCE SEQ_SAFETY_sno;
 DROP SEQUENCE SEQ_USERS_uno;
-
+DROP SEQUENCE SEQ_HOTEL_hgno;
 
 
 
@@ -52,6 +53,9 @@ DROP SEQUENCE SEQ_USERS_uno;
 CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_HOTEL_hno INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_QNA_qino1 INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_QNA_qino2 INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_QNA_qino3 INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_QNA_qno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_RESERVATION_resno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_REVIEW_revno INCREMENT BY 1 START WITH 1;
@@ -60,7 +64,26 @@ CREATE SEQUENCE SEQ_REV_HOTEL_rhno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_ROOM_roomno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_HOTEL_GOOD_hgno INCREMENT BY 1 START WITH 1;
 
+/* 위의 시퀀스가 적용했을 때 2부터 numbering이 된다면 아래의 시퀀스로 만들어서 DB를 구성하세요. */
+/*
+CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_HOTEL_hno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_QNA_qino1 INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_QNA_qino2 INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_QNA_qino3 INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_QNA_qno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_RESERVATION_resno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_REVIEW_revno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_REV_COMMENT_comno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_REV_HOTEL_rhno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_ROOM_roomno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 0;
+CREATE SEQUENCE SEQ_HOTEL_GOOD_hgno INCREMENT BY 1 START WITH 0;
+*/
 
 /* Create Tables */
 
@@ -98,9 +121,28 @@ CREATE TABLE HOTEL
 	constraint hotel_hno_pk PRIMARY KEY (hno)
 );
 
+CREATE TABLE HOTEL_GOOD
+(
+	hgno number(10,0) constraint hotel_good_hgno_nn NOT NULL,
+	hno number(7,0) constraint hotel_good_hno_nn NOT NULL,
+	uno number(7,0) constraint hotel_good_uno_nn NOT NULL,
+	constraint hotel_good_hgno_pk PRIMARY KEY (hgno)
+);
 
 CREATE TABLE QNA
 (
+    qino1 number(7,0),
+    thetext1 varchar2(1000),
+    thefile1 varchar2(1000)
+    DEFAULT '1',
+    qino2 number(7,0),
+    thetext2 varchar2(1000),
+    thefile2 varchar2(1000)
+    DEFAULT '1',
+    qino3 number(7,0),
+    thetext3 varchar2(1000),
+    thefile3 varchar2(1000)
+    DEFAULT '1',
 	qno number(7,0) constraint qna_qno_nn NOT NULL,
 	uno number(7,0) constraint qna_uno_nn NOT NULL,
 	hno number(10,0) constraint qna_hno_nn NOT NULL,
@@ -112,7 +154,7 @@ CREATE TABLE QNA
     constraint qna_qopen_nn NOT NULL 
     constraint qna_qopen_ck CHECK(qopen = 0 or qopen = 1),
 	createdate date DEFAULT SYSDATE 
-  constraint qna_createdate_nn NOT NULL,
+    constraint qna_createdate_nn NOT NULL,
 	constraint qna_qno_pk PRIMARY KEY (qno)
 );
 
@@ -133,7 +175,7 @@ CREATE TABLE RESERVATION
 CREATE TABLE REVIEW
 (
 	revno number(7,0) constraint review_revno_nn NOT NULL,
-	uno number(7,0) constraint review_uno_nn NOT NULL,
+	userid varchar2(20)  constraint review_userid_nn NOT NULL,
 	cityno number(10,0) constraint review_cityno_nn NOT NULL,
 	title varchar2(1000) constraint review_title_nn NOT NULL,
 	content clob constraint review_content_nn NOT NULL,
@@ -194,7 +236,7 @@ CREATE TABLE USERS
 	name varchar2(20) constraint users_name_nn NOT NULL,
 	passport varchar2(20) constraint users_passport_nn NOT NULL,
 	sex varchar2(1) constraint users_sex_nn NOT NULL constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
-	birth number(8,0) constraint users_birth_nn NOT NULL,
+	birth varchar2(20) constraint users_birth_nn NOT NULL,
 	post varchar2(5) constraint users_post_nn NOT NULL,
 	address1 varchar2(500) constraint users_address1_nn NOT NULL,
 	address2 varchar2(500) constraint users_address2_nn NOT NULL,
@@ -211,6 +253,18 @@ ALTER TABLE HOTEL
 	ADD constraint hotel_cityno_fk
     FOREIGN KEY (cityno)
 	REFERENCES CITY (cityno)
+;
+
+ALTER TABLE HOTEL_GOOD
+	ADD constraint hotel_good_hno_fk
+    FOREIGN KEY (hno)
+	REFERENCES HOTEL (hno)
+;
+
+ALTER TABLE HOTEL_GOOD
+	ADD constraint hotel_good_uno_fk
+    FOREIGN KEY (uno)
+	REFERENCES USERS (uno)
 ;
 
 
@@ -285,9 +339,9 @@ ALTER TABLE RESERVATION
 
 
 ALTER TABLE REVIEW
-	ADD constraint review_uno_fk
-	FOREIGN KEY (uno)
-	REFERENCES USERS (uno)
+	ADD constraint review_userid_fk
+	FOREIGN KEY (userid)
+	REFERENCES USERS (userid)
 ;
 
 
