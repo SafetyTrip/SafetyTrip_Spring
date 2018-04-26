@@ -84,7 +84,7 @@ public class MainController {
 		mav.addObject("cityename", cityename);
 		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
-		mav.addObject("rList",cityService.getReviewList(cityno));
+		mav.addObject("rList",cityService.getReviewList(map));
 		return mav;
 	}
 }

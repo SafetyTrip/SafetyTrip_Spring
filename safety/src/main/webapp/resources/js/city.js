@@ -18,8 +18,9 @@ $(document).ready( () => {
 		const couno = $('.page-header').attr('data-couno');
 		const cityename = $('.page-header').attr('data-cityename');
 		const cityno = $('.page-header').attr('data-cityno');
+		const revno = $(event.target).closest('tr').attr('data-revno');
 		
-		location.href = '/trip/review/' + couno + '/' + cityename + '/' + cityno + '?curPage=1';
+		location.href = '/trip/review/' + couno + '/' + cityename + '/' + cityno + '?curPage=1&revno='+revno;
 		
 		
 	});

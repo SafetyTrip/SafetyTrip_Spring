@@ -1,10 +1,15 @@
 package com.dao;
 
 
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dto.PageDTO;
 import com.dto.ReviewDTO;
 
 @Repository
@@ -17,6 +22,33 @@ public class ReviewDAO {
 	public int reviewWrite(ReviewDTO rDTO) {
 		int n = template.insert("ReviewMapper.reviewWrite",rDTO);
 		return n;
+	}
+	
+	//Review 리스트
+	public PageDTO<ReviewDTO> reviewList(HashMap<String,Integer> map){
+		
+		reviewCount(map.get("revno"));
+		
+		PageDTO<ReviewDTO> pDTO = new PageDTO<ReviewDTO>();
+		
+		int curPage = map.get("curPage");
+		int start = (curPage - 1) * pDTO.getPerPage();
+		int end = pDTO.getPerPage();
+		int revno = map.get("revno");
+		List<ReviewDTO> rList = template.selectList("ReviewMapper.reviewList",map,
+													new RowBounds(start, end));
+		
+		ReviewDTO rDTO = template.selectOne("ReviewMapper.reviewListByRevno",revno);
+		pDTO.setList(rList);
+		pDTO.setCurPage(curPage);
+		pDTO.setDto(rDTO);
+		
+		return pDTO;
+		
+	}
+	
+	private void reviewCount(int revno) {
+		template.update("ReviewMapper.reviewCount",revno);
 	}
 	
 }
