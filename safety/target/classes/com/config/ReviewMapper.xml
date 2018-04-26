@@ -7,15 +7,15 @@
 	
 	<!-- 리뷰보기 -->
 	<select id="reviewList" parameterType="int" resultType="ReviewDTO">
-	select revno,title,content, to_char(createdate,'yyyy/mm/dd hh24:mi:ss') createdate from review
+	select revno,title,userid, content, to_char(createdate,'yyyy/mm/dd hh24:mi:ss') createdate from review
 	where cityno = #{cityno}
 	order by createdate desc
 	</select>
 	
 	<!-- 리뷰쓰기 -->
 	<insert id="reviewWrite" parameterType="ReviewDTO">
-	insert into review(revno,uno,cityno,title,content)
-	values(seq_review_revno.nextval,#{uno},#{cityno},#{title},#{content})
+	insert into review(revno,userid,cityno,title,content)
+	values(seq_review_revno.nextval,#{userid},#{cityno},#{title},#{content})
 	</insert>
 	
 	<!-- 리뷰리스트 총 개수 -->

@@ -72,6 +72,7 @@
 	                <tr>
 	                  <th>#</th>
 	                  <th>Title</th>
+	                  <th>Author</th>
 	                  <th>Date</th>
 	                  <th class="hidden">content</th>
 	                </tr>
@@ -82,6 +83,7 @@
 	                <tr class="review-tr pointer" data-title="${rDTO.title}" data-content="${rDTO.content}">
 	                  <td>${(status.index+1) + (curPage-1)*5}</td>
 	                  <td>${rDTO.title}</td>
+	                  <td>${rDTO.userid}</td>
 	                  <td>${rDTO.createdate}</td>
 	                  <td class="hidden">${rDTO.content}</td>
 	                </tr>
@@ -112,7 +114,7 @@
 					</tr>
 				</table>
 				<input type="hidden" id="cityno" name="cityno" value="${cityno}">
- 				<input type="hidden" id="uno" name="uno" value="${login.uno}">
+ 				<input type="hidden" id="userid" name="userid" value="${login.userid}">
 			</div>
 		</form>
 			<div class="modal-footer">

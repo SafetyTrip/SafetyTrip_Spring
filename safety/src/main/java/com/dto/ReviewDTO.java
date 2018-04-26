@@ -6,7 +6,7 @@ import org.apache.ibatis.type.Alias;
 public class ReviewDTO {
 
 	private int revno;
-	private int uno;
+	private String userid;
 	private int cityno;
 	private String title;
 	private String content;
@@ -19,12 +19,15 @@ public class ReviewDTO {
 	public void setRevno(int revno) {
 		this.revno = revno;
 	}
-	public int getUno() {
-		return uno;
+	
+	
+	public String getUserid() {
+		return userid;
 	}
-	public void setUno(int uno) {
-		this.uno = uno;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
+	
 	public int getCityno() {
 		return cityno;
 	}
@@ -61,12 +64,13 @@ public class ReviewDTO {
 	public void setCreatedate(String createdate) {
 		this.createdate = createdate;
 	}
-	
 	@Override
 	public String toString() {
-		return "ReviewDTO [revno=" + revno + ", uno=" + uno + ", cityno=" + cityno + ", title=" + title + ", content="
-				+ content + ", viewscount=" + viewscount + ", good=" + good + ", createdate=" + createdate + "]";
+		return "ReviewDTO [revno=" + revno + ", userid=" + userid + ", cityno=" + cityno + ", title=" + title
+				+ ", content=" + content + ", viewscount=" + viewscount + ", good=" + good + ", createdate="
+				+ createdate + "]";
 	}
+	
 	
 	
 	

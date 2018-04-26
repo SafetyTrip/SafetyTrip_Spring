@@ -404,108 +404,108 @@ END;
 
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ì˜êµ­', 'United Kingdom', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '¿µ±¹', 'United Kingdom', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'í”„ë‘ìŠ¤', 'France', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, 'ÇÁ¶û½º', 'France', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ë…ì¼', 'Germany', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, 'µ¶ÀÏ', 'Germany', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ìŠ¤í˜ì¸', 'Spain', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '½ºÆäÀÎ', 'Spain', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ì´íƒˆë¦¬ì•„', 'Italy', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, 'ÀÌÅ»¸®¾Æ', 'Italy', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ì¼ë³¸', 'Japan', 'Asia');
+values(SEQ_COUNTRY_couno.nextval, 'ÀÏº»', 'Japan', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ì¤‘êµ­', 'China', 'Asia');
+values(SEQ_COUNTRY_couno.nextval, 'Áß±¹', 'China', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ëŒ€ë§Œ', 'Taiwan', 'Asia');
+values(SEQ_COUNTRY_couno.nextval, '´ë¸¸', 'Taiwan', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ë¯¸êµ­', 'United States of America', 'America');
+values(SEQ_COUNTRY_couno.nextval, '¹Ì±¹', 'United States of America', 'America');
 
 insert into country(couno, cname, cename, continent)
-values(SEQ_COUNTRY_couno.nextval, 'ìºë‚˜ë‹¤', 'Canada', 'America');
+values(SEQ_COUNTRY_couno.nextval, 'Ä³³ª´Ù', 'Canada', 'America');
 
 commit;
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 1, 'ëŸ°ë˜', 'London');
+values (SEQ_CITY_cityno.nextval, 1, '·±´ø', 'London');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 1, 'ë§¨ì²´ìŠ¤í„°', 'Manchester');
+values (SEQ_CITY_cityno.nextval, 1, '¸ÇÃ¼½ºÅÍ', 'Manchester');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 1, 'ë¦¬ë²„í’€', 'Liverpool');
+values (SEQ_CITY_cityno.nextval, 1, '¸®¹öÇ®', 'Liverpool');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 2, 'íŒŒë¦¬', 'Paris');
+values (SEQ_CITY_cityno.nextval, 2, 'ÆÄ¸®', 'Paris');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 2, 'ë¦¬ì˜¹', 'Lyon');
+values (SEQ_CITY_cityno.nextval, 2, '¸®¿Ë', 'Lyon');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 2, 'ë§ˆë¥´ì„¸ìœ ', 'Marseille');
+values (SEQ_CITY_cityno.nextval, 2, '¸¶¸£¼¼À¯', 'Marseille');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 3, 'ë² ë¥¼ë¦°', 'Berlin');
+values (SEQ_CITY_cityno.nextval, 3, 'º£¸¦¸°', 'Berlin');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 3, 'ë®Œí—¨', 'MÃ¼nchen');
+values (SEQ_CITY_cityno.nextval, 3, '¹ÀÇî', 'M?nchen');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 4, 'ë§ˆë“œë¦¬ë“œ', 'Madrid');
+values (SEQ_CITY_cityno.nextval, 4, '¸¶µå¸®µå', 'Madrid');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 4, 'ë°”ë¥´ì…€ë¡œë‚˜', 'Barcelona');
+values (SEQ_CITY_cityno.nextval, 4, '¹Ù¸£¼¿·Î³ª', 'Barcelona');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 5, 'ë¡œë§ˆ', 'Roma');
+values (SEQ_CITY_cityno.nextval, 5, '·Î¸¶', 'Roma');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 5, 'ë°€ë¼ë…¸', 'Millan');
+values (SEQ_CITY_cityno.nextval, 5, '¹Ğ¶ó³ë', 'Millan');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 6, 'ë„ì¿„', 'Tokyo');
+values (SEQ_CITY_cityno.nextval, 6, 'µµÄì', 'Tokyo');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 6, 'ì¿„í† ', 'Kyoto');
+values (SEQ_CITY_cityno.nextval, 6, 'ÄìÅä', 'Kyoto');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 6, 'ì˜¤ì‚¬ì¹´', 'Osaka');
+values (SEQ_CITY_cityno.nextval, 6, '¿À»çÄ«', 'Osaka');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 7, 'ë² ì´ì§•', 'Beijing');
+values (SEQ_CITY_cityno.nextval, 7, 'º£ÀÌÂ¡', 'Beijing');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 7, 'ìƒí•˜ì´', 'Shanghai');
+values (SEQ_CITY_cityno.nextval, 7, '»óÇÏÀÌ', 'Shanghai');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 8, 'íƒ€ì´ë² ì´', 'Taipei');
+values (SEQ_CITY_cityno.nextval, 8, 'Å¸ÀÌº£ÀÌ', 'Taipei');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 9, 'ë‰´ìš•', 'New York');
+values (SEQ_CITY_cityno.nextval, 9, '´º¿å', 'New York');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 9, 'ì›Œì‹±í„´', 'Washington');
+values (SEQ_CITY_cityno.nextval, 9, '¿ö½ÌÅÏ', 'Washington');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 9, 'ë¡œìŠ¤ì•¤ì ¤ë ˆìŠ¤', 'Los Angeles');
+values (SEQ_CITY_cityno.nextval, 9, '·Î½º¾ØÁ©·¹½º', 'Los Angeles');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 10, 'í† ë¡ í† ', 'Toronto');
+values (SEQ_CITY_cityno.nextval, 10, 'Åä·ĞÅä', 'Toronto');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 10, 'ëª¬í† ë¦¬ì˜¬', 'Montreal');
+values (SEQ_CITY_cityno.nextval, 10, '¸óÅä¸®¿Ã', 'Montreal');
 
 insert into city(cityno, couno, cityname, cityename)
-values (SEQ_CITY_cityno.nextval, 10, 'ì˜¤íƒ€ì™€', 'Ottawa');
+values (SEQ_CITY_cityno.nextval, 10, '¿ÀÅ¸¿Í', 'Ottawa');
 
 commit;
 

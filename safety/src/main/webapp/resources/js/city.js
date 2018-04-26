@@ -29,7 +29,7 @@ $(document).ready( () => {
 		const couno = $('.page-header').attr('data-couno');
 		const cityename = $('.page-header').attr('data-cityename');
 		var cityno = $('#cityno').val();
-		var uno = $('#uno').val();
+		var userid = $('#userid').val();
 		var title = $('#title').val();
 		var content = $('#content').val();
 		
@@ -38,7 +38,7 @@ $(document).ready( () => {
 			type : "get",
 			data : {
 				"cityno" : cityno,
-				"uno" : uno,
+				"userid" : userid,
 				"title" : title,
 				"content" : content
 			},
