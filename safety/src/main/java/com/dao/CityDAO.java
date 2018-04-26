@@ -29,25 +29,10 @@ public class CityDAO {
 		return template.selectList("CityMapper.getCityListByContinent", continent);
 	}
 	
-	public PageDTO getReviewList(int curPage, int cityno){
+	public List<ReviewDTO> getReviewList(int cityno){
 		
-		PageDTO pDTO = new PageDTO();
+		return  template.selectList("ReviewMapper.reviewList",cityno);
 		
-		
-		int start = (curPage - 1) * pDTO.getPerPage();
-		int end = pDTO.getPerPage();
-		List<ReviewDTO> reviewList = template.selectList("ReviewMapper.reviewList",cityno,
-										new RowBounds(start, end));
-		
-		pDTO.setList(reviewList);
-		pDTO.setCurPage(curPage);
-		pDTO.setTotalCount(getReviewListCount(cityno));
-		
-		
-		return pDTO;
 	}
 	
-	private int getReviewListCount(int cityno) {
-		return template.selectOne("ReviewMapper.reviewListCount",cityno);
-	}
 }

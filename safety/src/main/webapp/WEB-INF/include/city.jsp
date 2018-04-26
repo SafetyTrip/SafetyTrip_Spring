@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="curPage" value="${rList.curPage}" />
 
 <div class="container">
 	<div class="page-header" data-couno="${couno}" data-cityename="${cityename}" data-cityno="${cityno}">
@@ -78,10 +77,9 @@
 	                </tr>
 	              </thead>
 	              <tbody>
-	               <c:set value="${rList.list}" var="rList" />
-	               <c:forEach items="${rList}" var="rDTO" varStatus="status">
+	               <c:forEach begin='0' end='4' items="${rList}" var="rDTO" varStatus="status">
 	                <tr class="review-tr pointer" data-title="${rDTO.title}" data-content="${rDTO.content}">
-	                  <td>${(status.index+1) + (curPage-1)*5}</td>
+	                  <td>${status.index+1}</td>
 	                  <td>${rDTO.title}</td>
 	                  <td>${rDTO.userid}</td>
 	                  <td>${rDTO.createdate}</td>
@@ -90,7 +88,6 @@
 	                </c:forEach>
 	              </tbody>
 	            </table>
-	            <jsp:include page="reviewPage.jsp" flush="true"/>
 			</div>
 		</div>
 <!-- Reivew 작성 -->
@@ -122,29 +119,6 @@
 				<button class="btn btn-default" data-dismiss="modal">취소</button>
 			</div>	
 		</div>
-	</div>
-</div>
-<div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Review 내용</h4>
-        </div>
-        	<div class="modal-body">
-        		<div class="form-group">
-   				   <label for="label">Review Title</label>
-   				   <input type="text" id="reviewTitle" name="title" class="form-control"/>
-  			    </div>
-  			    <div class="form-group">
-   				   <label for="label">Review Content</label>
-   				   <textarea id="reviewContent" name="content" class="form-control" rows="20" cols="20"></textarea>
-  			    </div>
-  		   </div>
-       			 <div class="modal-footer">
-       			 <button type="button" id="reviewUpdate" class="btn btn-warning">수정</button>
-       			 <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-       		</div>
-   		 </div>
 	</div>
 </div>
 </div>	

@@ -75,8 +75,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/city/{couno}/{cityename}/{cityno}", method = RequestMethod.GET)
-	public ModelAndView city(@PathVariable int couno, @PathVariable String cityename, @PathVariable int cityno,
-			                 @RequestParam(required=false, defaultValue="1") int curPage) {
+	public ModelAndView city(@PathVariable int couno, @PathVariable String cityename, @PathVariable int cityno) {
 		ModelAndView mav = new ModelAndView();
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("cityno", cityno);
@@ -85,7 +84,7 @@ public class MainController {
 		mav.addObject("cityename", cityename);
 		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
-		mav.addObject("rList",cityService.getReviewList(curPage, cityno));
+		mav.addObject("rList",cityService.getReviewList(cityno));
 		return mav;
 	}
 }
