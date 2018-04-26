@@ -34,19 +34,24 @@ public class ReviewDAO {
 		int curPage = map.get("curPage");
 		int start = (curPage - 1) * pDTO.getPerPage();
 		int end = pDTO.getPerPage();
-		int revno = map.get("revno");
+		
 		List<ReviewDTO> rList = template.selectList("ReviewMapper.reviewList",map,
 													new RowBounds(start, end));
 		
+		int revno = (map.get("revno") == 0 ) ? rList.get(0).getRevno() : map.get("revno");
 		ReviewDTO rDTO = template.selectOne("ReviewMapper.reviewListByRevno",revno);
 		pDTO.setList(rList);
 		pDTO.setCurPage(curPage);
 		pDTO.setDto(rDTO);
+		pDTO.setTotalCount(reviewTotalCount(map.get("cityno")));
 		
 		return pDTO;
 		
 	}
 	
+	private int reviewTotalCount(int cityno) {
+		return template.selectOne("ReviewMapper.reviewListCount",cityno);
+	}
 	private void reviewCount(int revno) {
 		template.update("ReviewMapper.reviewCount",revno);
 	}

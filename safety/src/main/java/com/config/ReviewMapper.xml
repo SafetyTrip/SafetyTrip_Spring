@@ -31,7 +31,7 @@
 	</update>
 	
 	<select id="reviewListByRevno" parameterType="int" resultType="ReviewDTO">
-	select title,content from review
+	select title,content,revno from review
 	where revno=#{revno}
 	</select>
 	

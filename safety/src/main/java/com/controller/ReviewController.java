@@ -30,9 +30,12 @@ public class ReviewController {
 	
 	@RequestMapping(value="/review/{couno}/{cityename}/{cityno}")
 	public ModelAndView reviewRetrieve(@PathVariable int couno, @PathVariable String cityename, @PathVariable int cityno, 
-							   @RequestParam int curPage, @RequestParam int revno) {
+							   @RequestParam int curPage, @RequestParam Integer revno) {
 		
 		ModelAndView mav = new ModelAndView();
+		
+		revno = (revno == null) ? 0 : revno;
+		
 		HashMap<String,Integer> map = new HashMap<String,Integer>();
 		map.put("cityno", cityno);
 		map.put("curPage", curPage);

@@ -2,9 +2,9 @@ $(document).ready( () => {
 	$('.btn-back-review').on('click', (e) => {
 		const cityno = $('.review').attr("data-cityno");
 		const couno = $('.review').attr("data-couno");
-		const ename = $('.review').attr("data-ename");
+		const cityename = $('.review').attr("data-cityename");
 		
-		location.href="/trip/city/"+couno+"/"+ename+"/"+cityno;
+		location.href="/trip/city/"+couno+"/"+cityename+"/"+cityno;
 	});
 	
 	$('.reviewRetrieve-tr').on('click',function(event){

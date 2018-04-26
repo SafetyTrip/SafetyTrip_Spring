@@ -9,12 +9,12 @@
 <c:set var="curPage" value="${pDTO.curPage}" />
 <c:set var="end" value="${totalCount/perPage}" />
 <c:if test="${totalCount%perPage !=0}">
-   <c:set var="pageNum" value="${end+1}" />
+   <c:set var="end" value="${end+1}" />
 </c:if>
 
 <div class="container">
 	<div class="row">
-		<button type="button" class="btn btn-back-review btn-block">${ename} 돌아가기</button>
+		<button type="button" class="btn btn-back-review btn-block">${cityename} 돌아가기</button>
 	</div>
 	<div class="jumbotron">
         <h3>제목 : ${rDTO.title}</h3><br>
@@ -38,9 +38,16 @@
               </thead>
               <tbody>
               	<c:forEach var="dto" items="${pDTO.list}" varStatus="status">
-              	<tr class="reviewRetrieve-tr pointer" data-revno="${dto.revno}">
+              		<c:choose>
+              			<c:when test="${dto.revno == rDTO.revno}">
+              				<tr class="reviewRetrieve-tr pointer bold" data-revno="${dto.revno}">
+              			</c:when>
+              			<c:otherwise>
+              				<tr class="reviewRetrieve-tr pointer" data-revno="${dto.revno}">
+              			</c:otherwise>
+              		</c:choose>
 	                  <td>
-	                  	${(status.index+1) + (curPage-1)*5}
+	                  	${totalCount - (curPage - 1) * perPage - status.index}
 	                  </td>
 	                  <td>${dto.userid}</td>
 	                  <td>${dto.title}</td>
@@ -59,7 +66,9 @@
 				    	 <span class="curPage pointer bold">${status.index}</span>
 				    </c:when>
 				    <c:otherwise>
-				    	<span class="curPage pointer">${status.index}</span>
+				    	<span class="curPage pointer">
+				    	 <a href="/trip/review/${couno}/${cityename}/${cityno}/?curPage=${status.index}&revno=${dto.revno}">${status.index}</a>
+				    	 </span>
 				    </c:otherwise>
 			    </c:choose>
 			</c:forEach>
