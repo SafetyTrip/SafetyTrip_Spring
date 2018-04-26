@@ -25,7 +25,6 @@ $(document).ready( () => {
 		
 	});
 	
-	
 	$('#reviewSubmit').on('click',function(){
 		const couno = $('.page-header').attr('data-couno');
 		const cityename = $('.page-header').attr('data-cityename');
