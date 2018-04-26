@@ -50,10 +50,15 @@
 	                  </td>
 	                  <td>${dto.hname}</td>
 	                  <td>${dto.address}</td>
-	                  <td>${dto.good}</td>
-	                  <td>
-	                  	<button class="btn-good btn-default">♡</button>
-	                  </td>
+	                  <td class="good">${dto.good}</td>
+	                  <c:choose>
+						<c:when test="${dto.clickGood}">
+					    	<td class="btn-good good-click">Good</td>
+					    </c:when>
+					    <c:otherwise>
+					    	<td class="btn-good">Good</td>
+					    </c:otherwise>
+				      </c:choose>
 	                </tr>
                 </c:forEach>
               </tbody>
@@ -73,3 +78,7 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	const uno = '${sessionScope.login.uno}';
+</script>

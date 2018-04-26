@@ -19,25 +19,32 @@ $(document).ready( () => {
 	
 	$('.hotel-tr').closest('tr').on('click', (e) => {
 		if($(e.target).hasClass('btn-good')) {
-			$.ajax({
-				url: '/trip/hotel/good',
-				type: 'get',
-				data: {
-					hno: $(e.target).closest('.hotel-tr').attr('data-hno')
-				},
-				success: function(res) {
-					if(res == "추가") {
-						$(e.target).removeClass('btn-default');
-						$(e.target).addClass('btn btn-danger');
-					} else {
-						$(e.target).removeClass('btn btn-danger');
-						$(e.target).addClass('btn-default');
-					}
-				},
-				error: function(err) {
-					alert("다시 시도해주세요.");
-				} 
-			});
+			if(uno == "") {
+				alert("로그인 후 이용해주세요.");
+			} else {
+				$.ajax({
+					url: '/trip/hotel/good',
+					type: 'get',
+					data: {
+						hno: $(e.target).closest('.hotel-tr').attr('data-hno'),
+						uno: uno
+					},
+					success: function(res) {
+						if(res.result == "추가") {
+							$(e.target).addClass("good-click");
+						} else if(res.result == "삭제") {
+							$(e.target).removeClass("good-click");
+						} else {
+							alert("다시 시도해주세요.");
+						}
+						
+						$(e.target).siblings('.good').text(res.good);
+					},
+					error: function(err) {
+						alert("다시 시도해주세요.");
+					} 
+				});
+			}
 		} else {
 			$('.bold').removeClass('bold');
 			$(e.target).closest('tr').addClass('bold');
