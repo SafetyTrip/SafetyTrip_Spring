@@ -14,6 +14,16 @@ $(document).ready( () => {
 		location.href = '/trip/safety/'+couno+'?curPage=1&sno='+sno;
 	});
 	
+	$('.review-tr').on('click',function(event){
+		const couno = $('.page-header').attr('data-couno');
+		const cityename = $('.page-header').attr('data-cityename');
+		const cityno = $('.page-header').attr('data-cityno');
+		
+		location.href = '/trip/review/' + couno + '/' + cityename + '/' + cityno + '?curPage=1';
+		
+		
+	});
+	
 	
 	$('#reviewSubmit').on('click',function(){
 		//var data = $('#reviewForm').serialize();

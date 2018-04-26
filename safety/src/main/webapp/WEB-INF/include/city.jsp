@@ -73,6 +73,7 @@
 	                  <th>Title</th>
 	                  <th>Author</th>
 	                  <th>Date</th>
+	                  <th>ViewCount</th>
 	                  <th class="hidden">content</th>
 	                </tr>
 	              </thead>
@@ -83,6 +84,7 @@
 	                  <td>${rDTO.title}</td>
 	                  <td>${rDTO.userid}</td>
 	                  <td>${rDTO.createdate}</td>
+	                  <td>${rDTO.viewscount}</td>
 	                  <td class="hidden">${rDTO.content}</td>
 	                </tr>
 	                </c:forEach>

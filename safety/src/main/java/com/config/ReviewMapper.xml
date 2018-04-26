@@ -7,7 +7,7 @@
 	
 	<!-- 리뷰보기 -->
 	<select id="reviewList" parameterType="int" resultType="ReviewDTO">
-	select revno,title,userid, content, to_char(createdate,'yyyy/mm/dd hh24:mi:ss') createdate from review
+	select revno,title,userid, viewscount, content, to_char(createdate,'yyyy/mm/dd hh24:mi:ss') createdate from review
 	where cityno = #{cityno}
 	order by createdate desc
 	</select>
