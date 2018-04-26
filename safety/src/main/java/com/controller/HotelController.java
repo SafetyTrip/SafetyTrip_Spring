@@ -49,15 +49,15 @@ public class HotelController {
 		ModelAndView mav = new ModelAndView();
 		HashMap<String, Integer> map = new HashMap<>();
 		
+		map.put("cityno", cityno);
+		map.put("curPage", curPage);
+		
 		if(session.getAttribute("login") != null) {
 			UsersDTO dto = (UsersDTO) session.getAttribute("login");
 			map.put("uno", dto.getUno());
 		} else {
 			map.put("uno", 0);
 		}
-		
-		UsersDTO dto = (UsersDTO) session.getAttribute("login");
-		map.put("uno", dto.getUno());
 		
 		mav.setViewName("hotel");
 		mav.addObject("ename", cityename);
