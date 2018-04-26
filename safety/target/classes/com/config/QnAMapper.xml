@@ -5,74 +5,62 @@
   
 <mapper namespace="QnAMapper">
 	
-	<!-- QnA IMG 불러오기 -->
-	<select id="qnaImgList" resultType="QnAImgDTO">
-	   select qino, qno
-	   from qna_img
-	</select>
 
 	<!-- QnA List 불러오기 -->
-	<select id="qnaList" resultType="QnADTO">
-	   select qno, uno, hno,
+	<select id="qnaList" resultType="com.dto.QnADTO">
+	   select qino1, thetext1, thefile1, 
+	   qino2, thetext2, thefile2, 
+	   qino3, thetext3, thefile3, 
+	   qno, uno, hno,
 	   title, question, answer, qopen,
 	   to_char(createdate,'YYYY/MM/DD') createdate
 	   from qna
 	   order by qno desc
 	</select>
 	
-	<!-- QnAIMG Write 쓰기 -->
-	<insert id="qnaImgInsert" parameterType="QnAImgDTO">
-       insert into qna_img(qino)
-       values(SEQ_QNA_IMG_QINO.nextval)
-    </insert>
-	
 	<!-- QnA Write 쓰기 -->
-	<insert id="qnaInsert" parameterType="QnADTO">
-       insert into qna( qno, uno, hno, title, question)
-       values( SEQ_QNA_QNO.nextval, #{uno}, #{title}, #{hno}, #{question} )
+	<insert id="qnaInsert" parameterType="com.dto.QnADTO">
+       insert into 
+       qna( 
+       qino1, thetext1, thefile1, 
+	   qino2, thetext2, thefile2, 
+	   qino3, thetext3, thefile3, 
+       qno, uno, hno, title, question)
+       values( 
+       SEQ_QNA_IMG_QINO1.nextval, #{thetext1}, #{thefile1},
+       SEQ_QNA_IMG_QINO2.nextval, #{thetext2}, #{thefile2},
+       SEQ_QNA_IMG_QINO3.nextval, #{thetext3}, #{thefile3},
+       SEQ_QNA_QNO.nextval, #{uno}, #{title}, #{hno}, #{question} )
     </insert>
-  	
-    <!-- QnAIMG Retrieve 쓰기 -->
-	<select id="qnaImgRetrieve" parameterType="int" resultType="QnAImgDTO">
-	   select qino, qno
-	   from qna_img
-	   where qno = #{qno}
-	</select>
 
 	<!-- QnA Retrieve 쓰기 -->
-	<select id="qnaRetrieve"  parameterType="int"  resultType="QnADTO">
-	   select qno, uno, hno,
+	<select id="qnaRetrieve"  parameterType="int"  resultType="com.dto.QnADTO">
+	   select qino1, thetext1, thefile1, 
+	   qino2, thetext2, thefile2, 
+	   qino3, thetext3, thefile3,
+	   qno, uno, hno,
 	   title, question, answer, qopen,
 	   to_char(createdate,'YYYY/MM/DD') createdate
 	   from qna
 	   where qno = #{qno}
 	</select>
 	
-	<!-- QnAImg Delete -->
-	<delete id="qnaImgDelete" parameterType="int">
-	 delete from qna_img
-	 where qno = #{qno}
-	</delete>
-	
 	<!-- QnA Delete -->
 	<delete id="qnaDelete" parameterType="int">
 	 delete from qna
 	 where qno = #{qno}
 	</delete>
-	
-	<!-- QnAImg Update -->
-	<update id="qnaImgUpdate" parameterType="QnAImgDTO">
-	 update qna_img
-	 set qino=#{qino}
-	 where qno = #{qno}
-	 </update>
 	 
 	<!-- QnA Update -->
-	<update id="qnaUpdate" parameterType="QnADTO">
+	<update id="qnaUpdate" parameterType="com.dto.QnADTO">
 	 update qna
-	 set uno=#{uno}, hno=#{hno}, title=#{title}, question=#{question}
+	 set 
+	 qino1=#{qino1}, thetext1=#{thetext1}, thefile1=#{thefile1}, 
+	 qino2=#{qino2}, thetext2=#{thetext2}, thefile2=#{thefile2}, 
+	 qino3=#{qino3}, thetext3=#{thetext3}, thefile3=#{thefile3},
+	 uno=#{uno}, hno=#{hno}, title=#{title}, question=#{question}
 	 where qno = #{qno}
-	 </update>
+	</update>
 	
 	
 </mapper>
