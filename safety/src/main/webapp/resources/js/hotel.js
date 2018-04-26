@@ -17,13 +17,35 @@ $(document).ready( () => {
 		}
 	});
 	
-	$('.hotel-tr').on('click', (e) => {
-		$('.bold').removeClass('bold');
-		$(e.target).closest('tr').addClass('bold');
-		
-		var address = $(e.target).closest('tr').children().last().text();
-		
-		$('#google-map').attr("src","https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q="+address);
+	$('.hotel-tr').closest('tr').on('click', (e) => {
+		if($(e.target).hasClass('btn-good')) {
+			$.ajax({
+				url: '/trip/hotel/good',
+				type: 'get',
+				data: {
+					hno: $(e.target).closest('.hotel-tr').attr('data-hno')
+				},
+				success: function(res) {
+					if(res == "추가") {
+						$(e.target).removeClass('btn-default');
+						$(e.target).addClass('btn btn-danger');
+					} else {
+						$(e.target).removeClass('btn btn-danger');
+						$(e.target).addClass('btn-default');
+					}
+				},
+				error: function(err) {
+					alert("다시 시도해주세요.");
+				} 
+			});
+		} else {
+			$('.bold').removeClass('bold');
+			$(e.target).closest('tr').addClass('bold');
+			
+			var address = $(e.target).closest('tr').children().eq(2).text();
+			
+			$('#google-map').attr("src","https://www.google.com/maps/embed/v1/search?key=AIzaSyDx8zY9GlEPzdFHI7Q4DlWgRD8t2K4mf9M&q="+address);
+		}
 	});
 	
 	$('.btn-back').on('click', (e) => {

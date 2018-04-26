@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.service.HotelService;
@@ -44,5 +45,15 @@ public class HotelController {
 		mav.addObject("hpDTO", hotelService.getDetailHotelList(map));
 		
 		return mav;
+	}
+	
+	@RequestMapping(value = "/hotel/good", method = RequestMethod.GET)
+	@ResponseBody
+	public String hotelClickGood(@RequestParam int hno) {
+		String result = "수정";
+		
+		
+		
+		return result;
 	}
 }

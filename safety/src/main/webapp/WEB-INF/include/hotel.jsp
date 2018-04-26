@@ -52,7 +52,7 @@
 	                  <td>${dto.address}</td>
 	                  <td>${dto.good}</td>
 	                  <td>
-	                  	<button class="btn-default">♡</button>
+	                  	<button class="btn-good btn-default">♡</button>
 	                  </td>
 	                </tr>
                 </c:forEach>

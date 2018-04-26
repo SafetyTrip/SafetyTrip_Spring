@@ -101,6 +101,13 @@ CREATE TABLE HOTEL
 	constraint hotel_hno_pk PRIMARY KEY (hno)
 );
 
+CREATE TABLE HOTEL_GOOD
+{
+	hgno number(10,0) constraint hotel_good_hgno_nn NOT NULL,
+	hno number(7,0) constraint hotel_good_hno_nn NOT NULL,
+	uno number(7,0) constraint hotel_good_uno_nn NOT NULL,
+	constraint hotel_good_hgno_pk PRIMARY KEY (hgno)
+};
 
 CREATE TABLE QNA
 (
@@ -226,6 +233,18 @@ ALTER TABLE HOTEL
 	ADD constraint hotel_cityno_fk
     FOREIGN KEY (cityno)
 	REFERENCES CITY (cityno)
+;
+
+ALTER TABLE HOTEL_GOOD
+	ADD constraint hotel_good_hno_fk
+    FOREIGN KEY (hno)
+	REFERENCES HOTEL (hno)
+;
+
+ALTER TABLE HOTEL_GOOD
+	ADD constraint hotel_good_uno_fk
+    FOREIGN KEY (uno)
+	REFERENCES USERS (uno)
 ;
 
 
