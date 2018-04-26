@@ -49,17 +49,17 @@ DROP SEQUENCE SEQ_USERS_uno;
 
 /* Create Sequences */
 
-CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_HOTEL_hno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_QNA_qno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_RESERVATION_resno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_REVIEW_revno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_REV_COMMENT_comno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_REV_HOTEL_rhno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_ROOM_roomno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_HOTEL_hno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_QNA_qno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_RESERVATION_resno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_REVIEW_revno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_REV_COMMENT_comno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_REV_HOTEL_rhno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_ROOM_roomno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 0 MINVALUE 0;
+CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 0 MINVALUE 0;
 
 
 /* Create Tables */
@@ -121,7 +121,7 @@ CREATE TABLE RESERVATION
 (
 	resno number(8) constraint reservation_resno_nn NOT NULL,
 	uno number(7,0) constraint reservation_uno_nn NOT NULL,
-	roomno number(10,0) constraint reservation_roomno_nn NOT NULL,
+	hno number(10,0) constraint reservation_hno_nn NOT NULL,
 	room number(4,0) constraint reservation_room_nn NOT NULL,
 	sdate date constraint reservation_sdate_nn NOT NULL,
 	edate date constraint reservation_edate_nn NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE RESERVATION
 CREATE TABLE REVIEW
 (
 	revno number(7,0) constraint review_revno_nn NOT NULL,
-	uno number(7,0) constraint review_uno_nn NOT NULL,
+	userid varchar2(20) constraint review_userid_nn NOT NULL,
 	cityno number(10,0) constraint review_cityno_nn NOT NULL,
 	title varchar2(1000) constraint review_title_nn NOT NULL,
 	content clob constraint review_content_nn NOT NULL,
@@ -193,8 +193,8 @@ CREATE TABLE USERS
 	uname varchar2(20) constraint users_uname_nn NOT NULL constraint users_uname_uk UNIQUE,
 	name varchar2(20) constraint users_name_nn NOT NULL,
 	passport varchar2(20) constraint users_passport_nn NOT NULL,
-	sex varchar2(1) constraint users_sex_nn NOT NULL constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
-	birth number(8,0) constraint users_birth_nn NOT NULL,
+	sex nchar constraint users_sex_nn NOT NULL constraint users_sex_ck CHECK(sex = 'M' or sex = 'F'),
+	birth date constraint users_birth_nn NOT NULL,
 	post varchar2(5) constraint users_post_nn NOT NULL,
 	address1 varchar2(500) constraint users_address1_nn NOT NULL,
 	address2 varchar2(500) constraint users_address2_nn NOT NULL,
@@ -243,9 +243,9 @@ ALTER TABLE QNA
 
 
 ALTER TABLE RESERVATION
-	ADD constraint reservation_roomno_fk
-	FOREIGN KEY (roomno)
-	REFERENCES ROOM (roomno)
+	ADD constraint reservation_hno_fk
+	FOREIGN KEY (hno)
+	REFERENCES Hotel (hno)
 ;
 
 
@@ -285,9 +285,9 @@ ALTER TABLE RESERVATION
 
 
 ALTER TABLE REVIEW
-	ADD constraint review_uno_fk
-	FOREIGN KEY (uno)
-	REFERENCES USERS (uno)
+	ADD constraint review_userid_fk
+	FOREIGN KEY (userid)
+	REFERENCES USERS (userid)
 ;
 
 
@@ -404,117 +404,114 @@ END;
 
 
 insert into country(couno, cname, cename, continent)
-values(1, '영국', 'United Kingdom', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '영국', 'United Kingdom', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(2, '프랑스', 'French Republic', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '프랑스', 'France', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(3, '독일', 'Germany', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '독일', 'Germany', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(4, '스페인', 'Spain', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '스페인', 'Spain', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(5, '이탈리아', 'Italy', 'Europe');
+values(SEQ_COUNTRY_couno.nextval, '이탈리아', 'Italy', 'Europe');
 
 insert into country(couno, cname, cename, continent)
-values(6, '일본', 'Japan', 'Asia');
+values(SEQ_COUNTRY_couno.nextval, '일본', 'Japan', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(7, '중국', 'China', 'Asia');
+values(SEQ_COUNTRY_couno.nextval, '중국', 'China', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(8, '대만', 'Taiwan', 'Asia');
+values(SEQ_COUNTRY_couno.nextval, '대만', 'Taiwan', 'Asia');
 
 insert into country(couno, cname, cename, continent)
-values(9, '미국', 'United States of America', 'America');
+values(SEQ_COUNTRY_couno.nextval, '미국', 'United States of America', 'America');
 
 insert into country(couno, cname, cename, continent)
-values(10, '캐나다', 'Canada', 'America');
+values(SEQ_COUNTRY_couno.nextval, '캐나다', 'Canada', 'America');
 
 commit;
 
 insert into city(cityno, couno, cityname, cityename)
-values (1, 1, '런던', 'London');
+values (SEQ_CITY_cityno.nextval, 1, '런던', 'London');
 
 insert into city(cityno, couno, cityname, cityename)
-values (2, 1, '맨체스터', 'Manchester');
+values (SEQ_CITY_cityno.nextval, 1, '맨체스터', 'Manchester');
 
 insert into city(cityno, couno, cityname, cityename)
-values (3, 1, '리버풀', 'Liverpool');
+values (SEQ_CITY_cityno.nextval, 1, '리버풀', 'Liverpool');
 
 insert into city(cityno, couno, cityname, cityename)
-values (4, 2, '파리', 'Paris');
+values (SEQ_CITY_cityno.nextval, 2, '파리', 'Paris');
 
 insert into city(cityno, couno, cityname, cityename)
-values (5, 2, '리옹', 'Lyon');
+values (SEQ_CITY_cityno.nextval, 2, '리옹', 'Lyon');
 
 insert into city(cityno, couno, cityname, cityename)
-values (6, 2, '마르세유', 'Marseille');
+values (SEQ_CITY_cityno.nextval, 2, '마르세유', 'Marseille');
 
 insert into city(cityno, couno, cityname, cityename)
-values (7, 3, '베를린', 'Berlin');
+values (SEQ_CITY_cityno.nextval, 3, '베를린', 'Berlin');
 
 insert into city(cityno, couno, cityname, cityename)
-values (8, 3, '뮌헨', 'München');
+values (SEQ_CITY_cityno.nextval, 3, '뮌헨', 'München');
 
 insert into city(cityno, couno, cityname, cityename)
-values (9, 4, '마드리드', 'Madrid');
+values (SEQ_CITY_cityno.nextval, 4, '마드리드', 'Madrid');
 
 insert into city(cityno, couno, cityname, cityename)
-values (10, 4, '바르셀로나', 'Barcelona');
+values (SEQ_CITY_cityno.nextval, 4, '바르셀로나', 'Barcelona');
 
 insert into city(cityno, couno, cityname, cityename)
-values (11, 5, '로마', 'Roma');
+values (SEQ_CITY_cityno.nextval, 5, '로마', 'Roma');
 
 insert into city(cityno, couno, cityname, cityename)
-values (12, 5, '밀라노', 'Millan');
+values (SEQ_CITY_cityno.nextval, 5, '밀라노', 'Millan');
 
 insert into city(cityno, couno, cityname, cityename)
-values (13, 6, '도쿄', 'Tokyo');
+values (SEQ_CITY_cityno.nextval, 6, '도쿄', 'Tokyo');
 
 insert into city(cityno, couno, cityname, cityename)
-values (14, 6, '쿄토', 'Kyoto');
+values (SEQ_CITY_cityno.nextval, 6, '쿄토', 'Kyoto');
 
 insert into city(cityno, couno, cityname, cityename)
-values (15, 6, '오사카', 'Osaka');
+values (SEQ_CITY_cityno.nextval, 6, '오사카', 'Osaka');
 
 insert into city(cityno, couno, cityname, cityename)
-values (16, 7, '베이징', 'Beijing');
+values (SEQ_CITY_cityno.nextval, 7, '베이징', 'Beijing');
 
 insert into city(cityno, couno, cityname, cityename)
-values (17, 7, '상하이', 'Shanghai');
+values (SEQ_CITY_cityno.nextval, 7, '상하이', 'Shanghai');
 
 insert into city(cityno, couno, cityname, cityename)
-values (18, 8, '타이베이', 'Taipei');
+values (SEQ_CITY_cityno.nextval, 8, '타이베이', 'Taipei');
 
 insert into city(cityno, couno, cityname, cityename)
-values (19, 9, '뉴욕', 'New York');
+values (SEQ_CITY_cityno.nextval, 9, '뉴욕', 'New York');
 
 insert into city(cityno, couno, cityname, cityename)
-values (20, 9, '워싱턴', 'Washington');
+values (SEQ_CITY_cityno.nextval, 9, '워싱턴', 'Washington');
 
 insert into city(cityno, couno, cityname, cityename)
-values (21, 9, '로스앤젤레스', 'Los Angeles');
+values (SEQ_CITY_cityno.nextval, 9, '로스앤젤레스', 'Los Angeles');
 
 insert into city(cityno, couno, cityname, cityename)
-values (22, 10, '토론토', 'Toronto');
+values (SEQ_CITY_cityno.nextval, 10, '토론토', 'Toronto');
 
 insert into city(cityno, couno, cityname, cityename)
-values (23, 10, '몬토리올', 'Montreal');
+values (SEQ_CITY_cityno.nextval, 10, '몬토리올', 'Montreal');
 
 insert into city(cityno, couno, cityname, cityename)
-values (24, 10, '오타와', 'Ottawa');
+values (SEQ_CITY_cityno.nextval, 10, '오타와', 'Ottawa');
 
 commit;
-
-select * from tab;
-
-purge recyclebin;
 
 
 select * from country;
 select * from city;
 select * from hotel;
 select * from safety;
+select * from room;
