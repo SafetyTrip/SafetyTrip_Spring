@@ -9,6 +9,7 @@ public class HotelDTO {
 	private String address;
 	private String lat;
 	private String lng;
+	private boolean clickGood = false;
 	
 	public HotelDTO() {}
 
@@ -66,6 +67,14 @@ public class HotelDTO {
 
 	public void setLng(String lng) {
 		this.lng = lng;
+	}
+	
+	public boolean isClickGood() {
+		return clickGood;
+	}
+
+	public void setClickGood(boolean clickGood) {
+		this.clickGood = clickGood;
 	}
 
 	@Override

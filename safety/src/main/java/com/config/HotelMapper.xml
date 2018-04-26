@@ -33,9 +33,32 @@
 				(select cityno from city where couno = #{couno})
 			</when>
 			<otherwise>
-				where 1=2;
+				where 1=2
 			</otherwise>
 		</choose>
+	</select>
+	
+	<select id="countHotelGood" parameterType="hashmap" resultType="int">
+		select count(*) from hotel_good where hno = #{hno} and uno = #{uno}
+	</select>
+	
+	<insert id="hotelGoodInsert" parameterType="hashmap">
+		insert into hotel_good(hgno, hno, uno)
+		values(SEQ_Hotel_Good_hgno.nextval, #{hno}, #{uno})
+	</insert>
+	
+	<delete id="hotelGoodDelete" parameterType="hashmap">
+		delete from hotel_good where hno = #{hno} and uno = #{uno}
+	</delete>
+	
+	<update id="hotelUpdateGood" parameterType="hashmap">
+		update hotel 
+		set good = (select count(*) from hotel_good where hno = #{hno}) 
+		where hno = #{hno}
+	</update>
+	
+	<select id="countGood" parameterType="hashmap" resultType="int">
+		select good from hotel where hno = #{hno}
 	</select>
 </mapper>
 
