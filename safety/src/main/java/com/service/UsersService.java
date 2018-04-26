@@ -15,7 +15,9 @@ public class UsersService {
 	UsersDAO dao;	
 	
 	public void usersAdd(UsersDTO dto) {
+		System.out.println(dto);
 		dao.usersAdd(dto);
+		
 	}
 	public int usersIdCheck(String userid) {
 		return dao.usersIdCheck(userid);
