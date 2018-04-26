@@ -1,5 +1,4 @@
 package com.dto;
-import com.dto.QnAImgDTO;
 import com.dto.QnADTO;
 
 import java.util.List;
@@ -8,7 +7,6 @@ import org.apache.ibatis.type.Alias;
 @Alias("QnAPageDTO")
 public class QnAPageDTO {
 	
-	private List<QnAImgDTO> imglist; //QnAImg List
 	private List<QnADTO> list; // QnA List
 	private int perPage = 3;  // Page 갯수
 	private int totalCount;   // Total
@@ -17,24 +15,19 @@ public class QnAPageDTO {
 	
 	@Override
 	public String toString() {
-		return "QnAPageDTO [imglist=" + imglist + ", list=" + list + ", perPage=" + perPage + ", totalCount="
-				+ totalCount + ", curPage=" + curPage + "]";
+		return "QnAPageDTO [list=" + list + ", perPage=" + perPage + ", totalCount=" + totalCount + ", curPage="
+				+ curPage + "]";
 	}
 	public QnAPageDTO() {
-	}
-	public QnAPageDTO(List<QnAImgDTO> imglist, List<QnADTO> list, int perPage, int totalCount, int curPage) {
 		super();
-		this.imglist = imglist;
+		// TODO Auto-generated constructor stub
+	}
+	public QnAPageDTO(List<QnADTO> list, int perPage, int totalCount, int curPage) {
+		super();
 		this.list = list;
 		this.perPage = perPage;
 		this.totalCount = totalCount;
 		this.curPage = curPage;
-	}
-	public List<QnAImgDTO> getImglist() {
-		return imglist;
-	}
-	public void setImglist(List<QnAImgDTO> imglist) {
-		this.imglist = imglist;
 	}
 	public List<QnADTO> getList() {
 		return list;
@@ -60,6 +53,8 @@ public class QnAPageDTO {
 	public void setCurPage(int curPage) {
 		this.curPage = curPage;
 	}
+	
+	
 	
 	
 }

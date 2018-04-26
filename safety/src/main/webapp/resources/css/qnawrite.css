@@ -8,6 +8,9 @@ html {
 }
 
 
+.navbar-default .navbar-brand {
+    color:blue;
+}
 
 
 #list {
