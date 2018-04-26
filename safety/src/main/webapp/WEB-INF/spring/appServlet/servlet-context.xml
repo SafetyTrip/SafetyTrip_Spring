@@ -15,7 +15,7 @@
 	<mvc:view-controller path="/qnawriteUI" view-name="qnawrite"/>
 	<mvc:view-controller path="/users" view-name="users"/>
 	<mvc:view-controller path="/loginForm" view-name="loginForm"/>	
-	<mvc:view-controller path="/mypage" view-name="mypage"/>	
+	<mvc:view-controller path="/mypage" view-name="mypage"/>
 	
 	<!-- static resource -->
 	<mvc:resources location="/resources/" mapping="/resources/**"/>

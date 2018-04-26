@@ -66,7 +66,7 @@ CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_HOTEL_GOOD_hgno INCREMENT BY 1 START WITH 1;
 
-/* 위의 시퀀스가 적용했을 때 2부터 numbering이 된다면 아래의 시퀀스로 만들어서 DB를 구성하세요. */
+/* ìœ„ì˜ ì‹œí€€ìŠ¤ê°€ ì ìš©í–ˆì„ ë•Œ 2ë¶€í„° numberingì´ ëœë‹¤ë©´ ì•„ëž˜ì˜ ì‹œí€€ìŠ¤ë¡œ ë§Œë“¤ì–´ì„œ DBë¥¼ êµ¬ì„±í•˜ì„¸ìš”. */
 /*
 CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 0;
 CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 0;

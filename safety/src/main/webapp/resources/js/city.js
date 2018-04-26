@@ -13,4 +13,44 @@ $(document).ready( () => {
 		
 		location.href = '/trip/safety/'+couno+'?curPage=1&sno='+sno;
 	});
+	
+	$('.review-tr').on('click',function(event){
+		const couno = $('.page-header').attr('data-couno');
+		const cityename = $('.page-header').attr('data-cityename');
+		const cityno = $('.page-header').attr('data-cityno');
+		const revno = $(event.target).closest('tr').attr('data-revno');
+		
+		location.href = '/trip/review/' + couno + '/' + cityename + '/' + cityno + '?curPage=1&revno='+revno;
+		
+		
+	});
+	
+	
+	$('#reviewSubmit').on('click',function(){
+		//var data = $('#reviewForm').serialize();
+		const couno = $('.page-header').attr('data-couno');
+		const cityename = $('.page-header').attr('data-cityename');
+		var cityno = $('#cityno').val();
+		var userid = $('#userid').val();
+		var title = $('#title').val();
+		var content = $('#content').val();
+		
+		$.ajax({
+			url : "/trip/reviewWrite",
+			type : "get",
+			data : {
+				"cityno" : cityno,
+				"userid" : userid,
+				"title" : title,
+				"content" : content
+			},
+			success : function(result){
+				if(result){
+					alert('리뷰 등록이 완료되었습니다.');
+					location.href="/trip/city/" + couno + '/' + cityename + '/' + cityno;
+				}
+			}
+		})
+	});
+	
 });
