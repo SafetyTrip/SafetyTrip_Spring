@@ -27,7 +27,6 @@ $(document).ready( () => {
 	
 	
 	$('#reviewSubmit').on('click',function(){
-		//var data = $('#reviewForm').serialize();
 		const couno = $('.page-header').attr('data-couno');
 		const cityename = $('.page-header').attr('data-cityename');
 		var cityno = $('#cityno').val();
@@ -35,22 +34,27 @@ $(document).ready( () => {
 		var title = $('#title').val();
 		var content = $('#content').val();
 		
-		$.ajax({
-			url : "/trip/reviewWrite",
-			type : "get",
-			data : {
-				"cityno" : cityno,
-				"userid" : userid,
-				"title" : title,
-				"content" : content
-			},
-			success : function(result){
-				if(result){
-					alert('리뷰 등록이 완료되었습니다.');
-					location.href="/trip/city/" + couno + '/' + cityename + '/' + cityno;
+		if(userid == ""){
+			alert('로그인 작업이 필요합니다.');
+			location.href = '/trip/loginForm';
+		} else {
+			$.ajax({
+				url : "/trip/reviewWrite",
+				type : "get",
+				data : {
+					"cityno" : cityno,
+					"userid" : userid,
+					"title" : title,
+					"content" : content
+				},
+				success : function(result){
+					if(result){
+						alert('리뷰 등록이 완료되었습니다.');
+						location.href="/trip/city/" + couno + '/' + cityename + '/' + cityno;
+					}
 				}
-			}
-		})
+			})
+		}
 	});
 	
 });

@@ -28,10 +28,6 @@ public class CityDAO {
 		return template.selectList("CityMapper.getCityListByContinent", continent);
 	}
 	
-	public List<ReviewDTO> getReviewList(HashMap<String,Integer> map){
-		
-		return  template.selectList("ReviewMapper.reviewList",map);
-		
-	}
+	
 	
 }
