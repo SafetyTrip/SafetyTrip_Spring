@@ -79,7 +79,7 @@
 	              </thead>
 	              <tbody>
 	               <c:forEach begin='0' end='4' items="${rList}" var="rDTO" varStatus="status">
-	                <tr class="review-tr pointer" data-title="${rDTO.title}" data-content="${rDTO.content}">
+	                <tr class="review-tr pointer" data-revno="${rDTO.revno}">
 	                  <td>${status.index+1}</td>
 	                  <td>${rDTO.title}</td>
 	                  <td>${rDTO.userid}</td>
