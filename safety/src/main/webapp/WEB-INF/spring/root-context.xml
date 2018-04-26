@@ -34,8 +34,7 @@
 				<value>com.dto.HotelDTO</value>
 				<value>com.dto.SafetyDTO</value>
 				<value>com.dto.UsersDTO</value>
-				<value>com.dto.QnAImgDTO</value>
-				<value>com.dto.QnADTO</value>
+				<!-- <value>com.dto.QnADTO</value> -->
 				<value>com.dto.QnAPageDTO</value>
 			</list>
 		</property>
