@@ -31,8 +31,8 @@
                 <tr>
                   <th>#</th>
                   <th>Hotel</th>
-                  <th>Good</th>
                   <th>Address</th>
+                  <th>Good</th>
                 </tr>
               </thead>
               <tbody>
@@ -49,8 +49,11 @@
 	                  	${(status.index+1) + (curPage-1)*5}
 	                  </td>
 	                  <td>${dto.hname}</td>
-	                  <td>${dto.good}</td>
 	                  <td>${dto.address}</td>
+	                  <td>${dto.good}</td>
+	                  <td>
+	                  	<button class="btn-default">♡</button>
+	                  </td>
 	                </tr>
                 </c:forEach>
               </tbody>
