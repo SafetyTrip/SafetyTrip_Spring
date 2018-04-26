@@ -35,7 +35,7 @@ $(document).ready( () => {
 		var content = $('#content').val();
 		
 		if(userid == ""){
-			alert('로그인 작업이 필요합니다.');
+			alert("로그인 작업이 필요합니다.");
 			location.href = '/trip/loginForm';
 		} else {
 			$.ajax({
