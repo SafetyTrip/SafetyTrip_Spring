@@ -77,7 +77,7 @@
 	<div class="form-group">
 		<label class="col-md-4 control-label" for="birth">생년월일</label>  
 		<div class="col-md-3">
-		  <input id="birth" name="birth" type="text" placeholder="19901010" class="form-control input-md">
+		  <input id="birth" name="birth" size = "8" maxlength="8" type="text" placeholder="19901010" class="form-control input-md">
 		</div>
 	</div>
 	<div class="form-group">
