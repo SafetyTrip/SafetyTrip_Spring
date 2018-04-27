@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="com/config/jdbc.properties"></properties>
+
+	<typeAliases>
+		<typeAlias type="com.dto.UsersDTO" alias="UsersDTO" />
+		<typeAlias type="com.dto.CountryDTO" alias="CountryDTO" />
+		<typeAlias type="com.dto.SafetyDTO" alias="SafetyDTO" />
+		<typeAlias type="com.dto.CityDTO" alias="CityDTO" />
+		<typeAlias type="com.dto.HotelDTO" alias="HotelDTO" />
+	</typeAliases>
+
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.userid}" />
+				<property name="password" value="${jdbc.passwd}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/config/UsersMapper.xml" />
+		<mapper resource="com/config/CountryMapper.xml" />
+		<mapper resource="com/config/SafetyMapper.xml" />
+		<mapper resource="com/config/CityMapper.xml" />
+		<mapper resource="com/config/HotelMapper.xml" />
+	</mappers>
+</configuration>
+
+
+

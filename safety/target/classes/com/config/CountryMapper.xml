@@ -29,6 +29,10 @@
 	<select id="getCountryOneByCouno" parameterType="int" resultType="string">
 		select cename from country where couno = #{value}
 	</select>
+	
+	<select id="countrySelectOneByCname" parameterType="string" resultType="CountryDTO">
+		select couno, cname, cename, continent from country where cname = #{value}
+	</select>
 </mapper>
 
 

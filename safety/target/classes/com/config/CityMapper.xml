@@ -28,5 +28,9 @@
 		and couno in (select couno from country where continent = #{value})
 		order by cityename desc
 	</select>
+	
+	<select id="getCityList" resultType="cityDTO">
+		select cityno, cityename from city
+	</select>
 </mapper>
 
