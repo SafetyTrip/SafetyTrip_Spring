@@ -26,7 +26,7 @@ public class LoginController {
 		
 		String nextPage = null;
 		if (dto == null) {
-			nextPage = "login";
+			nextPage = "loginForm";
 			m.addAttribute("mesg", "아이디 및 비밀번호 오류 입니다.");
 		} else {
 			session.setAttribute("login", dto);
