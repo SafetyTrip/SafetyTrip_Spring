@@ -3,7 +3,7 @@
 동작 방법
 
 1. 먼저 table.sql을 돌려 DB를 세팅해준다.
-2. api 패키지에 있는 ApiExplorer.java와 GoogleMapAPI.java 자바프로그램을 동작시켜준다.
+2. api 패키지에 있는 ApiExplorer.java(안전정보 추가)와 GoogleMapAPI.java(호텔정보 추가) 자바프로그램을 동작시켜준다.
 3. 서버를 실행한다.
 
 Spring version
