@@ -35,6 +35,23 @@
 	where revno=#{revno}
 	</select>
 	
+	<!-- 국가 및 도시별 ReviewList -->
+	<select id="reviewTotalList" parameterType="string" resultType="ReviewDTO">
+	select C.userid, C.title, B.cityename, C.viewscount, to_char(C.createdate,'yyyy/mm/dd hh24:mi:ss') createdate 
+	from country A
+	left join city B
+	on A.couno = B.couno
+	left join review C
+	on B.cityno = c.cityno
+	where A.cename = #{cename}
+	and C.userid is not null
+	order by createdate desc
+	
+	
+	</select>
+	
+	
+	
 </mapper>
 
 

@@ -13,6 +13,15 @@ public class ReviewDTO {
 	private int viewscount;
 	private int good;
 	private String createdate;
+	private String cityename;
+	
+	
+	public String getCityename() {
+		return cityename;
+	}
+	public void setCename(String cityename) {
+		this.cityename = cityename;
+	}
 	public int getRevno() {
 		return revno;
 	}
@@ -68,9 +77,8 @@ public class ReviewDTO {
 	public String toString() {
 		return "ReviewDTO [revno=" + revno + ", userid=" + userid + ", cityno=" + cityno + ", title=" + title
 				+ ", content=" + content + ", viewscount=" + viewscount + ", good=" + good + ", createdate="
-				+ createdate + "]";
+				+ createdate + ", cityename=" + cityename + "]";
 	}
-	
 	
 	
 	

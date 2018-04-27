@@ -49,6 +49,11 @@ public class ReviewDAO {
 		
 	}
 	
+	//국가 및 도시별 전체ReviewList
+	public List<ReviewDTO> getReviewTotalList(String cename){
+		return template.selectList("ReviewMapper.reviewTotalList",cename);
+	}
+	
 	private int reviewTotalCount(int cityno) {
 		return template.selectOne("ReviewMapper.reviewListCount",cityno);
 	}

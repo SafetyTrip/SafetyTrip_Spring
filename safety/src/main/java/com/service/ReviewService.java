@@ -37,4 +37,8 @@ public class ReviewService {
 	public List<ReviewDTO> getReviewList(HashMap<String,Integer> map){
 		return rDAO.getReviewList(map);
 	}
+	
+	public List<ReviewDTO> getReviewTotalList(String cename){
+		return rDAO.getReviewTotalList(cename);
+	}
 }

@@ -62,5 +62,39 @@
 	            </table>
 			</div>
 		</div>
+		<div class="col-md-6">
+			<div class="table-responsive">
+				<h4>Review</h4>
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>#</th>
+	                  <th>City</th>
+	                  <th>Title</th>
+	                  <th>Author</th>
+	                  <th>Date</th>
+	                  <th>ViewCount</th>
+	                  <th class="hidden">content</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              <c:forEach begin='0' end='4' items="${tList}" var="dto" varStatus="status">
+					<tr>
+					  <td>${status.index+1}</td>
+					  <td>${dto.cityename}</td>
+					  <td>${dto.title}</td>
+					  <td>${dto.userid}</td>
+					  <td>${dto.createdate}</td>
+					  <td>${dto.viewscount}</td>	               
+	              	</tr>
+	              </c:forEach>
+	              </tbody>
+	            </table>
+			</div>
+		</div>
+		
+		
+		
+		
 	</div>	
 </div>
