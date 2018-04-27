@@ -61,9 +61,8 @@ CREATE SEQUENCE SEQ_ROOM_roomno INCREMENT BY 1 START WITH 0 MINVALUE 0;
 CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 0 MINVALUE 0;
 CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 0 MINVALUE 0;
 
-<<<<<<< HEAD
-=======
-/* Ã¬Å“â€žÃ¬ÂËœ Ã¬â€¹Å“Ã­â‚¬â‚¬Ã¬Å Â¤ÃªÂ°â‚¬ Ã¬Â ÂÃ¬Å¡Â©Ã­â€“Ë†Ã¬Ââ€ž Ã«â€¢Å’ 2Ã«Â¶â‚¬Ã­â€žÂ° numberingÃ¬ÂÂ´ Ã«ÂÅ“Ã«â€¹Â¤Ã«Â©Â´ Ã¬â€¢â€žÃ«Å¾ËœÃ¬ÂËœ Ã¬â€¹Å“Ã­â‚¬â‚¬Ã¬Å Â¤Ã«Â¡Å“ Ã«Â§Å’Ã«â€œÂ¤Ã¬â€“Â´Ã¬â€žÅ“ DBÃ«Â¥Â¼ ÃªÂµÂ¬Ã¬â€žÂ±Ã­â€¢ËœÃ¬â€žÂ¸Ã¬Å¡â€. */
+
+/* ìœ„ì˜ ì‹œí€€ìŠ¤ì— ë¬¸ì œê°€ ìžˆì„ ê²½ìš° ì•„ëž˜ë¡œ ì‚¬ìš©í•˜ì„¸ìš”. */
 /*
 CREATE SEQUENCE SEQ_CITY_cityno INCREMENT BY 1 START WITH 0;
 CREATE SEQUENCE SEQ_COUNTRY_couno INCREMENT BY 1 START WITH 0;
@@ -81,7 +80,6 @@ CREATE SEQUENCE SEQ_SAFETY_sno INCREMENT BY 1 START WITH 0;
 CREATE SEQUENCE SEQ_USERS_uno INCREMENT BY 1 START WITH 0;
 CREATE SEQUENCE SEQ_HOTEL_GOOD_hgno INCREMENT BY 1 START WITH 0;
 */
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 /* Create Tables */
 
@@ -425,244 +423,108 @@ END;
 
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, '¿µ±¹', 'United Kingdom', 'Europe');
-=======
 values(1, 'ì˜êµ­', 'United Kingdom', 'Europe');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, 'ÇÁ¶û½º', 'France', 'Europe');
-=======
 values(2, 'í”„ëž‘ìŠ¤', 'French Republic', 'Europe');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, 'µ¶ÀÏ', 'Germany', 'Europe');
-=======
 values(3, 'ë…ì¼', 'Germany', 'Europe');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, '½ºÆäÀÎ', 'Spain', 'Europe');
-=======
 values(4, 'ìŠ¤íŽ˜ì¸', 'Spain', 'Europe');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, 'ÀÌÅ»¸®¾Æ', 'Italy', 'Europe');
-=======
 values(5, 'ì´íƒˆë¦¬ì•„', 'Italy', 'Europe');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, 'ÀÏº»', 'Japan', 'Asia');
-=======
 values(6, 'ì¼ë³¸', 'Japan', 'Asia');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, 'Áß±¹', 'China', 'Asia');
-=======
 values(7, 'ì¤‘êµ­', 'China', 'Asia');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, '´ë¸¸', 'Taiwan', 'Asia');
-=======
 values(8, 'ëŒ€ë§Œ', 'Taiwan', 'Asia');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, '¹Ì±¹', 'United States of America', 'America');
-=======
 values(9, 'ë¯¸êµ­', 'United States of America', 'America');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into country(couno, cname, cename, continent)
-<<<<<<< HEAD
-values(SEQ_COUNTRY_couno.nextval, 'Ä³³ª´Ù', 'Canada', 'America');
-=======
 values(10, 'ìºë‚˜ë‹¤', 'Canada', 'America');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 commit;
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 1, '·±´ø', 'London');
-=======
 values (1, 1, 'ëŸ°ë˜', 'London');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 1, '¸ÇÃ¼½ºÅÍ', 'Manchester');
-=======
 values (2, 1, 'ë§¨ì²´ìŠ¤í„°', 'Manchester');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 1, '¸®¹öÇ®', 'Liverpool');
-=======
 values (3, 1, 'ë¦¬ë²„í’€', 'Liverpool');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 2, 'ÆÄ¸®', 'Paris');
-=======
 values (4, 2, 'íŒŒë¦¬', 'Paris');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 2, '¸®¿Ë', 'Lyon');
-=======
 values (5, 2, 'ë¦¬ì˜¹', 'Lyon');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 2, '¸¶¸£¼¼À¯', 'Marseille');
-=======
 values (6, 2, 'ë§ˆë¥´ì„¸ìœ ', 'Marseille');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 3, 'º£¸¦¸°', 'Berlin');
-=======
 values (7, 3, 'ë² ë¥¼ë¦°', 'Berlin');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 3, '¹ÀÇî', 'M?nchen');
-=======
 values (8, 3, 'ë®Œí—¨', 'MÃ¼nchen');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 4, '¸¶µå¸®µå', 'Madrid');
-=======
 values (9, 4, 'ë§ˆë“œë¦¬ë“œ', 'Madrid');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 4, '¹Ù¸£¼¿·Î³ª', 'Barcelona');
-=======
 values (10, 4, 'ë°”ë¥´ì…€ë¡œë‚˜', 'Barcelona');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 5, '·Î¸¶', 'Roma');
-=======
 values (11, 5, 'ë¡œë§ˆ', 'Roma');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 5, '¹Ð¶ó³ë', 'Millan');
-=======
 values (12, 5, 'ë°€ë¼ë…¸', 'Millan');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 6, 'µµÄì', 'Tokyo');
-=======
 values (13, 6, 'ë„ì¿„', 'Tokyo');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 6, 'ÄìÅä', 'Kyoto');
-=======
 values (14, 6, 'ì¿„í† ', 'Kyoto');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 6, '¿À»çÄ«', 'Osaka');
-=======
 values (15, 6, 'ì˜¤ì‚¬ì¹´', 'Osaka');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 7, 'º£ÀÌÂ¡', 'Beijing');
-=======
 values (16, 7, 'ë² ì´ì§•', 'Beijing');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 7, '»óÇÏÀÌ', 'Shanghai');
-=======
 values (17, 7, 'ìƒí•˜ì´', 'Shanghai');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 8, 'Å¸ÀÌº£ÀÌ', 'Taipei');
-=======
 values (18, 8, 'íƒ€ì´ë² ì´', 'Taipei');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 9, '´º¿å', 'New York');
-=======
 values (19, 9, 'ë‰´ìš•', 'New York');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 9, '¿ö½ÌÅÏ', 'Washington');
-=======
 values (20, 9, 'ì›Œì‹±í„´', 'Washington');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 9, '·Î½º¾ØÁ©·¹½º', 'Los Angeles');
-=======
 values (21, 9, 'ë¡œìŠ¤ì•¤ì ¤ë ˆìŠ¤', 'Los Angeles');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 10, 'Åä·ÐÅä', 'Toronto');
-=======
 values (22, 10, 'í† ë¡ í† ', 'Toronto');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 10, '¸óÅä¸®¿Ã', 'Montreal');
-=======
 values (23, 10, 'ëª¬í† ë¦¬ì˜¬', 'Montreal');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 insert into city(cityno, couno, cityname, cityename)
-<<<<<<< HEAD
-values (SEQ_CITY_cityno.nextval, 10, '¿ÀÅ¸¿Í', 'Ottawa');
-=======
 values (24, 10, 'ì˜¤íƒ€ì™€', 'Ottawa');
->>>>>>> branch 'master' of https://github.com/SafetyTrip/SafetyTrip_Spring.git
 
 commit;
 
