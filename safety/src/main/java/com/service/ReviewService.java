@@ -2,6 +2,7 @@ package com.service;
 
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,8 @@ public class ReviewService {
 		int n = rDAO.reviewWrite(rDTO);
 		if(n>0) {
 			result = true;
+		} else {
+			
 		}
 		return result;
 	}
@@ -31,4 +34,7 @@ public class ReviewService {
 		return rDAO.reviewList(map);
 	}
 	
+	public List<ReviewDTO> getReviewList(HashMap<String,Integer> map){
+		return rDAO.getReviewList(map);
+	}
 }

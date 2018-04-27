@@ -56,4 +56,8 @@ public class ReviewDAO {
 		template.update("ReviewMapper.reviewCount",revno);
 	}
 	
+	public List<ReviewDTO> getReviewList(HashMap<String,Integer> map){
+		return  template.selectList("ReviewMapper.reviewList",map);
+	}
+	
 }

@@ -16,6 +16,7 @@ import com.dto.CountryDTO;
 import com.service.CityService;
 import com.service.CountryService;
 import com.service.HotelService;
+import com.service.ReviewService;
 import com.service.SafetyService;
 
 @Controller
@@ -32,6 +33,9 @@ public class MainController {
 	
 	@Autowired
 	SafetyService safetyService;
+	
+	@Autowired
+	ReviewService reviewService;
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public ModelAndView search(@RequestParam HashMap<String, String> map) {
@@ -84,7 +88,7 @@ public class MainController {
 		mav.addObject("cityename", cityename);
 		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
-		mav.addObject("rList",cityService.getReviewList(map));
+		mav.addObject("rList",reviewService.getReviewList(map));
 		return mav;
 	}
 }
