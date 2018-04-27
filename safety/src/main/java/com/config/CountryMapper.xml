@@ -29,6 +29,8 @@
 	<select id="getCountryOneByCouno" parameterType="int" resultType="string">
 		select cename from country where couno = #{value}
 	</select>
+	
+	
 </mapper>
 
 

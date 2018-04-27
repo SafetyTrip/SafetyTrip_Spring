@@ -69,13 +69,14 @@ public class MainController {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("couno", couno);
 		map.put("num", 5);
+
 		
 		mav.setViewName("country");
 		mav.addObject("cename", cename);
 		mav.addObject("hList", hotelService.getHotelList(map));
 		mav.addObject("sList", safetyService.getSafetyListByCouno(couno));
 		mav.addObject("tList",reviewService.getReviewTotalList(cename));
-		
+		mav.addObject("cList",cityService.getCityListByCename(cename));
 		return mav;
 	}
 	

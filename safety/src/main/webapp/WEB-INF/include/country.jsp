@@ -64,7 +64,18 @@
 		</div>
 		<div class="col-md-6">
 			<div class="table-responsive">
-				<h4>Review</h4>
+				<h4>Review
+					<div class="col-xs-3 pull-right">
+					    <div class="form-group">
+					      <select class="selectpicker form-control">
+					      	<c:forEach items="${cList}" var="dto">
+					       		 <option>${dto.cityename}</option>
+					        </c:forEach>
+					      </select>
+					  </div>
+					</div>
+					
+				</h4>
 	            <table class="table table-striped">
 	              <thead>
 	                <tr>
@@ -92,9 +103,5 @@
 	            </table>
 			</div>
 		</div>
-		
-		
-		
-		
 	</div>	
 </div>

@@ -28,5 +28,17 @@
 		and couno in (select couno from country where continent = #{value})
 		order by cityename desc
 	</select>
+	
+	<!-- 국가별 도시 List -->
+	<select id="getCityListByCename" parameterType="string" resultType="CityDTO">
+	select distinct B.cityename 
+	from country A
+	left join city B
+	on A.couno = B.couno
+	where A.cename = #{value}
+	order by cityename
+	</select>
+	
+	
 </mapper>
 

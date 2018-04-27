@@ -1,6 +1,5 @@
 package com.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.CityDTO;
-import com.dto.ReviewDTO;
 
 @Repository
 public class CityDAO {
@@ -28,6 +26,7 @@ public class CityDAO {
 		return template.selectList("CityMapper.getCityListByContinent", continent);
 	}
 	
-	
-	
+	public List<CityDTO> getCityListByCename(String cename){
+		return template.selectList("CityMapper.getCityListByCename",cename);
+	}
 }
