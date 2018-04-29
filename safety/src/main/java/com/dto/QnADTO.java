@@ -7,16 +7,19 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class QnADTO {
 	
 	private int qino1;
-    private String theText1; 
-    private CommonsMultipartFile theFile1;
-	
+    private String theText1=" "; 
+    //private CommonsMultipartFile theFile1;
+    private String theFile1;
+    
     private int qino2;
-    private String theText2; 
-    private CommonsMultipartFile theFile2;
+    private String theText2=" "; 
+    //private CommonsMultipartFile theFile2;
+    private String theFile2;
     
     private int qino3;
-    private String theText3; 
-    private CommonsMultipartFile theFile3;
+    private String theText3=" "; 
+    //private CommonsMultipartFile theFile3;
+    private String theFile3;
     
 	private int qno;
 	private int uno=1;
@@ -27,22 +30,13 @@ public class QnADTO {
 	private int qopen;
 	private String createDate;
 	
-	
-	@Override
-	public String toString() {
-		return "QnADTO [qino1=" + qino1 + ", theText1=" + theText1 + ", theFile1=" + theFile1 + ", qino2=" + qino2
-				+ ", theText2=" + theText2 + ", theFile2=" + theFile2 + ", qino3=" + qino3 + ", theText3=" + theText3
-				+ ", theFile3=" + theFile3 + ", qno=" + qno + ", uno=" + uno + ", hno=" + hno + ", title=" + title
-				+ ", question=" + question + ", answer=" + answer + ", qopen=" + qopen + ", createDate=" + createDate
-				+ "]";
-	}
 	public QnADTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public QnADTO(int qino1, String theText1, CommonsMultipartFile theFile1, int qino2, String theText2,
-			CommonsMultipartFile theFile2, int qino3, String theText3, CommonsMultipartFile theFile3, int qno, int uno,
-			int hno, String title, String question, String answer, int qopen, String createDate) {
+	public QnADTO(int qino1, String theText1, String theFile1, int qino2, String theText2, String theFile2, int qino3,
+			String theText3, String theFile3, int qno, int uno, int hno, String title, String question, String answer,
+			int qopen, String createDate) {
 		super();
 		this.qino1 = qino1;
 		this.theText1 = theText1;
@@ -74,10 +68,10 @@ public class QnADTO {
 	public void setTheText1(String theText1) {
 		this.theText1 = theText1;
 	}
-	public CommonsMultipartFile getTheFile1() {
+	public String getTheFile1() {
 		return theFile1;
 	}
-	public void setTheFile1(CommonsMultipartFile theFile1) {
+	public void setTheFile1(String theFile1) {
 		this.theFile1 = theFile1;
 	}
 	public int getQino2() {
@@ -92,10 +86,10 @@ public class QnADTO {
 	public void setTheText2(String theText2) {
 		this.theText2 = theText2;
 	}
-	public CommonsMultipartFile getTheFile2() {
+	public String getTheFile2() {
 		return theFile2;
 	}
-	public void setTheFile2(CommonsMultipartFile theFile2) {
+	public void setTheFile2(String theFile2) {
 		this.theFile2 = theFile2;
 	}
 	public int getQino3() {
@@ -110,10 +104,10 @@ public class QnADTO {
 	public void setTheText3(String theText3) {
 		this.theText3 = theText3;
 	}
-	public CommonsMultipartFile getTheFile3() {
+	public String getTheFile3() {
 		return theFile3;
 	}
-	public void setTheFile3(CommonsMultipartFile theFile3) {
+	public void setTheFile3(String theFile3) {
 		this.theFile3 = theFile3;
 	}
 	public int getQno() {
@@ -164,7 +158,6 @@ public class QnADTO {
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
-	
 	
     
 	
