@@ -15,18 +15,15 @@
 
 
 
-<!-- Begin of Container Upload -->
-        
-<!-- End of Upload -->
 
-<!-- Begin of Container Hotel -->        
-<!-- End of Hotel -->
+
+
 <c:set var="qnaretrieve" value="${qnaretrieve}" />
 
 <div class="my-12rem container">
 <div id="list" class="col-md-1 col-md-offset-1 container">
 <br>
-<a href="qna"><h5>List</h5></a>
+<a href="qna"><h4>List</h4></a>
 </div>	
 </div>
 
@@ -36,14 +33,40 @@
 
 <div id="tinymce-form" class="container">
 <div class="well well-lg">
-
-<form name="qnaForm" method="post" action="qnaupdate">
+<form action="qnaupdate" method="post" encType="multipart/form-data">
 <div id="div${qnaretrieve.qno}">
 <h4 class=" py-3 font-weight-bold text-grey ">
 <strong>QnA Write</strong>
 </h4>
+<br>
+<!-- Begin of Container Upload -->
+
+<div class="container">
+<input type="hidden" name="qino1" value="${qnaretrieve.qino1}">
+FileName: <input type="text" name="theText1" value="${qnaretrieve.theText1}" placeholder=" Write your FileName"><br>
+File: <input type="file" name="theFile1" value="${qnaretrieve.theFile1}"><br>    
+</div>
+
+<div class="container">							
+<input type="hidden" name="qino2" value="${qnaretrieve.qino2}">
+FileName: <input type="text" name="theText2" value="${qnaretrieve.theText2}" placeholder=" Write your FileName"><br>
+File: <input type="file" name="theFile2" value="${qnaretrieve.theFile2}"><br>
+</div>
+
+<div class="container">	
+<input type="hidden" name="qino3" value="${qnaretrieve.qino3}">
+FileName: <input type="text" name="theText3" value="${qnaretrieve.theText3}" placeholder=" Write your FileName"><br>
+File: <input type="file" name="theFile3" value="${qnaretrieve.theFile3}"><br>
+</div>
+<br>
+<!-- End of Upload -->
+<!-- Begin of Container Hotel -->        
+<!-- End of Hotel -->
+
 <input type="hidden" name="qno" value="${qnaretrieve.qno}">
-<input class="form-control" type="text" name="title" value="${qnaretrieve.title}">
+<input type="hidden" name="uno" value="${qnaretrieve.uno}">
+<input type="hidden" name="hno" value="${qnaretrieve.hno}">
+<input class="form-control" type="text" name="title" value="${qnaretrieve.title}" placeholder=" Write your Title">
 <fieldset class="form-group">
     <textarea 
             class="form-control" 
@@ -51,7 +74,8 @@
             rows="10" 
             placeholder="Content"
             v-tinymce-editor="content"
-            name="question">          
+            name="question"
+            value="${qnaretrieve.question}">          
     </textarea>
 </fieldset>
 ${qnaretrieve.question}
@@ -64,11 +88,11 @@ ${qnaretrieve.question}
 <input type="button" class="btn btn-sm btn-default delete" 
        data-num="${qnaretrieve.qno}" value="Delete" ><br>
 </span>
-</div>
-</form>
 
+</form>
 </div>
 </div>
+
 
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.4/tinymce.min.js'></script>
 <script >
