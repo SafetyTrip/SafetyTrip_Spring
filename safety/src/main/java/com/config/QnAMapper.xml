@@ -8,9 +8,9 @@
 
 	<!-- QnA List 불러오기 -->
 	<select id="qnaList" resultType="com.dto.QnADTO">
-	   select qino1, thetext1, thefile1, 
-	   qino2, thetext2, thefile2, 
-	   qino3, thetext3, thefile3, 
+	   select qino1, theText1, theFile1, 
+	   qino2, theText2, theFile2, 
+	   qino3, theText3, theFile3, 
 	   qno, uno, hno,
 	   title, question, answer, qopen,
 	   to_char(createdate,'YYYY/MM/DD') createdate
@@ -22,22 +22,23 @@
 	<insert id="qnaInsert" parameterType="com.dto.QnADTO">
        insert into 
        qna( 
-       qino1, thetext1, thefile1, 
-	   qino2, thetext2, thefile2, 
-	   qino3, thetext3, thefile3, 
+       qino1, theText1, theFile1, 
+	   qino2, theText2, theFile2, 
+	   qino3, theText3, theFile3, 
        qno, uno, hno, title, question)
        values( 
-       SEQ_QNA_IMG_QINO1.nextval, #{thetext1}, #{thefile1},
-       SEQ_QNA_IMG_QINO2.nextval, #{thetext2}, #{thefile2},
-       SEQ_QNA_IMG_QINO3.nextval, #{thetext3}, #{thefile3},
-       SEQ_QNA_QNO.nextval, #{uno}, #{title}, #{hno}, #{question} )
+       NVL(SEQ_QNA_QINO1.nextval, 1), #{theText1}, #{theFile1},
+       NVL(SEQ_QNA_QINO2.nextval, 1), #{theText2}, #{theFile2},
+       NVL(SEQ_QNA_QINO3.nextval, 1), #{theText3}, #{theFile3},
+       NVL(SEQ_QNA_QNO.nextval, 1), #{uno}, #{title, jdbcType=VARCHAR}, 
+       #{hno}, #{question, jdbcType=VARCHAR} )
     </insert>
 
 	<!-- QnA Retrieve 쓰기 -->
 	<select id="qnaRetrieve"  parameterType="int"  resultType="com.dto.QnADTO">
-	   select qino1, thetext1, thefile1, 
-	   qino2, thetext2, thefile2, 
-	   qino3, thetext3, thefile3,
+	   select qino1, theText1, theFile1, 
+	   qino2, theText2, theFile2, 
+	   qino3, theText3, theFile3,
 	   qno, uno, hno,
 	   title, question, answer, qopen,
 	   to_char(createdate,'YYYY/MM/DD') createdate
@@ -55,12 +56,14 @@
 	<update id="qnaUpdate" parameterType="com.dto.QnADTO">
 	 update qna
 	 set 
-	 qino1=#{qino1}, thetext1=#{thetext1}, thefile1=#{thefile1}, 
-	 qino2=#{qino2}, thetext2=#{thetext2}, thefile2=#{thefile2}, 
-	 qino3=#{qino3}, thetext3=#{thetext3}, thefile3=#{thefile3},
+	 qino1=#{qino1}, thetext1=#{theText1}, thefile1=#{theFile1}, 
+	 qino2=#{qino2}, thetext2=#{theText2}, thefile2=#{theFile2}, 
+	 qino3=#{qino3}, thetext3=#{theText3}, thefile3=#{theFile3},
 	 uno=#{uno}, hno=#{hno}, title=#{title}, question=#{question}
 	 where qno = #{qno}
 	</update>
+	
+	
 	
 	
 </mapper>

@@ -15,19 +15,15 @@
 
 
 
-<!-- Begin of Container Upload -->
-        
-<!-- End of Upload -->
-
-<!-- Begin of Container Hotel -->        
-<!-- End of Hotel -->
+<c:set var="qna" value="${dto}" />
 
 <div class="my-12rem container">
 <div id="list" class="col-md-1 col-md-offset-1 container">
 <br>
-<a href="qna"><h5>List</h5></a>
+<a href="qna"><h4>List</h4></a>
 </div>	
 </div>
+
 
 
 <!-- --------------------------------------------------------------------------- -->
@@ -35,12 +31,40 @@
 
 <div id="tinymce-form" class="container">
 <div class="well well-lg">
-<form action="qnawrite" method="post">
+<form action="qnawrite" method="post" encType="multipart/form-data">
 <h4 class=" py-3 font-weight-bold text-grey ">
 <strong>QnA Write</strong>
 </h4>
+<br>
+<!-- Begin of Container Upload -->
+
+<div class="container">
+<input type="hidden" name="qino1" value="${qna.qino1}">
+FileName: <input type="text" name="theText1" value="${qna.theText1}" placeholder=" Write your FileName"><br>
+File: <input type="file" name="theFile1" value="${qna.theFile1}"><br>    
+</div>
+
+<div class="container">							
+<input type="hidden" name="qino2" value="${qna.qino2}">
+FileName: <input type="text" name="theText2" value="${qna.theText2}" placeholder=" Write your FileName"><br>
+File: <input type="file" name="theFile2" value="${qna.theFile2}"><br>
+</div>
+
+<div class="container">	
+<input type="hidden" name="qino3" value="${qna.qino3}">
+FileName: <input type="text" name="theText3" value="${qna.theText3}" placeholder=" Write your FileName"><br>
+File: <input type="file" name="theFile3" value="${qna.theFile3}"><br>
+</div>
+<br>
+<!-- End of Upload -->
+<!-- Begin of Container Hotel -->        
+<!-- End of Hotel -->
+
+
 <input type="hidden" name="qno" value="${qna.qno}">
-<input class="form-control" type="text" name="title" placeholder=" Write your Title">
+<input type="hidden" name="uno" value="${qna.uno}">
+<input type="hidden" name="hno" value="${qna.hno}">
+<input class="form-control" type="text" name="title" value="${qna.title}" placeholder=" Write your Title">
 <fieldset class="form-group">
     <textarea 
             class="form-control" 
@@ -48,7 +72,8 @@
             rows="10" 
             placeholder="Content"
             v-tinymce-editor="content"
-            name="question">          
+            name="question"
+            value="${qna.question}">          
     </textarea>
 </fieldset>
 {{ content }}
@@ -65,6 +90,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.4/tinymce.min.js'></script>
 <script >
+
+
 	$(function() {
 
 	// tinymce directive
