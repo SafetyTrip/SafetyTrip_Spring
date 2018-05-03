@@ -65,13 +65,13 @@
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                    <img src="<c:url value='/resources/img/qna/150x150.jpg'/>" alt="Image">
+                    <img src="images/${dto.theFile1}" alt="Image">
                 </div>
                 <div class="item">
-                    <img src="<c:url value='/resources/img/qna/150x150.jpg'/>" alt="Image">
+                    <img src="<c:url value='images/${dto.theFile2}'/>" alt="Image">
                 </div>
                 <div class="item">
-                    <img src="<c:url value='/resources/img/qna/150x150.jpg'/>" alt="Image">
+                    <img src="<c:url value='images/${dto.theFile3}'/>" alt="Image">
                 </div>
               </div>
             </div>
