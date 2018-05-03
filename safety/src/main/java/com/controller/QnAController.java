@@ -166,7 +166,7 @@ public class QnAController {
 			        
 			  		  
 			  		ModelAndView mav = new ModelAndView();
-			        mav.setViewName( "qna" );
+			        mav.setViewName( "redirect:qna" );
 					
 			        mav.addObject( "qino1" , new Integer( qino1 ));
 			        mav.addObject( "theText1" , theText1 );		       		        
