@@ -32,7 +32,7 @@
 <!-- Begin of Container Editor -->	
 
 <div id="tinymce-form" class="container">
-<div class="well well-lg">
+<div class="jumbotron" style="background-color:light-grey; padding:24px 24px 42px;">
 <form action="qnaupdate" method="post" encType="multipart/form-data">
 <div id="div${qnaretrieve.qno}">
 <h4 class=" py-3 font-weight-bold text-grey ">
@@ -83,7 +83,7 @@ ${qnaretrieve.question}
 <span class="pull-right buttons">
 <input type="submit" class="btn btn-sm btn-info revise" 
        data-num="${qnaretrieve.qno}" value="Revise"><br>
-</span>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span class="pull-right buttons">
 <input type="button" class="btn btn-sm btn-default delete" 
        data-num="${qnaretrieve.qno}" value="Delete" ><br>
