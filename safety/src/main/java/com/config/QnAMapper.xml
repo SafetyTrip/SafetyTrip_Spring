@@ -28,10 +28,10 @@
        qno, uno, hno, title, question)
        values( 
        NVL(SEQ_QNA_QINO1.nextval, 1), #{theText1}, #{theFile1},
-       NVL(SEQ_QNA_QINO2.nextval, 1), #{theText2}, #{theFile2},
-       NVL(SEQ_QNA_QINO3.nextval, 1), #{theText3}, #{theFile3},
-       NVL(SEQ_QNA_QNO.nextval, 1), #{uno}, #{title, jdbcType=VARCHAR}, 
-       #{hno}, #{question, jdbcType=VARCHAR} )
+       NVL(SEQ_QNA_QINO2.nextval, 2), #{theText2}, #{theFile2},
+       NVL(SEQ_QNA_QINO3.nextval, 3), #{theText3}, #{theFile3},
+       NVL(SEQ_QNA_QNO.nextval, 1), #{uno}, #{hno}, 
+       #{title, jdbcType=VARCHAR}, #{question, jdbcType=VARCHAR} )
     </insert>
 
 	<!-- QnA Retrieve 쓰기 -->

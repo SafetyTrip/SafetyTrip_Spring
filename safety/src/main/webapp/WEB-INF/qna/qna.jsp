@@ -26,13 +26,14 @@
                 </h1>
 
                 <p class=" mb-5 pb-3 text-center text-grey ">
-                    <em>Sed ut perspiciatis unde omnis iste natus
-                        error sit voluptatem accusantium doloremque laudantium, 
-                        totam
-                        rem aperiam, eaque ipsa quae ab illo inventore
-                        veritatis et quasi architecto beatae sit aspernatur
-                        aut odit aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem sequi.</em>
+                    <em>Adventure is Everywhere !
+                        This is the Place For Those who wants to Solve inquiry, 
+                        Find answer to Venture out 
+                        Accelerate your stay ahead By being part of the New
+                        and Lead your Travel out Here                  
+                        Make the Chance and Grab it with SafetyTrip ! 
+                        SafetyTrip is always be with you</em>
+                        
                 </p>
 			</div>
 			 <hr class="mb-5">
@@ -64,13 +65,13 @@
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                    <img src="<c:url value='/resources/img/qna/150x150.jpg'/>" alt="Image">
+                    <img class="img-responsive center-block" src="<c:url value='images/${dto.theFile1}'/>"  alt="Image" >
                 </div>
                 <div class="item">
-                    <img src="<c:url value='/resources/img/qna/150x150.jpg'/>" alt="Image">
+                    <img class="img-responsive center-block" src="<c:url value='images/${dto.theFile2}'/>" alt="Image">
                 </div>
                 <div class="item">
-                    <img src="<c:url value='/resources/img/qna/150x150.jpg'/>" alt="Image">
+                    <img class="img-responsive center-block" src="<c:url value='images/${dto.theFile3}'/>" alt="Image">
                 </div>
               </div>
             </div>
@@ -78,11 +79,10 @@
             <div class="slide-content">
             <input type="hidden" name="qno" value="${dto.qno}">
                 <a class="qnaretrieve"  data-num="${dto.qno}">
-                <h4>QnATitle ${dto.qno}</h4>
-                <h4>${dto.title}</h4>
+                <h4>QnATitle ${dto.qno}</h4><h4>${dto.title}</h4>
                 </a>
                 <p>
-                   QnAContent ${dto.question}
+                   Question | ${dto.question}
                 </p>
             </div>
             
@@ -129,6 +129,8 @@ $(document).ready(function(){
 
 
 
+<br>
+<br>
 <br>
 <br>
 <br>

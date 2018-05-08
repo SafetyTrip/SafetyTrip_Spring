@@ -21,6 +21,7 @@
 	<mvc:resources location="/resources/" mapping="/resources/**"/>
 	<mvc:resources location="/WEB-INF/angular/" mapping="/angular/**"/>
 	<mvc:resources location="/WEB-INF/img/" mapping="/img/**"/>
+	<mvc:resources location="file:c:\\upload\\" mapping="/images/**"/>
 	
 	<mvc:interceptors>
 	  <mvc:interceptor>

@@ -30,7 +30,7 @@
 <!-- Begin of Container Editor -->	
 
 <div id="tinymce-form" class="container">
-<div class="well well-lg">
+<div class="jumbotron" style="background-color:light-grey; padding:24px 24px 33px;">
 <form action="qnawrite" method="post" encType="multipart/form-data">
 <h4 class=" py-3 font-weight-bold text-grey ">
 <strong>QnA Write</strong>
